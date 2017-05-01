@@ -12,6 +12,7 @@
 		014179DF1EB791FB00315C15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 014179DE1EB791FB00315C15 /* Assets.xcassets */; };
 		014179E21EB791FB00315C15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 014179E01EB791FB00315C15 /* LaunchScreen.storyboard */; };
 		014179EC1EB7926E00315C15 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014179EB1EB7926E00315C15 /* CloudKit.framework */; };
+		014179F81EB7963A00315C15 /* ImageSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179F71EB7963A00315C15 /* ImageSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		014179E31EB791FB00315C15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		014179E91EB7926800315C15 /* Decade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Decade.entitlements; path = Decade/Decade.entitlements; sourceTree = "<group>"; };
 		014179EB1EB7926E00315C15 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		014179F71EB7963A00315C15 /* ImageSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		014179ED1EB792BB00315C15 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				014179F71EB7963A00315C15 /* ImageSearch.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */,
+				014179F81EB7963A00315C15 /* ImageSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +400,7 @@
 				014179E81EB791FB00315C15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
