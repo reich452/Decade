@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+enum DecadeError: Error {
+    case baseUrlFailed
+    case imageSearchFailure
+    case invalidData
+    case invalidResponseData
+    case responseUnsucessful
+    case jsonConversionFailure
+    case imageUrlFailed
+    case imageSearchUnsucessful
+    case noImageData
+    case imageInitilizationFailure
+}
+
