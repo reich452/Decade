@@ -18,7 +18,8 @@
 		014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179FD1EB7A80C00315C15 /* NetworkController.swift */; };
 		01417A001EB7B20E00315C15 /* DecadeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179FF1EB7B20E00315C15 /* DecadeError.swift */; };
 		01417A021EB7E8C200315C15 /* ImageController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A011EB7E8C200315C15 /* ImageController .swift */; };
-		01417A041EB7EE2D00315C15 /* ImageSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A031EB7EE2D00315C15 /* ImageSearchTableViewController.swift */; };
+		01417A041EB7EE2D00315C15 /* DecadeSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A031EB7EE2D00315C15 /* DecadeSearchTableViewController.swift */; };
+		01417A061EB7F37E00315C15 /* DecadeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A051EB7F37E00315C15 /* DecadeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,8 @@
 		014179FD1EB7A80C00315C15 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		014179FF1EB7B20E00315C15 /* DecadeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeError.swift; sourceTree = "<group>"; };
 		01417A011EB7E8C200315C15 /* ImageController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageController .swift"; sourceTree = "<group>"; };
-		01417A031EB7EE2D00315C15 /* ImageSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSearchTableViewController.swift; sourceTree = "<group>"; };
+		01417A031EB7EE2D00315C15 /* DecadeSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeSearchTableViewController.swift; sourceTree = "<group>"; };
+		01417A051EB7F37E00315C15 /* DecadeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,8 @@
 		014179EF1EB792CD00315C15 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				01417A031EB7EE2D00315C15 /* ImageSearchTableViewController.swift */,
+				01417A031EB7EE2D00315C15 /* DecadeSearchTableViewController.swift */,
+				01417A051EB7F37E00315C15 /* DecadeTableViewCell.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01417A061EB7F37E00315C15 /* DecadeTableViewCell.swift in Sources */,
 				01417A001EB7B20E00315C15 /* DecadeError.swift in Sources */,
 				01417A021EB7E8C200315C15 /* ImageController .swift in Sources */,
 				014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */,
@@ -256,7 +260,7 @@
 				014179F81EB7963A00315C15 /* Decade.swift in Sources */,
 				014179FA1EB79CDC00315C15 /* User.swift in Sources */,
 				014179FC1EB7A4FE00315C15 /* ImageSearchController.swift in Sources */,
-				01417A041EB7EE2D00315C15 /* ImageSearchTableViewController.swift in Sources */,
+				01417A041EB7EE2D00315C15 /* DecadeSearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

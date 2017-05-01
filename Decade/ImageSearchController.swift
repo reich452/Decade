@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class ImageSearchController {
+class DecadeSearchController {
     
-    static let shared = ImageSearchController()
+    static let shared = DecadeSearchController()
     
     private let searchTermKey = "q"
     private let countKey = "count"
