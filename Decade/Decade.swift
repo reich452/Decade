@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ImageSearch {
+class Decade {
     
     private let imageNameKey = "name"
     private let contentUrlKey = "contentUrl"

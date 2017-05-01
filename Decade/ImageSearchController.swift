@@ -21,7 +21,7 @@ class ImageSearchController {
     private let baseURL = URL(string: "https://api.cognitive.microsoft.com/bing/v5.0/images/search")
     private let apiKey = "0231de06566d4717873444afb447e586"
     
-    func searchForImagesWith(searchTerm: String, completion: @escaping ([ImageSearch]?, DecadeError?) -> Void) {
+    func searchForImagesWith(searchTerm: String, completion: @escaping ([Decade]?, DecadeError?) -> Void) {
         guard let baseURL = baseURL else { completion([], .baseUrlFailed); return }
         let urlParameters = ["q": searchTerm, apiParameter: apiKey]
         
@@ -34,7 +34,7 @@ class ImageSearchController {
             
             guard let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion([], .invalidData); return }
             
-            let images = imageArray.flatMap( {ImageSearch(jsonDictionary: $0)})
+            let images = imageArray.flatMap( {Decade(jsonDictionary: $0)})
             
             for image in images {
                 ImageController.image(forURL: image.contentUrlString, completion: { (newImage) in

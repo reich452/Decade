@@ -10,6 +10,8 @@ import UIKit
 
 class ImageSearchTableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var imageSearchBar: UISearchBar!
+    
+    var images: [ImageSearch] = []
 
     
     override func viewDidLoad() {
