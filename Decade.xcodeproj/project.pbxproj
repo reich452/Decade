@@ -131,6 +131,7 @@
 		014179F21EB792F900315C15 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				014179DB1EB791FB00315C15 /* Main.storyboard */,
 				014179E01EB791FB00315C15 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboard;
@@ -150,7 +151,6 @@
 			children = (
 				014179E31EB791FB00315C15 /* Info.plist */,
 				014179D71EB791FB00315C15 /* AppDelegate.swift */,
-				014179DB1EB791FB00315C15 /* Main.storyboard */,
 				014179DE1EB791FB00315C15 /* Assets.xcassets */,
 				014179E91EB7926800315C15 /* Decade.entitlements */,
 			);
