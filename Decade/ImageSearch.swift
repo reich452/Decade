@@ -11,15 +11,24 @@ import UIKit
 
 class ImageSearch {
     
-    let searchTerm: String
-    var resultImages: [UIImage]
-    let name: String
-    let year: String?
+    private let imageNameKey = "name"
+    private let contentUrlKey = "contentUrl"
     
-    init(searchTerm: String, name: String, year: String?) {
-        self.searchTerm = searchTerm
-        self.resultImages = []
-        self.name = name
-        self.year = year
+   // var resultImages: [UIImage]
+    let imageName: String
+    let contentUrlString: String
+    
+    
+    var contentUrl: URL? {
+        return URL(string: contentUrlString)
+    }
+    
+    init?(jsonDictionary: [String : Any]) {
+        guard let imageName = jsonDictionary[imageNameKey] as? String,
+            let contentUrl = jsonDictionary[contentUrlKey] as? String
+            else { return nil }
+        
+        self.imageName = imageName
+        self.contentUrlString = contentUrl
     }
 }
