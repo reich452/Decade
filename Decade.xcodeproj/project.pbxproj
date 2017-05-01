@@ -113,6 +113,7 @@
 		014179F01EB792DB00315C15 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				014179EF1EB792CD00315C15 /* View Controller */,
 				014179F41EB7932800315C15 /* Network Controller */,
 				014179EE1EB792C300315C15 /* Model Controller */,
 			);
@@ -123,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				014179F21EB792F900315C15 /* Storyboard */,
-				014179EF1EB792CD00315C15 /* View Controller */,
 			);
 			name = View;
 			sourceTree = "<group>";

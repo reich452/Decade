@@ -37,8 +37,11 @@ class ImageSearchController {
             let images = imageArray.flatMap( {ImageSearch(jsonDictionary: $0)})
             
             for image in images {
-                
+                ImageController.image(forURL: image.contentUrlString, completion: { (newImage) in
+                    
+                })
             }
+            completion(images, nil)
         }
     }
 }
