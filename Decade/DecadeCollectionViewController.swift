@@ -12,14 +12,11 @@ private let reuseIdentifier = "decadeCell"
 
 class DecadeCollectionViewController: UICollectionViewController {
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-
     // MARK: - Navigation
 
    
@@ -27,7 +24,6 @@ class DecadeCollectionViewController: UICollectionViewController {
      
     }
  
-
     // MARK: UICollectionViewDataSource
     let mockData = [#imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal")]
     

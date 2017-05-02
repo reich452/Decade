@@ -136,7 +136,7 @@
         <scene sceneID="lcT-ag-DFo">
             <objects>
                 <tableViewController id="T0P-DY-hip" customClass="DecadeSearchTableViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z9P-gp-90v">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="223" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z9P-gp-90v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,21 +146,33 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="lK2-lo-YXW" rowHeight="67" style="IBUITableViewCellStyleDefault" id="QcE-Im-Dt9">
-                                <rect key="frame" x="0.0" y="72" width="375" height="67"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="223" id="QcE-Im-Dt9" customClass="DecadeImageTableViewCell" customModule="Decade" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="223"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QcE-Im-Dt9" id="wn0-LP-KOv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lK2-lo-YXW">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="67"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xRU-IB-hAS">
+                                            <rect key="frame" x="26" y="27" width="151" height="147"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="151" id="W54-Cy-vY1"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decade Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlM-nb-DwC">
+                                            <rect key="frame" x="26" y="182" width="160" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xRU-IB-hAS" firstAttribute="leading" secondItem="hlM-nb-DwC" secondAttribute="leading" id="7bj-G0-21W"/>
+                                        <constraint firstItem="hlM-nb-DwC" firstAttribute="top" secondItem="xRU-IB-hAS" secondAttribute="bottom" constant="8" symbolic="YES" id="Bw7-3g-eEI"/>
+                                        <constraint firstItem="xRU-IB-hAS" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leadingMargin" constant="18" id="HAO-uJ-1mM"/>
+                                        <constraint firstItem="xRU-IB-hAS" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="topMargin" constant="19" id="JA5-Wg-mgO"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hlM-nb-DwC" secondAttribute="bottom" constant="11.5" id="NE7-0d-K8k"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -184,7 +196,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFP-yS-bzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="638"/>
+            <point key="canvasLocation" x="2364" y="637.33133433283365"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iCE-d3-FhX">

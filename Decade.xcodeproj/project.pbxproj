@@ -23,6 +23,7 @@
 		01417A0C1EB8117400315C15 /* DecadeSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A0B1EB8117400315C15 /* DecadeSearchTableViewController.swift */; };
 		01417A0F1EB818DE00315C15 /* DecadeImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A0E1EB818DE00315C15 /* DecadeImageTableViewCell.swift */; };
 		01417A111EB820B700315C15 /* DecadeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A101EB820B700315C15 /* DecadeCollectionViewCell.swift */; };
+		01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		01417A0B1EB8117400315C15 /* DecadeSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeSearchTableViewController.swift; sourceTree = "<group>"; };
 		01417A0E1EB818DE00315C15 /* DecadeImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeImageTableViewCell.swift; sourceTree = "<group>"; };
 		01417A101EB820B700315C15 /* DecadeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeCollectionViewCell.swift; sourceTree = "<group>"; };
+		01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +184,9 @@
 		01417A0D1EB817AA00315C15 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				01417A0E1EB818DE00315C15 /* DecadeImageTableViewCell.swift */,
 				01417A101EB820B700315C15 /* DecadeCollectionViewCell.swift */,
+				01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */,
+				01417A0E1EB818DE00315C15 /* DecadeImageTableViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				01417A001EB7B20E00315C15 /* DecadeError.swift in Sources */,
 				01417A021EB7E8C200315C15 /* ImageController .swift in Sources */,
 				014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */,
+				01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */,
 				01417A0F1EB818DE00315C15 /* DecadeImageTableViewCell.swift in Sources */,
 				014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */,
 				014179F81EB7963A00315C15 /* Decade.swift in Sources */,
