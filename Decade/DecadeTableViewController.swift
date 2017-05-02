@@ -9,8 +9,9 @@
 import UIKit
 
 class DecadeTableViewController: UITableViewController {
+    
+    // MARK: - TODO: add Firebase display 
  
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,19 +24,10 @@ class DecadeTableViewController: UITableViewController {
         return 0
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
         return cell
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-        }
     }
     
     // MARK: - Navigation

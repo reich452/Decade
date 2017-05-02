@@ -24,6 +24,8 @@
 		01417A0F1EB818DE00315C15 /* DecadeImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A0E1EB818DE00315C15 /* DecadeImageTableViewCell.swift */; };
 		01417A111EB820B700315C15 /* DecadeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A101EB820B700315C15 /* DecadeCollectionViewCell.swift */; };
 		01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */; };
+		01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A141EB8F3C100315C15 /* CustomTabBarController.swift */; };
+		01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		01417A0E1EB818DE00315C15 /* DecadeImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeImageTableViewCell.swift; sourceTree = "<group>"; };
 		01417A101EB820B700315C15 /* DecadeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeCollectionViewCell.swift; sourceTree = "<group>"; };
 		01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeSearchTableViewCell.swift; sourceTree = "<group>"; };
+		01417A141EB8F3C100315C15 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedDecadeTableViewController.swift; path = ../SavedDecadeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				01417A071EB8108400315C15 /* DecadeCollectionViewController.swift */,
 				01417A091EB8112400315C15 /* DecadeTableViewController.swift */,
 				01417A0B1EB8117400315C15 /* DecadeSearchTableViewController.swift */,
+				01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				014179FF1EB7B20E00315C15 /* DecadeError.swift */,
+				01417A141EB8F3C100315C15 /* CustomTabBarController.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -277,9 +283,11 @@
 				01417A021EB7E8C200315C15 /* ImageController .swift in Sources */,
 				014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */,
 				01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */,
+				01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */,
 				01417A0F1EB818DE00315C15 /* DecadeImageTableViewCell.swift in Sources */,
 				014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */,
 				014179F81EB7963A00315C15 /* Decade.swift in Sources */,
+				01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */,
 				01417A0A1EB8112400315C15 /* DecadeTableViewController.swift in Sources */,
 				014179FA1EB79CDC00315C15 /* User.swift in Sources */,
 				014179FC1EB7A4FE00315C15 /* DecadeSearchController.swift in Sources */,

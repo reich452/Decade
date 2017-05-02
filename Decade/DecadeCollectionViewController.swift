@@ -19,13 +19,13 @@ class DecadeCollectionViewController: UICollectionViewController {
     
     // MARK: - Navigation
 
-   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      
     }
  
     // MARK: UICollectionViewDataSource
     let mockData = [#imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal")]
+ 
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -33,15 +33,16 @@ class DecadeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? DecadeCollectionViewCell else { return UICollectionViewCell() }
     
+        let image = mockData[indexPath.row]
         // Configure the cell
-    
+        cell.decadeImageView.image = image
+        
         return cell
     }
 
     // MARK: UICollectionViewDelegate
-
 
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     

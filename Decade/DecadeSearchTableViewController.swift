@@ -9,6 +9,7 @@
 import UIKit
 
 class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegate {
+    
     @IBOutlet weak var imageSearchBar: UISearchBar!
     
     // MARK: - Properties 
@@ -20,6 +21,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imageSearchBar.delegate = self
 
     }
@@ -29,7 +31,6 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return decades.count
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "decadeSearchCell", for: indexPath) as? DecadeSearchTableViewCell else { return UITableViewCell() }

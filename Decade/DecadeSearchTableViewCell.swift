@@ -10,6 +10,9 @@ import UIKit
 
 class DecadeSearchTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var decadeImageView: UIImageView!
+    @IBOutlet weak var decadeTitleLabel: UILabel!
+    
     var decade: Decade? {
         didSet {
             

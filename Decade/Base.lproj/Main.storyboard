@@ -19,21 +19,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3wk-vI-nJs">
-                            <size key="itemSize" width="136" height="126"/>
+                            <size key="itemSize" width="167" height="171"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="decadeCell" id="lET-dO-w07" customClass="DecadeCollectionViewCell" customModule="Decade" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="136" height="126"/>
+                                <rect key="frame" x="0.0" y="0.0" width="167" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="136" height="126"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="167" height="171"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal" highlightedImage="meal" translatesAutoresizingMaskIntoConstraints="NO" id="yii-I6-lYl">
-                                            <rect key="frame" x="10" y="11" width="116" height="104"/>
+                                            <rect key="frame" x="10" y="11" width="147" height="150"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -57,11 +57,7 @@
                     <toolbarItems>
                         <barButtonItem title="Home" id="rJw-MC-dJl"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cZU-fA-8TU"/>
-                        <barButtonItem title="Item" systemItem="search" id="UdW-yr-o8c">
-                            <connections>
-                                <segue destination="T0P-DY-hip" kind="show" identifier="toSearchDecadeTVC" id="MFU-zl-ay3"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem title="Item" systemItem="search" id="UdW-yr-o8c"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="xDL-hA-Scu"/>
                         <barButtonItem title="Hart" id="DKQ-tW-mjR"/>
                     </toolbarItems>
@@ -135,7 +131,7 @@
         <!--Item-->
         <scene sceneID="lcT-ag-DFo">
             <objects>
-                <tableViewController id="T0P-DY-hip" customClass="DecadeSearchTableViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="decadeSearchTVC" id="T0P-DY-hip" customClass="DecadeSearchTableViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="223" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z9P-gp-90v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +142,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="223" id="QcE-Im-Dt9" customClass="DecadeImageTableViewCell" customModule="Decade" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="223" id="QcE-Im-Dt9" customClass="DecadeSearchTableViewCell" customModule="Decade" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="223"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QcE-Im-Dt9" id="wn0-LP-KOv">
@@ -174,6 +170,10 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="hlM-nb-DwC" secondAttribute="bottom" constant="11.5" id="NE7-0d-K8k"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="decadeImageView" destination="xRU-IB-hAS" id="TQg-0G-iM6"/>
+                                    <outlet property="decadeTitleLabel" destination="hlM-nb-DwC" id="eZn-kP-1eN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -191,17 +191,46 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageSearchBar" destination="0Ab-tK-6hb" id="WOd-7O-g1T"/>
+                        <outlet property="imageSearchBar" destination="0Ab-tK-6hb" id="y3d-8F-fY8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFP-yS-bzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="637.33133433283365"/>
+            <point key="canvasLocation" x="2364" y="621"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Item-->
+        <scene sceneID="cCn-xr-YB0">
+            <objects>
+                <tableViewController id="IGb-0H-mUz" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="302" sectionHeaderHeight="28" sectionFooterHeight="28" id="gx4-eJ-fr0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="302" id="foB-fD-uJh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="302"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="foB-fD-uJh" id="CPh-dt-E3X">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="302"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IGb-0H-mUz" id="Dwi-PO-koo"/>
+                            <outlet property="delegate" destination="IGb-0H-mUz" id="etL-R5-Drh"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="6LC-qk-ZAj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpv-0c-ADL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="1291.304347826087"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="iCE-d3-FhX">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="b6i-x9-ZBu" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="customTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="b6i-x9-ZBu" customClass="CustomTabBarController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zCq-OU-tgM">
                         <autoresizingMask key="autoresizingMask"/>
@@ -209,16 +238,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="kob-t7-y7g" kind="relationship" relationship="viewControllers" id="rCs-N7-19w"/>
+                        <segue destination="T0P-DY-hip" kind="relationship" relationship="viewControllers" id="qe8-dU-kKY"/>
+                        <segue destination="IGb-0H-mUz" kind="relationship" relationship="viewControllers" id="02i-br-WR3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUm-V7-h3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="-134"/>
+            <point key="canvasLocation" x="522" y="739"/>
         </scene>
         <!--Item-->
         <scene sceneID="bNo-eX-6tG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kob-t7-y7g" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="decadeHomeController" automaticallyAdjustsScrollViewInsets="NO" id="kob-t7-y7g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="oQE-nv-p9P"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DOs-ss-dGc">
@@ -232,7 +263,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mP-EU-JGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424.8" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="1590" y="-134"/>
         </scene>
     </scenes>
     <resources>

@@ -11,5 +11,16 @@ import UIKit
 class DecadeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var decadeImageView: UIImageView!
     
+    var decade: Decade? {
+        didSet{
+            updateViews()
+        }
+    }
+    
+    func updateViews() {
+        
+        let image = #imageLiteral(resourceName: "meal")
+        self.decadeImageView.image = image
+    }
     
 }
