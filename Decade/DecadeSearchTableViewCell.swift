@@ -9,7 +9,11 @@
 import UIKit
 
 class DecadeSearchTableViewCell: UITableViewCell {
-
-
+    
+    var decade: Decade? {
+        didSet {
+            
+        }
+    }
 
 }

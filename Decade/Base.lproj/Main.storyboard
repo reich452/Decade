@@ -146,7 +146,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="223" id="QcE-Im-Dt9" customClass="DecadeImageTableViewCell" customModule="Decade" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="223" id="QcE-Im-Dt9" customClass="DecadeImageTableViewCell" customModule="Decade" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="223"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QcE-Im-Dt9" id="wn0-LP-KOv">

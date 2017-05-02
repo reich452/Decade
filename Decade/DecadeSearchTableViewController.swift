@@ -8,36 +8,37 @@
 
 import UIKit
 
-class DecadeSearchTableViewController: UITableViewController {
+class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var imageSearchBar: UISearchBar!
+    
+    // MARK: - Properties 
+    var decades: [Decade] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageSearchBar.delegate = self
 
     }
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 0
+        return decades.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "decadeSearchCell", for: indexPath) as? DecadeSearchTableViewCell else { return UITableViewCell() }
         
+        let decade = decades[indexPath.row]
+        cell.decade = decade
         return cell
     }
-    
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-        }
-    }
-    
+
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
