@@ -14,7 +14,7 @@
 		014179EC1EB7926E00315C15 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014179EB1EB7926E00315C15 /* CloudKit.framework */; };
 		014179F81EB7963A00315C15 /* Decade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179F71EB7963A00315C15 /* Decade.swift */; };
 		014179FA1EB79CDC00315C15 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179F91EB79CDC00315C15 /* User.swift */; };
-		014179FC1EB7A4FE00315C15 /* ImageSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179FB1EB7A4FE00315C15 /* ImageSearchController.swift */; };
+		014179FC1EB7A4FE00315C15 /* DecadeSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179FB1EB7A4FE00315C15 /* DecadeSearchController.swift */; };
 		014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179FD1EB7A80C00315C15 /* NetworkController.swift */; };
 		01417A001EB7B20E00315C15 /* DecadeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179FF1EB7B20E00315C15 /* DecadeError.swift */; };
 		01417A021EB7E8C200315C15 /* ImageController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A011EB7E8C200315C15 /* ImageController .swift */; };
@@ -31,7 +31,7 @@
 		014179EB1EB7926E00315C15 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		014179F71EB7963A00315C15 /* Decade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decade.swift; sourceTree = "<group>"; };
 		014179F91EB79CDC00315C15 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		014179FB1EB7A4FE00315C15 /* ImageSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSearchController.swift; sourceTree = "<group>"; };
+		014179FB1EB7A4FE00315C15 /* DecadeSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeSearchController.swift; sourceTree = "<group>"; };
 		014179FD1EB7A80C00315C15 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		014179FF1EB7B20E00315C15 /* DecadeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeError.swift; sourceTree = "<group>"; };
 		01417A011EB7E8C200315C15 /* ImageController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageController .swift"; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		014179EE1EB792C300315C15 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
-				014179FB1EB7A4FE00315C15 /* ImageSearchController.swift */,
+				014179FB1EB7A4FE00315C15 /* DecadeSearchController.swift */,
 			);
 			name = "Model Controller";
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 				014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */,
 				014179F81EB7963A00315C15 /* Decade.swift in Sources */,
 				014179FA1EB79CDC00315C15 /* User.swift in Sources */,
-				014179FC1EB7A4FE00315C15 /* ImageSearchController.swift in Sources */,
+				014179FC1EB7A4FE00315C15 /* DecadeSearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
