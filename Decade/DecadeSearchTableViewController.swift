@@ -9,6 +9,7 @@
 import UIKit
 
 class DecadeSearchTableViewController: UITableViewController {
+    @IBOutlet weak var imageSearchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()

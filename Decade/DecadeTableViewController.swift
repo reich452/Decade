@@ -9,6 +9,8 @@
 import UIKit
 
 class DecadeTableViewController: UITableViewController {
+    @IBOutlet weak var imageNameLabel: UILabel!
+    @IBOutlet weak var deckadeImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

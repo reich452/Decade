@@ -1,5 +1,5 @@
 //
-//  DecadeImageTableViewCell.swift
+//  DecadeCollectionViewCell.swift
 //  Decade
 //
 //  Created by Nick Reichard on 5/1/17.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class DecadeImageTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var decadeNameLabel: UILabel!
+class DecadeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var decadeImageView: UIImageView!
-
+    
+    
 }
