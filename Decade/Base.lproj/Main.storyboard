@@ -33,7 +33,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
                                 <connections>
-                                    <segue destination="f7g-XW-nQG" kind="show" identifier="toDecadeDetail" id="LcB-ja-lSz"/>
+                                    <segue destination="7Za-ip-cBw" kind="show" identifier="toDecadeTVC" id="hca-UH-a9b"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -48,7 +48,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cZU-fA-8TU"/>
                         <barButtonItem title="Item" systemItem="search" id="UdW-yr-o8c">
                             <connections>
-                                <segue destination="r1F-IH-2xq" kind="show" id="9jE-yj-wA4"/>
+                                <segue destination="T0P-DY-hip" kind="show" identifier="toSearchDecadeTVC" id="MFU-zl-ay3"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="xDL-hA-Scu"/>
@@ -69,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="421" id="i07-1p-Hz3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeImageCell" rowHeight="421" id="i07-1p-Hz3">
                                 <rect key="frame" x="0.0" y="28" width="375" height="421"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i07-1p-Hz3" id="N5G-OS-O6I">
@@ -114,7 +114,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKf-hN-mzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="2473" y="-134"/>
         </scene>
         <!--Item-->
         <scene sceneID="lcT-ag-DFo">
@@ -165,7 +165,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFP-yS-bzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="608.54572713643188"/>
+            <point key="canvasLocation" x="1465" y="629"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iCE-d3-FhX">
@@ -183,40 +183,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUm-V7-h3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="386" y="-134"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="8jw-I9-nLk">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="r1F-IH-2xq" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="17N-TY-5xX">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="T0P-DY-hip" kind="relationship" relationship="viewControllers" id="zwH-yv-Ush"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hOq-oU-3bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1424.8" y="608.54572713643188"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="emg-J4-jtp">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="f7g-XW-nQG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="1cZ-ZY-Vdy">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="7Za-ip-cBw" kind="relationship" relationship="viewControllers" id="HUI-7w-7tf"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b1t-LX-crk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2432.8000000000002" y="-134.48275862068968"/>
         </scene>
     </scenes>
 </document>
