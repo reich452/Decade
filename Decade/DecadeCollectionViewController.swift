@@ -8,14 +8,16 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "decadeCell"
 
 class DecadeCollectionViewController: UICollectionViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
 
     // MARK: - Navigation
 
@@ -26,12 +28,11 @@ class DecadeCollectionViewController: UICollectionViewController {
  
 
     // MARK: UICollectionViewDataSource
-
- 
-
+    let mockData = [#imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal")]
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        
+        return mockData.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
