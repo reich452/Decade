@@ -20,6 +20,7 @@ class NetworkController {
     }
     
     static func performRequest(for url: URL,
+                               apiKey: String,
                                httpMethod: HTTPMethod,
                                urlParameters: [String : String]? = nil,
                                body: Data? = nil,
@@ -31,6 +32,7 @@ class NetworkController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = httpMethod.rawValue
         request.httpBody = body
+        request.addValue(apiKey, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
         
         // Create and "resume" (a.k.a. run) the task
         
