@@ -63,7 +63,7 @@ class NetworkController {
                                                      completion: ((Data?, Error?) -> Void)? = nil) {
         
         // Build our entire URL
-        
+        // We do not need the url parameters for the image because the contentUrl for the image already has urlParameters. Other projects were just the .jpeg
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         
