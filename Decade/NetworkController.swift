@@ -20,7 +20,7 @@ class NetworkController {
     }
     
     static func performRequest(for url: URL,
-                               apiKey: String,
+                               apiKey: String?,
                                httpMethod: HTTPMethod,
                                urlParameters: [String : String]? = nil,
                                body: Data? = nil,
@@ -32,7 +32,9 @@ class NetworkController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = httpMethod.rawValue
         request.httpBody = body
-        request.addValue(apiKey, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        if let apiKey = apiKey {
+            request.addValue(apiKey, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        }
         
         // Create and "resume" (a.k.a. run) the task
         
@@ -54,5 +56,24 @@ class NetworkController {
             fatalError("URL optional is nil")
         }
         return url
+    }
+    
+    static func performRequestWithoutParameters(for url: URL,
+                                                     httpMethod: HTTPMethod,
+                                                     completion: ((Data?, Error?) -> Void)? = nil) {
+        
+        // Build our entire URL
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod.rawValue
+        
+        // Create and "resume" (a.k.a. run) the task
+        
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            completion?(data, error)
+        }
+        
+        dataTask.resume()
     }
 }
