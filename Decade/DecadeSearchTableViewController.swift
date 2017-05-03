@@ -28,9 +28,10 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         searchBar.resignFirstResponder()
         guard let searchTerm = searchBar.text else { return }
         
-        DecadeSearchController.shared.searchForImagesWith(searchTerm: searchTerm) { (newDecade, decadeError) in
+        DecadeSearchController.shared.searchForImagesWith(searchTerm: searchTerm) { (newDecades, decadeError) in
+            guard let decades = newDecades else { return }
             DispatchQueue.main.async {
-                self.decades = newDecade ?? []
+                self.decades = decades
             }
         }
     }

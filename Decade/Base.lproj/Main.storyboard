@@ -144,24 +144,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-m3-0SC">
-                                            <rect key="frame" x="27" y="96" width="124" height="129"/>
+                                            <rect key="frame" x="8" y="66" width="124" height="129"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="129" id="nCS-Wl-eYQ"/>
+                                                <constraint firstAttribute="height" constant="129" id="aJg-vp-sYk"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-sb-bGd">
-                                            <rect key="frame" x="166" y="127" width="97" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-sb-bGd">
+                                            <rect key="frame" x="140" y="92" width="97" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="KWp-m3-0SC" secondAttribute="trailing" constant="15" id="1to-F1-3jY"/>
-                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leading" constant="166" id="2be-Bh-bPj"/>
-                                        <constraint firstItem="KWp-m3-0SC" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="topMargin" constant="88" id="Lnd-R7-nx4"/>
-                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="top" constant="127" id="Sy9-uQ-E9g"/>
-                                        <constraint firstItem="KWp-m3-0SC" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leadingMargin" constant="19" id="yGv-3H-c1T"/>
+                                        <constraint firstItem="KWp-m3-0SC" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="topMargin" constant="58" id="DTJ-gj-VMK"/>
+                                        <constraint firstItem="KWp-m3-0SC" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leadingMargin" id="U4q-hr-9qN"/>
+                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="KWp-m3-0SC" secondAttribute="trailing" constant="8" id="Vfx-JM-TZk"/>
+                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="topMargin" constant="84" id="YSu-Rj-DsL"/>
+                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="KWp-m3-0SC" secondAttribute="trailing" constant="8" symbolic="YES" id="gvd-Ok-Zyu"/>
+                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leading" constant="140" id="tKY-Jj-4NM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

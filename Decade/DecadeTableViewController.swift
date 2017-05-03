@@ -17,9 +17,11 @@ class DecadeTableViewController: UITableViewController, isLikedButtonTappedTable
 
     }
     
+    // MARK: - Protocol 
+    
     func isCompleteButtonTapped(sender: DecadeImageTableViewCell) {
         guard let user = sender.user, let indexPath = tableView.indexPath(for: sender) else { return }
-        // TODO: Finish the Liked Image button 
+        // TODO: Finish the Liked Image button
     }
     
     

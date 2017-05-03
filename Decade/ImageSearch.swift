@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+struct ImageSearch {
+    
+    let searchTerm: String
+    var resultImages: [UIImage]
+    
+    init(searchTerm: String) {
+        self.searchTerm = searchTerm
+        self.resultImages = []
+    }
+}
