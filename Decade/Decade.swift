@@ -19,10 +19,6 @@ class Decade {
     let contentUrlString: String
     var decadeImage: UIImage?
     
-    var contentUrl: URL? {
-        return URL(string: contentUrlString)
-    }
-    
     init?(jsonDictionary: [String : Any]) {
         guard let imageName = jsonDictionary[imageNameKey] as? String,
             let contentUrl = jsonDictionary[contentUrlKey] as? String
