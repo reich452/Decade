@@ -8,14 +8,20 @@
 
 import UIKit
 
-class DecadeTableViewController: UITableViewController {
-    
+class DecadeTableViewController: UITableViewController, isLikedButtonTappedTableViewCellDelegate {
+
     // MARK: - TODO: add Firebase display 
  
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    func isCompleteButtonTapped(sender: DecadeImageTableViewCell) {
+        guard let user = sender.user, let indexPath = tableView.indexPath(for: sender) else { return }
+        // TODO: Finish the Liked Image button 
+    }
+    
     
     // MARK: - Table view data source
     

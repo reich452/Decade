@@ -20,7 +20,7 @@ class DecadeCollectionViewCell: UICollectionViewCell {
     func updateViews() {
         
         let image = #imageLiteral(resourceName: "meal")
-        self.decadeImageView.image = image
+        self.decadeImageView.image = image 
     }
     
 }

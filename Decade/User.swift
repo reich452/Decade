@@ -17,12 +17,12 @@ class User {
     static let appleUserRefKey = "appleUserRef"
     
     let appleUserRef: CKReference
-    var likedImage: Int?
+    var likedImage: Bool
     var likedImageRefs: [CKReference]? = []
     var cloudKitRecordID: CKRecordID?
     
     // To create an instance of a user likeing an image
-    init(likedImage: Int?, likedImageRefs: [CKReference]? = [], appleUserRef: CKReference) {
+    init(likedImage: Bool, likedImageRefs: [CKReference]? = [], appleUserRef: CKReference) {
         self.likedImage = likedImage
         self.likedImageRefs = likedImageRefs
         self.appleUserRef = appleUserRef
@@ -30,7 +30,7 @@ class User {
     
     // FetchLogedInUserRecord 
     init?(cloudKitRecord: CKRecord) {
-        guard let likedImage = cloudKitRecord[User.likedImageKey] as? Int,
+        guard let likedImage = cloudKitRecord[User.likedImageKey] as? Bool,
         let appleUserRef = cloudKitRecord[User.appleUserRefKey] as? CKReference
             else { return nil}
         

@@ -84,24 +84,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="421"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L7b-2Y-sLo">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7b-2Y-sLo">
                                             <rect key="frame" x="7" y="65" width="360" height="274"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Nme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJC-RL-W0K">
-                                            <rect key="frame" x="143" y="65" width="88" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image Nme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJC-RL-W0K">
+                                            <rect key="frame" x="143" y="36" width="88" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="L7b-2Y-sLo" firstAttribute="top" secondItem="N5G-OS-O6I" secondAttribute="topMargin" constant="57" id="BhA-XE-ym5"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="L7b-2Y-sLo" secondAttribute="bottom" constant="73.5" id="PKP-f1-ASa"/>
-                                        <constraint firstItem="L7b-2Y-sLo" firstAttribute="trailing" secondItem="N5G-OS-O6I" secondAttribute="trailingMargin" id="X4R-Cv-oPT"/>
-                                        <constraint firstItem="L7b-2Y-sLo" firstAttribute="top" secondItem="eJC-RL-W0K" secondAttribute="top" id="jBW-2c-96E"/>
-                                        <constraint firstItem="eJC-RL-W0K" firstAttribute="centerX" secondItem="L7b-2Y-sLo" secondAttribute="centerX" id="q6L-Bt-rfT"/>
-                                        <constraint firstItem="eJC-RL-W0K" firstAttribute="centerX" secondItem="N5G-OS-O6I" secondAttribute="centerX" id="uGt-Lo-qbh"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="decadeImageView" destination="L7b-2Y-sLo" id="dYi-df-WNc"/>
@@ -225,7 +219,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpv-0c-ADL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="1291.304347826087"/>
+            <point key="canvasLocation" x="2364" y="1274"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="iCE-d3-FhX">
@@ -233,6 +227,7 @@
                 <tabBarController storyboardIdentifier="customTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="b6i-x9-ZBu" customClass="CustomTabBarController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zCq-OU-tgM">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
