@@ -25,9 +25,6 @@ class DecadeSearchTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.decadeTitleLabel.text = decade.imageName
             self.decadeImageView.image = decade.decadeImage
-//            ImageController.image(forURL: decade.contentUrlString, completion: { (decadeImage) in
-//                self.decadeImageView.image = decadeImage
-//            })
         }
     }
 }

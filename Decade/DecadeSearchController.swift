@@ -40,7 +40,6 @@ class DecadeSearchController {
             for decade in decades {
                 group.enter()
                 ImageController.image(forURL: decade.contentUrlString, completion: { (newImage) in
-                    print("Wheres da image")
                     decade.decadeImage = newImage
                     group.leave()
                 })
