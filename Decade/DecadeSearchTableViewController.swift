@@ -21,9 +21,18 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         imageSearchBar.delegate = self
-
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let searchTerm = searchBar.text else { return }
+        
+        DecadeSearchController.shared.searchForImagesWith(searchTerm: searchTerm) { (newDecade, decadeError) in
+            DispatchQueue.main.async {
+                self.decades = newDecade ?? []
+            }
+        }
     }
 
     // MARK: - Table view data source

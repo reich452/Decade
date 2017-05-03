@@ -132,7 +132,7 @@
         <scene sceneID="lcT-ag-DFo">
             <objects>
                 <tableViewController storyboardIdentifier="decadeSearchTVC" id="T0P-DY-hip" customClass="DecadeSearchTableViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="223" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z9P-gp-90v">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="373" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z9P-gp-90v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,37 +142,37 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="223" id="QcE-Im-Dt9" customClass="DecadeSearchTableViewCell" customModule="Decade" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="223"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="373" id="QcE-Im-Dt9" customClass="DecadeSearchTableViewCell" customModule="Decade" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="373"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QcE-Im-Dt9" id="wn0-LP-KOv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xRU-IB-hAS">
-                                            <rect key="frame" x="26" y="27" width="151" height="147"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-m3-0SC">
+                                            <rect key="frame" x="27" y="96" width="124" height="129"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="151" id="W54-Cy-vY1"/>
+                                                <constraint firstAttribute="height" constant="129" id="nCS-Wl-eYQ"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decade Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlM-nb-DwC">
-                                            <rect key="frame" x="26" y="182" width="160" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-sb-bGd">
+                                            <rect key="frame" x="166" y="127" width="97" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="xRU-IB-hAS" firstAttribute="leading" secondItem="hlM-nb-DwC" secondAttribute="leading" id="7bj-G0-21W"/>
-                                        <constraint firstItem="hlM-nb-DwC" firstAttribute="top" secondItem="xRU-IB-hAS" secondAttribute="bottom" constant="8" symbolic="YES" id="Bw7-3g-eEI"/>
-                                        <constraint firstItem="xRU-IB-hAS" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leadingMargin" constant="18" id="HAO-uJ-1mM"/>
-                                        <constraint firstItem="xRU-IB-hAS" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="topMargin" constant="19" id="JA5-Wg-mgO"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="hlM-nb-DwC" secondAttribute="bottom" constant="11.5" id="NE7-0d-K8k"/>
+                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="KWp-m3-0SC" secondAttribute="trailing" constant="15" id="1to-F1-3jY"/>
+                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leading" constant="166" id="2be-Bh-bPj"/>
+                                        <constraint firstItem="KWp-m3-0SC" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="topMargin" constant="88" id="Lnd-R7-nx4"/>
+                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="top" constant="127" id="Sy9-uQ-E9g"/>
+                                        <constraint firstItem="KWp-m3-0SC" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leadingMargin" constant="19" id="yGv-3H-c1T"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="decadeImageView" destination="xRU-IB-hAS" id="TQg-0G-iM6"/>
-                                    <outlet property="decadeTitleLabel" destination="hlM-nb-DwC" id="eZn-kP-1eN"/>
+                                    <outlet property="decadeImageView" destination="KWp-m3-0SC" id="c1z-hh-QAH"/>
+                                    <outlet property="decadeTitleLabel" destination="bUI-sb-bGd" id="l1k-VJ-ecA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,7 +196,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFP-yS-bzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="621"/>
+            <point key="canvasLocation" x="2364" y="620.23988005997012"/>
         </scene>
         <!--Item-->
         <scene sceneID="cCn-xr-YB0">

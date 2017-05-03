@@ -15,8 +15,18 @@ class DecadeSearchTableViewCell: UITableViewCell {
     
     var decade: Decade? {
         didSet {
-            
+            self.updateViews()
         }
     }
-
+    
+    func updateViews() {
+        guard let decade = decade else { return }
+        
+        DispatchQueue.main.async {
+            self.decadeTitleLabel.text = decade.imageName
+            ImageController.image(forURL: decade.contentUrlString, completion: { (decadeImage) in
+                self.decadeImageView.image = decadeImage
+            })
+        }
+    }
 }

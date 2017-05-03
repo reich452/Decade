@@ -19,5 +19,101 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Decade/DecadeSearchController.swift"
+            timestampString = "515461555.018955"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "searchForImagesWith(searchTerm:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Decade/DecadeSearchController.swift"
+            timestampString = "515461560.341718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "searchForImagesWith(searchTerm:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Decade/DecadeSearchController.swift"
+            timestampString = "515462913.807449"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "searchForImagesWith(searchTerm:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Decade.DecadeSearchController.(searchForImagesWith (searchTerm : Swift.String, completion : (Swift.Optional&lt;Swift.Array&lt;Decade.Decade&gt;&gt;, Swift.Optional&lt;Decade.DecadeError&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Decade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nick/Desktop/Decade/Decade%20Capstone/Decade/DecadeSearchController.swift"
+                  timestampString = "515463048.645232"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1875">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Decade.DecadeSearchController.(searchForImagesWith (searchTerm : Swift.String, completion : (Swift.Optional&lt;Swift.Array&lt;Decade.Decade&gt;&gt;, Swift.Optional&lt;Decade.DecadeError&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "Decade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nick/Desktop/Decade/Decade%20Capstone/Decade/DecadeSearchController.swift"
+                  timestampString = "515463048.649591"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Decade/DecadeSearchController.swift"
+            timestampString = "515462920.200634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "searchForImagesWith(searchTerm:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

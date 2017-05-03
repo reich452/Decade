@@ -17,7 +17,7 @@ class Decade {
    // var resultImages: [UIImage]
     let imageName: String
     let contentUrlString: String
-    
+    var decadeImage: UIImage?
     
     var contentUrl: URL? {
         return URL(string: contentUrlString)
