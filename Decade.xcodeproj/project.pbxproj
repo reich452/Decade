@@ -26,6 +26,9 @@
 		01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */; };
 		01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A141EB8F3C100315C15 /* CustomTabBarController.swift */; };
 		01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */; };
+		01A795061EBAA49300E62DD6 /* LocalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795051EBAA49300E62DD6 /* LocalImage.swift */; };
+		01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795071EBAA4F100E62DD6 /* LocalImageController.swift */; };
+		01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeSearchTableViewCell.swift; sourceTree = "<group>"; };
 		01417A141EB8F3C100315C15 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedDecadeTableViewController.swift; path = ../SavedDecadeTableViewController.swift; sourceTree = "<group>"; };
+		01A795051EBAA49300E62DD6 /* LocalImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImage.swift; sourceTree = "<group>"; };
+		01A795071EBAA4F100E62DD6 /* LocalImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageController.swift; sourceTree = "<group>"; };
+		01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 			children = (
 				014179F71EB7963A00315C15 /* Decade.swift */,
 				014179F91EB79CDC00315C15 /* User.swift */,
+				01A795051EBAA49300E62DD6 /* LocalImage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				014179FB1EB7A4FE00315C15 /* DecadeSearchController.swift */,
+				01A795071EBAA4F100E62DD6 /* LocalImageController.swift */,
 			);
 			name = "Model Controller";
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 			children = (
 				014179FF1EB7B20E00315C15 /* DecadeError.swift */,
 				01417A141EB8F3C100315C15 /* CustomTabBarController.swift */,
+				01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -281,12 +290,15 @@
 				01417A081EB8108400315C15 /* DecadeCollectionViewController.swift in Sources */,
 				01417A001EB7B20E00315C15 /* DecadeError.swift in Sources */,
 				01417A021EB7E8C200315C15 /* ImageController .swift in Sources */,
+				01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */,
+				01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */,
 				014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */,
 				01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */,
 				01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */,
 				01417A0F1EB818DE00315C15 /* DecadeImageTableViewCell.swift in Sources */,
 				014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */,
 				014179F81EB7963A00315C15 /* Decade.swift in Sources */,
+				01A795061EBAA49300E62DD6 /* LocalImage.swift in Sources */,
 				01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */,
 				01417A0A1EB8112400315C15 /* DecadeTableViewController.swift in Sources */,
 				014179FA1EB79CDC00315C15 /* User.swift in Sources */,

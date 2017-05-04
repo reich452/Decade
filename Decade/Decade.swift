@@ -13,6 +13,7 @@ class Decade {
     
     private let imageNameKey = "name"
     private let contentUrlKey = "contentUrl"
+    private let hostPageDislayUrlKey = "hostPageDisplayUrl"  // TODO: Open in a web view. 
     
    // var resultImages: [UIImage]
     let imageName: String

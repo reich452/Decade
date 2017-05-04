@@ -10,7 +10,7 @@ import UIKit
 
 class DecadeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var decadeImageView: UIImageView!
-    
+
     var decade: Decade? {
         didSet{
             updateViews()
@@ -18,9 +18,7 @@ class DecadeCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
-        
-        let image = #imageLiteral(resourceName: "meal")
-        self.decadeImageView.image = image 
+        guard let decade = decade else { return }
+        decadeImageView.image = UIImage(named: (decade.imageName))
     }
-    
 }

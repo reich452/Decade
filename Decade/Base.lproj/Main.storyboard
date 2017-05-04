@@ -32,9 +32,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="167" height="171"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal" highlightedImage="meal" translatesAutoresizingMaskIntoConstraints="NO" id="yii-I6-lYl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal" highlightedImage="fashion2017" translatesAutoresizingMaskIntoConstraints="NO" id="yii-I6-lYl">
                                             <rect key="frame" x="10" y="11" width="147" height="150"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QU-tI-b9o">
+                                            <rect key="frame" x="10" y="11" width="147" height="160"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <segue destination="7Za-ip-cBw" kind="show" identifier="toDecadeDetail" id="DM0-qy-TQB"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -45,7 +52,6 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="decadeImageView" destination="yii-I6-lYl" id="4FT-6w-X84"/>
-                                    <segue destination="7Za-ip-cBw" kind="show" identifier="toDecadeTVC" id="hca-UH-a9b"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -263,6 +269,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fashion2017" width="181" height="125"/>
         <image name="meal" width="540" height="540"/>
     </resources>
 </document>

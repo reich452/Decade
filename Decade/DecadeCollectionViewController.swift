@@ -24,19 +24,18 @@ class DecadeCollectionViewController: UICollectionViewController {
     }
  
     // MARK: UICollectionViewDataSource
-    let mockData = [#imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal"), #imageLiteral(resourceName: "meal")]
+    
  
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return mockData.count
+        return LocalImageHelper.localImageArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? DecadeCollectionViewCell else { return UICollectionViewCell() }
     
-        let image = mockData[indexPath.row]
-        // Configure the cell
+        let image = LocalImageHelper.localImageArray[indexPath.row]
         cell.decadeImageView.image = image
         
         return cell

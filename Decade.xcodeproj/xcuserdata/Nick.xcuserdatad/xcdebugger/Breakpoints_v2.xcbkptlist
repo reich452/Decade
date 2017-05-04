@@ -90,7 +90,7 @@
                   moduleName = "Decade"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nick/Desktop/Decade/Decade%20Capstone/Decade/ImageController%20.swift"
-                  timestampString = "515535285.947974"
+                  timestampString = "515605391.757262"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
@@ -105,7 +105,7 @@
                   moduleName = "Decade"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nick/Desktop/Decade/Decade%20Capstone/Decade/ImageController%20.swift"
-                  timestampString = "515535285.952862"
+                  timestampString = "515605391.761186"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
@@ -234,29 +234,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Decade/DecadeSearchController.swift"
-            timestampString = "515536524.252909"
+            timestampString = "515539761.064477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "searchForImagesWith(searchTerm:completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Decade/Decade.swift"
-            timestampString = "515533673.582912"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "init(jsonDictionary:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Decade.DecadeSearchController.(searchForImagesWith (searchTerm : Swift.String, completion : (Swift.Optional&lt;Swift.Array&lt;Decade.Decade&gt;&gt;, Swift.Optional&lt;Decade.DecadeError&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Decade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nick/Desktop/Decade/Decade%20Capstone/Decade/DecadeSearchController.swift"
+                  timestampString = "515605391.770001"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "2286">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Decade.DecadeSearchController.(searchForImagesWith (searchTerm : Swift.String, completion : (Swift.Optional&lt;Swift.Array&lt;Decade.Decade&gt;&gt;, Swift.Optional&lt;Decade.DecadeError&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #2)"
+                  moduleName = "Decade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nick/Desktop/Decade/Decade%20Capstone/Decade/DecadeSearchController.swift"
+                  timestampString = "515605391.773738"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -282,7 +298,7 @@
                   moduleName = "Decade"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nick/Desktop/Decade/Decade%20Capstone/Decade/NetworkController.swift"
-                  timestampString = "515535285.968091"
+                  timestampString = "515605391.781756"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "72"
@@ -297,7 +313,7 @@
                   moduleName = "Decade"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nick/Desktop/Decade/Decade%20Capstone/Decade/NetworkController.swift"
-                  timestampString = "515535285.971727"
+                  timestampString = "515605391.786221"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "74"
