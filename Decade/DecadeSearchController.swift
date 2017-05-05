@@ -21,6 +21,10 @@ class DecadeSearchController {
     private let baseURL = URL(string: "https://api.cognitive.microsoft.com/bing/v5.0/images/search")
     private let apiKey = "0231de06566d4717873444afb447e586"
     
+    // MARK: - Properties 
+    
+    var decades = [Decade]()
+    
     func searchTermsFor(decade: Decades) -> [String] {
         switch decade {
         case .currentYear:

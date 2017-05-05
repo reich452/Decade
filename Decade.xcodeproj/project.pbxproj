@@ -200,8 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				01417A101EB820B700315C15 /* DecadeCollectionViewCell.swift */,
-				01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */,
 				01417A0E1EB818DE00315C15 /* DecadeImageTableViewCell.swift */,
+				01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";

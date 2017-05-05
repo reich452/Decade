@@ -32,16 +32,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="167" height="171"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal" highlightedImage="fashion2017" translatesAutoresizingMaskIntoConstraints="NO" id="yii-I6-lYl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yii-I6-lYl">
                                             <rect key="frame" x="10" y="11" width="147" height="150"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QU-tI-b9o">
-                                            <rect key="frame" x="10" y="11" width="147" height="160"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <connections>
-                                                <segue destination="7Za-ip-cBw" kind="show" identifier="toDecadeDetail" id="DM0-qy-TQB"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -69,6 +62,9 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="EVz-9A-Esn"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="7Za-ip-cBw" kind="show" identifier="toDecadeDetail" id="MG0-Cv-4Jt"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kh-RM-hkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,7 +122,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKf-hN-mzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="3206" y="-134"/>
         </scene>
         <!--Item-->
         <scene sceneID="lcT-ag-DFo">
@@ -251,6 +247,7 @@
         <!--Item-->
         <scene sceneID="bNo-eX-6tG">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mP-EU-JGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="decadeHomeController" automaticallyAdjustsScrollViewInsets="NO" id="kob-t7-y7g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="oQE-nv-p9P"/>
                     <toolbarItems/>
@@ -263,13 +260,8 @@
                         <segue destination="ShI-QS-wfO" kind="relationship" relationship="rootViewController" id="VBv-kW-A0r"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3mP-EU-JGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1590" y="-134"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="fashion2017" width="181" height="125"/>
-        <image name="meal" width="540" height="540"/>
-    </resources>
 </document>

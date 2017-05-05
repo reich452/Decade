@@ -19,5 +19,6 @@ enum DecadeError: Error {
     case imageSearchUnsucessful
     case noImageData
     case imageInitilizationFailure
+    case noPreslectedDecades
 }
 
