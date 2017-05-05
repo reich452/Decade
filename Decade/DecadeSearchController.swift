@@ -21,16 +21,6 @@ class DecadeSearchController {
     private let baseURL = URL(string: "https://api.cognitive.microsoft.com/bing/v5.0/images/search")
     private let apiKey = "0231de06566d4717873444afb447e586"
     
-    enum Decades {
-        case currentYear
-        case twothousands
-        case ninties
-        case eightys
-        case seventies
-        case sixties
-        case fifties
-    }
-    
     func searchTermsFor(decade: Decades) -> [String] {
         switch decade {
         case .currentYear:
@@ -47,6 +37,8 @@ class DecadeSearchController {
             return ["1960s people black and white photos"]
         case .fifties:
             return ["1950s photos", "1950s famous people black and white photos"]
+        case .none:
+            return []
         }
     }
     
@@ -63,7 +55,6 @@ class DecadeSearchController {
                 let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion([], .jsonConversionFailure); return }
             
             let decades = imageArray.flatMap( {Decade(jsonDictionary: $0)})
-            
             let group = DispatchGroup()
             
             for decade in decades {
@@ -82,18 +73,15 @@ class DecadeSearchController {
     }
     
     func getRandomSearchTermFrom(searchTerms: [String]) -> String {
-        
         let randomIndex = Int(arc4random_uniform(UInt32(searchTerms.count - 1)))
         
         return searchTerms[randomIndex]
-        
     }
     
-    func searchForImagesWithKeywords2(decade: Decades, completion: @escaping ([Decade?], DecadeError?) -> Void) {
+    func searchForImagesWithKeywords(keywords: [String], completion: @escaping ([Decade]?, DecadeError?) -> Void) {
         guard let baseURL = baseURL else { completion([], .baseUrlFailed); return }
-       
-        let keywordSearch = searchTermsFor(decade: decade)
-        let urlParameters: [String: String] = ["q": getRandomSearchTermFrom(searchTerms: keywordSearch)]
+
+        let urlParameters: [String: String] = ["q": getRandomSearchTermFrom(searchTerms: keywords)]
         NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
             if let error = error { print("Error: searching for image \(error.localizedDescription)")
                 completion([], .imageSearchFailure); return }
@@ -120,4 +108,15 @@ class DecadeSearchController {
             })
         }
     }
+}
+
+enum Decades {
+    case currentYear
+    case twothousands
+    case ninties
+    case eightys
+    case seventies
+    case sixties
+    case fifties
+    case none
 }
