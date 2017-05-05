@@ -11,6 +11,8 @@ import UIKit
 class DecadeTableViewController: UITableViewController, isLikedButtonTappedTableViewCellDelegate {
 
     // MARK: - TODO: add Firebase display 
+    
+    var decades: [Decade] = []
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,7 @@ class DecadeTableViewController: UITableViewController, isLikedButtonTappedTable
     // MARK: - Protocol 
     
     func isCompleteButtonTapped(sender: DecadeImageTableViewCell) {
-        guard let user = sender.user, let indexPath = tableView.indexPath(for: sender) else { return }
+//        guard let user = sender.user, let indexPath = tableView.indexPath(for: sender) else { return }
         // TODO: Finish the Liked Image button
     }
     
@@ -29,11 +31,14 @@ class DecadeTableViewController: UITableViewController, isLikedButtonTappedTable
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return self.decades.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "decadeImageCell", for: indexPath) as? DecadeImageTableViewCell else { return UITableViewCell() }
+        
+        let decade = decades[indexPath.row]
+        cell.decade = decade 
         
         return cell
     }

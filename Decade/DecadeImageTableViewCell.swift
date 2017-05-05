@@ -16,17 +16,26 @@ class DecadeImageTableViewCell: UITableViewCell {
     @IBOutlet weak var decadeImageView: UIImageView!
     @IBOutlet weak var isLikedButton: UIButton!
     
-    var user: User? {
+    var decade: Decade? {
         didSet {
             updateViews()
         }
     }
     
+//    var user: User? {
+//        didSet {
+//            updateViews()
+//        }
+//    }
+    
     private func updateViews() {
-        guard let user = user else { return }
-        let heartImage = user.likedImage ? #imageLiteral(resourceName: "redHear") : #imageLiteral(resourceName: "heart")
-        isLikedButton.setImage(heartImage, for: .normal)
+        guard let decade = decade else { return }
         
+            self.decadeNameLabel.text = decade.imageName
+            self.decadeImageView.image = decade.decadeImage
+        
+//        let heartImage = user.likedImage ? #imageLiteral(resourceName: "redHear") : #imageLiteral(resourceName: "heart")
+//        isLikedButton.setImage(heartImage, for: .normal)
     }
 }
 
