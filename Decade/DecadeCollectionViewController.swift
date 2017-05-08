@@ -10,12 +10,18 @@ import UIKit
 
 class DecadeCollectionViewController: UICollectionViewController {
     
+//    @IBOutlet weak var headerImageView: UIImageView!
+//    @IBOutlet weak var headerPageController: UIPageControl!
+    
     var decades: [Decade] = []
+    var timer: Timer?
+    var updateCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,27 +87,26 @@ class DecadeCollectionViewController: UICollectionViewController {
             }
         }
     }
+    
 }
 
-extension UICollectionViewController {
-    enum UICollectionViewSegue: String {
-        case toDecadeTVC
-        case toDecadeCVC
-        case unnamed = ""
-    }
-}
-// Conforming types will have to provide a nested type of the same name enumerating all of the segues the view controller expects to handle
-protocol SegueHandler {
-    associatedtype UICollectionViewControllerSegue: RawRepresentable
-    func segueIdentifierCase(for segue: UIStoryboardSegue) -> UICollectionViewControllerSegue?
-}
+// Mark: - Header Timer & Images
 
-extension SegueHandler where Self: UICollectionViewController, UICollectionViewControllerSegue.RawValue == String {
-    func segueIdentifierCase(for segue: UIStoryboardSegue) -> UICollectionViewSegue {
-        guard let identifier = segue.identifier,
-            let identifierCase = UICollectionViewSegue(rawValue: identifier) else {
-                fatalError("Could not map segue identifier -- \(String(describing: segue.identifier)) -- to segue case")
-        }
-        return identifierCase
-    }
-}
+//extension DecadeCollectionViewController {
+//    
+//    func setupTimer() {
+//        updateCount = 0
+//        timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(DecadeCollectionViewController.updateTimer), userInfo: nil, repeats: true)
+//    }
+//    
+//    internal func updateTimer() { 
+//        if(updateCount <= 2) {
+//            headerPageController.currentPage = updateCount
+//            headerImageView.image = UIImage(named: String(updateCount+1) + ".jpg")
+//            updateCount = updateCount + 1
+//        } else {
+//            updateCount = 0
+//        }
+//    }
+//}
+

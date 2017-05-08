@@ -124,81 +124,73 @@
             </objects>
             <point key="canvasLocation" x="3206" y="-134"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="lcT-ag-DFo">
+        <!--Decade Search Table View Controller-->
+        <scene sceneID="mjd-eO-keq">
             <objects>
-                <tableViewController storyboardIdentifier="decadeSearchTVC" id="T0P-DY-hip" customClass="DecadeSearchTableViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="373" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z9P-gp-90v">
+                <tableViewController storyboardIdentifier="decadeSearchTVC" id="5X2-ig-YyD" customClass="DecadeSearchTableViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="224" sectionHeaderHeight="28" sectionFooterHeight="28" id="S4N-G0-ByG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="0Ab-tK-6hb">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="i0m-Gi-QC0">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="373" id="QcE-Im-Dt9" customClass="DecadeSearchTableViewCell" customModule="Decade" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="373"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="224" id="Ulu-w2-EAf" customClass="DecadeSearchTableViewCell" customModule="Decade" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="224"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QcE-Im-Dt9" id="wn0-LP-KOv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ulu-w2-EAf" id="0PY-KZ-E0e">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-m3-0SC">
-                                            <rect key="frame" x="8" y="66" width="124" height="129"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oNz-Cy-5u2">
+                                            <rect key="frame" x="22" y="33" width="124" height="113"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="129" id="aJg-vp-sYk"/>
+                                                <constraint firstAttribute="width" constant="124" id="YMl-CW-HV7"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-sb-bGd">
-                                            <rect key="frame" x="140" y="92" width="97" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkc-ic-B4c">
+                                            <rect key="frame" x="22" y="167" width="345" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="KWp-m3-0SC" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="topMargin" constant="58" id="DTJ-gj-VMK"/>
-                                        <constraint firstItem="KWp-m3-0SC" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leadingMargin" id="U4q-hr-9qN"/>
-                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="KWp-m3-0SC" secondAttribute="trailing" constant="8" id="Vfx-JM-TZk"/>
-                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="top" secondItem="wn0-LP-KOv" secondAttribute="topMargin" constant="84" id="YSu-Rj-DsL"/>
-                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="KWp-m3-0SC" secondAttribute="trailing" constant="8" symbolic="YES" id="gvd-Ok-Zyu"/>
-                                        <constraint firstItem="bUI-sb-bGd" firstAttribute="leading" secondItem="wn0-LP-KOv" secondAttribute="leading" constant="140" id="tKY-Jj-4NM"/>
+                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="top" secondItem="0PY-KZ-E0e" secondAttribute="topMargin" constant="25" id="ACE-uk-HTH"/>
+                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="leading" secondItem="0PY-KZ-E0e" secondAttribute="leadingMargin" constant="14" id="AO5-5k-Z82"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wkc-ic-B4c" secondAttribute="bottom" constant="27.5" id="VCp-Qh-UNd"/>
+                                        <constraint firstItem="wkc-ic-B4c" firstAttribute="trailing" secondItem="0PY-KZ-E0e" secondAttribute="trailingMargin" id="dQU-iC-D1F"/>
+                                        <constraint firstItem="wkc-ic-B4c" firstAttribute="top" secondItem="oNz-Cy-5u2" secondAttribute="bottom" constant="21" id="omO-JX-SbV"/>
+                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="leading" secondItem="wkc-ic-B4c" secondAttribute="leading" id="r2T-EF-qMg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="decadeImageView" destination="KWp-m3-0SC" id="c1z-hh-QAH"/>
-                                    <outlet property="decadeTitleLabel" destination="bUI-sb-bGd" id="l1k-VJ-ecA"/>
+                                    <outlet property="decadeImageView" destination="oNz-Cy-5u2" id="4IW-dP-Ilc"/>
+                                    <outlet property="decadeTitleLabel" destination="wkc-ic-B4c" id="bCP-F8-CRq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="T0P-DY-hip" id="pAc-Xx-7Dp"/>
-                            <outlet property="delegate" destination="T0P-DY-hip" id="RRo-8i-n3O"/>
+                            <outlet property="dataSource" destination="5X2-ig-YyD" id="Scx-vL-HXh"/>
+                            <outlet property="delegate" destination="5X2-ig-YyD" id="Dsh-DJ-puj"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Qgr-Gy-JRw"/>
-                    <toolbarItems>
-                        <barButtonItem title="Home" id="nK0-vL-IXN"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="GL5-Fy-Qou"/>
-                        <barButtonItem systemItem="search" id="ea3-pf-xRN"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sSQ-dQ-h8h"/>
-                        <barButtonItem title="Heart" id="Ul2-Xe-3bZ"/>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="cj5-A7-0Lf"/>
                     <connections>
-                        <outlet property="imageSearchBar" destination="0Ab-tK-6hb" id="y3d-8F-fY8"/>
+                        <outlet property="imageSearchBar" destination="i0m-Gi-QC0" id="nrC-Aq-L1N"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFP-yS-bzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AHf-ie-omz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="620.23988005997012"/>
+            <point key="canvasLocation" x="2364" y="596.85157421289364"/>
         </scene>
         <!--Item-->
         <scene sceneID="cCn-xr-YB0">
             <objects>
-                <tableViewController id="IGb-0H-mUz" sceneMemberID="viewController">
+                <tableViewController id="IGb-0H-mUz" customClass="SavedDecadeTableViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="302" sectionHeaderHeight="28" sectionFooterHeight="28" id="gx4-eJ-fr0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,8 +228,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="kob-t7-y7g" kind="relationship" relationship="viewControllers" id="rCs-N7-19w"/>
-                        <segue destination="T0P-DY-hip" kind="relationship" relationship="viewControllers" id="qe8-dU-kKY"/>
                         <segue destination="IGb-0H-mUz" kind="relationship" relationship="viewControllers" id="02i-br-WR3"/>
+                        <segue destination="JYQ-75-lMv" kind="relationship" relationship="viewControllers" id="0z3-pc-Xz7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUm-V7-h3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,7 +239,6 @@
         <!--Item-->
         <scene sceneID="bNo-eX-6tG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3mP-EU-JGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="decadeHomeController" automaticallyAdjustsScrollViewInsets="NO" id="kob-t7-y7g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="oQE-nv-p9P"/>
                     <toolbarItems/>
@@ -260,8 +251,28 @@
                         <segue destination="ShI-QS-wfO" kind="relationship" relationship="rootViewController" id="VBv-kW-A0r"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mP-EU-JGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1590" y="-134"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="3rJ-47-ZxF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JYQ-75-lMv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="iCY-Y0-xMB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xEB-aP-zXQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5X2-ig-YyD" kind="relationship" relationship="rootViewController" id="Ecf-ea-mTf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16U-hm-naQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="597"/>
         </scene>
     </scenes>
 </document>

@@ -12,6 +12,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     
     @IBOutlet weak var imageSearchBar: UISearchBar!
     
+    
     // MARK: - Properties 
     var decades: [Decade] = [] {
         didSet {

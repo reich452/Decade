@@ -14,7 +14,7 @@ class DecadeImageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var decadeNameLabel: UILabel!
     @IBOutlet weak var decadeImageView: UIImageView!
-    @IBOutlet weak var isLikedButton: UIButton!
+//    @IBOutlet weak var isLikedButton: UIButton!
     
     var decade: Decade? {
         didSet {

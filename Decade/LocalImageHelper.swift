@@ -12,7 +12,7 @@ import UIKit
 enum LocalImageHelper {
     
     static var decadeYear = ["2017", "2000s", "1990s", "1980s", "1970s", "1960s", "1950s"]
-    static var localImageNames = ["fashion2017", "ninties", "vanImage", "eskate", "sixtysStop", "seventysGutar", "fiftysImage"]
-    static var localImageArray = [#imageLiteral(resourceName: "fashion2017"), #imageLiteral(resourceName: "ninties"), #imageLiteral(resourceName: "vanImage") , #imageLiteral(resourceName: "skate"), #imageLiteral(resourceName: "sixtysStop"), #imageLiteral(resourceName: "seventysGutar"), #imageLiteral(resourceName: "fiftysImage")]
+    static var localImageNames = ["decade2017", "decade2000s", "decade1990s", "decade1980s", "decade1970s", "decade1960s", "decade1950s"]
+    static var localImageArray = [#imageLiteral(resourceName: "decade2017"), #imageLiteral(resourceName: "decade2000s"), #imageLiteral(resourceName: "decade1990s") , #imageLiteral(resourceName: "decade1980s"), #imageLiteral(resourceName: "decade1970s"), #imageLiteral(resourceName: "decade1960s"), #imageLiteral(resourceName: "decade1950s")]
 }
 
