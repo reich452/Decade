@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DecadeCollectionViewCell: UICollectionViewCell {
+class DecadeHomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var decadeImageView: UIImageView!
 
     var decade: Decade? {
