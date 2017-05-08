@@ -10,66 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Decade Collection View Controller-->
-        <scene sceneID="5So-2h-FUs">
-            <objects>
-                <collectionViewController id="ShI-QS-wfO" customClass="DecadeCollectionViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1Yc-2K-KPI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3wk-vI-nJs">
-                            <size key="itemSize" width="167" height="171"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="decadeCell" id="lET-dO-w07" customClass="DecadeCollectionViewCell" customModule="Decade" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="167" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="167" height="171"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yii-I6-lYl">
-                                            <rect key="frame" x="10" y="11" width="147" height="150"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="yii-I6-lYl" firstAttribute="centerY" secondItem="lET-dO-w07" secondAttribute="centerY" id="PIy-Uf-fwC"/>
-                                    <constraint firstItem="yii-I6-lYl" firstAttribute="top" secondItem="lET-dO-w07" secondAttribute="topMargin" constant="3" id="X2b-OC-CnX"/>
-                                    <constraint firstItem="yii-I6-lYl" firstAttribute="leading" secondItem="lET-dO-w07" secondAttribute="leadingMargin" constant="2" id="YbM-IR-wT2"/>
-                                    <constraint firstItem="yii-I6-lYl" firstAttribute="centerX" secondItem="lET-dO-w07" secondAttribute="centerX" id="y4h-ie-hnD"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="decadeImageView" destination="yii-I6-lYl" id="4FT-6w-X84"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="ShI-QS-wfO" id="FJR-gi-FjC"/>
-                            <outlet property="delegate" destination="ShI-QS-wfO" id="94D-8t-v8y"/>
-                        </connections>
-                    </collectionView>
-                    <toolbarItems>
-                        <barButtonItem title="Home" id="rJw-MC-dJl"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="cZU-fA-8TU"/>
-                        <barButtonItem title="Item" systemItem="search" id="UdW-yr-o8c"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xDL-hA-Scu"/>
-                        <barButtonItem title="Hart" id="DKQ-tW-mjR"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="EVz-9A-Esn"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="7Za-ip-cBw" kind="show" identifier="toDecadeDetail" id="MG0-Cv-4Jt"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0kh-RM-hkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2364" y="-134.48275862068968"/>
-        </scene>
         <!--Item-->
         <scene sceneID="qgw-DT-9AO">
             <objects>
@@ -248,12 +188,80 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ShI-QS-wfO" kind="relationship" relationship="rootViewController" id="VBv-kW-A0r"/>
+                        <segue destination="FaO-mP-CWy" kind="relationship" relationship="rootViewController" id="T6j-Yg-XxL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mP-EU-JGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1590" y="-134"/>
+        </scene>
+        <!--Decade Home View Controller-->
+        <scene sceneID="FCj-mg-JC6">
+            <objects>
+                <viewController id="FaO-mP-CWy" customClass="DecadeHomeViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qrf-4t-7dQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hEh-O9-9I1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9cz-qr-nfW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Phf-lx-Yog">
+                                <rect key="frame" x="0.0" y="255" width="375" height="363"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sbd-d8-JyG">
+                                    <size key="itemSize" width="150" height="148"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="decadeCell" id="26i-fv-Z9n" customClass="DecadeHomeCollectionViewCell" customModule="Decade" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFF-g6-LYk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="decadeImageView" destination="uFF-g6-LYk" id="dA6-uG-2kR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="FaO-mP-CWy" id="k2C-Br-342"/>
+                                    <outlet property="delegate" destination="FaO-mP-CWy" id="qya-08-ixM"/>
+                                </connections>
+                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K66-mX-Eqe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9eX-cS-r1H">
+                                <rect key="frame" x="168" y="210" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MIb-bW-rKK"/>
+                    <connections>
+                        <outlet property="headerImageView" destination="K66-mX-Eqe" id="p0f-Fd-UYC"/>
+                        <outlet property="headerPageController" destination="9eX-cS-r1H" id="vpU-Xr-haH"/>
+                        <segue destination="7Za-ip-cBw" kind="show" identifier="toDecadeDetail" id="Rhd-H3-f50"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QM5-24-wDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="-146.17691154422789"/>
         </scene>
         <!--Item-->
         <scene sceneID="3rJ-47-ZxF">
