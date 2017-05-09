@@ -26,15 +26,12 @@ class CloudKitManager {
             guard let appleUserRecordID = appleUserRecordID else { return }
             
             // Initialize a CKReference with that recordID so that we can fetch OUR real User record
-            
             let appleUserReference = CKReference(recordID: appleUserRecordID, action: .deleteSelf)
             
             // Create a predicate with that reference that will go through all of the Users and FILTER through them and return us the one that has the matching reference.
-            
             let predicate = NSPredicate(format: "appleUserRef == %@", appleUserReference)
             
             // Fetch the real User record
-            
             self.fetchRecordsWithType(User.recordTypeKey, predicate: predicate, recordFetchedBlock: nil, completion: { (records, error) in
                 guard let currentUserRecord = records?.first else { return }
                 

@@ -28,9 +28,11 @@
 		01A795061EBAA49300E62DD6 /* LocalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795051EBAA49300E62DD6 /* LocalImage.swift */; };
 		01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795071EBAA4F100E62DD6 /* LocalImageController.swift */; };
 		01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */; };
+		01ACC3641EC252420010B17C /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC3631EC252420010B17C /* CloudKitManager.swift */; };
 		01C65F131EC0CE0600DD675B /* DecadeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */; };
 		01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F181EC1452700DD675B /* UIColorHelper.swift */; };
 		01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */; };
+		01C65F1D1EC2264B00DD675B /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1C1EC2264B00DD675B /* UserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,9 +60,11 @@
 		01A795051EBAA49300E62DD6 /* LocalImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImage.swift; sourceTree = "<group>"; };
 		01A795071EBAA4F100E62DD6 /* LocalImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageController.swift; sourceTree = "<group>"; };
 		01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageHelper.swift; sourceTree = "<group>"; };
+		01ACC3631EC252420010B17C /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeHomeViewController.swift; sourceTree = "<group>"; };
 		01C65F181EC1452700DD675B /* UIColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
 		01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeWebViewController.swift; sourceTree = "<group>"; };
+		01C65F1C1EC2264B00DD675B /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 			children = (
 				014179FB1EB7A4FE00315C15 /* DecadeSearchController.swift */,
 				01A795071EBAA4F100E62DD6 /* LocalImageController.swift */,
+				01C65F1C1EC2264B00DD675B /* UserController.swift */,
+				01ACC3631EC252420010B17C /* CloudKitManager.swift */,
 			);
 			name = "Model Controller";
 			sourceTree = "<group>";
@@ -305,12 +311,14 @@
 				014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */,
 				014179F81EB7963A00315C15 /* Decade.swift in Sources */,
 				01A795061EBAA49300E62DD6 /* LocalImage.swift in Sources */,
+				01ACC3641EC252420010B17C /* CloudKitManager.swift in Sources */,
 				01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */,
 				01417A0A1EB8112400315C15 /* DecadeTableViewController.swift in Sources */,
 				014179FA1EB79CDC00315C15 /* User.swift in Sources */,
 				014179FC1EB7A4FE00315C15 /* DecadeSearchController.swift in Sources */,
 				01417A111EB820B700315C15 /* DecadeHomeCollectionViewCell.swift in Sources */,
 				01417A0C1EB8117400315C15 /* DecadeSearchTableViewController.swift in Sources */,
+				01C65F1D1EC2264B00DD675B /* UserController.swift in Sources */,
 				01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */,
 				01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */,
 			);

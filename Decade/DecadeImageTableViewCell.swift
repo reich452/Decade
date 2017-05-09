@@ -14,7 +14,7 @@ class DecadeImageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var decadeNameLabel: UILabel!
     @IBOutlet weak var decadeImageView: UIImageView!
-//    @IBOutlet weak var isLikedButton: UIButton!
+    @IBOutlet weak var isLikedButton: UIButton!
     
     var decade: Decade? {
         didSet {
@@ -22,23 +22,31 @@ class DecadeImageTableViewCell: UITableViewCell {
         }
     }
     
-//    var user: User? {
-//        didSet {
-//            updateViews()
-//        }
-//    }
+    var user: User? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    // MARK: - Actions 
+    
+    @IBAction func isLikedButtonTapped(_ sender: UIButton) {
+        delegate?.isHeartButtonTapped(sender: self)
+    }
+    
     
     private func updateViews() {
         guard let decade = decade else { return }
+        guard let user = user else { return }
         
             self.decadeNameLabel.text = decade.imageName
             self.decadeImageView.image = decade.decadeImage
         
-//        let heartImage = user.likedImage ? #imageLiteral(resourceName: "redHear") : #imageLiteral(resourceName: "heart")
-//        isLikedButton.setImage(heartImage, for: .normal)
+        let heartImage = user.likedImage ? #imageLiteral(resourceName: "redHear") : #imageLiteral(resourceName: "heart")
+        isLikedButton.setImage(heartImage, for: .normal)
     }
 }
 
 protocol isLikedButtonTappedTableViewCellDelegate: class {
-    func isCompleteButtonTapped(sender: DecadeImageTableViewCell)
+    func isHeartButtonTapped(sender: DecadeImageTableViewCell)
 }
