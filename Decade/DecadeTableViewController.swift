@@ -10,12 +10,12 @@ import UIKit
 
 class DecadeTableViewController: UITableViewController, isLikedButtonTappedTableViewCellDelegate {
 
-    // MARK: - TODO: add Firebase display 
     
     var decades: [Decade] = []
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .customBackgroundColor
 
     }
     

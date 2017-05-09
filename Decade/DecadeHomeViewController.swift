@@ -18,13 +18,13 @@ class DecadeHomeViewController: UIViewController {
     var updateCount: Int = 0
     
     override func viewDidLoad() {
-        
         updateCount = 0
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector (DecadeHomeViewController.updateTimer), userInfo: nil, repeats: true)
+        
     }
     
     internal func updateTimer() {
-        if(updateCount <= 2) {
+        if(updateCount <= 3) {
             headerPageController.currentPage = updateCount
             headerImageView.image = UIImage(named: String(updateCount+1) + ".jpg")
             updateCount = updateCount + 1

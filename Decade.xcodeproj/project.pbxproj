@@ -29,6 +29,8 @@
 		01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795071EBAA4F100E62DD6 /* LocalImageController.swift */; };
 		01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */; };
 		01C65F131EC0CE0600DD675B /* DecadeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */; };
+		01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F181EC1452700DD675B /* UIColorHelper.swift */; };
+		01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		01A795071EBAA4F100E62DD6 /* LocalImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageController.swift; sourceTree = "<group>"; };
 		01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageHelper.swift; sourceTree = "<group>"; };
 		01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeHomeViewController.swift; sourceTree = "<group>"; };
+		01C65F181EC1452700DD675B /* UIColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
+		01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */,
-				01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */,
 				01417A091EB8112400315C15 /* DecadeTableViewController.swift */,
+				01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */,
+				01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */,
 				01417A0B1EB8117400315C15 /* DecadeSearchTableViewController.swift */,
 			);
 			name = "View Controller";
@@ -192,6 +197,7 @@
 				014179FF1EB7B20E00315C15 /* DecadeError.swift */,
 				01417A141EB8F3C100315C15 /* CustomTabBarController.swift */,
 				01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */,
+				01C65F181EC1452700DD675B /* UIColorHelper.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -305,6 +311,8 @@
 				014179FC1EB7A4FE00315C15 /* DecadeSearchController.swift in Sources */,
 				01417A111EB820B700315C15 /* DecadeHomeCollectionViewCell.swift in Sources */,
 				01417A0C1EB8117400315C15 /* DecadeSearchTableViewController.swift in Sources */,
+				01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */,
+				01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

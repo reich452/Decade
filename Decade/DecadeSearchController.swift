@@ -112,6 +112,7 @@ class DecadeSearchController {
             })
         }
     }
+    
 }
 
 enum Decades {
