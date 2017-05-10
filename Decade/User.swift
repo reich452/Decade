@@ -12,37 +12,32 @@ import CloudKit
 class User {
     
     static let recordTypeKey = "User"
-    static let likedImageRefKey = "likedImageRef"
-    static let likedImageUrlKey = "likedImageURL"
+    static let likedImageUrlsKey = "likedImageURLs"
     static let likedImageKey = "likedImage"
+    static let imageIdKey = "imageId"
     static let appleUserRefKey = "appleUserRef"
     
-    var likedImageRefs: CKReference
-    var likedImageURL: [String] = []
-    var likedImage: Bool
+    var likedImageURLs: [String] = []
+    var imageId: [String] = []
     var cloudKitRecordID: CKRecordID?
     
     // This is the reference to the default Apple User records ID
     let appleUserRef: CKReference
     
-    // To create an instance of a user likeing an image
-    init(likedImageRefs: CKReference, likedImageURL: [String] = [], likedImage: Bool, appleUserRef: CKReference) {
+    // To create an instance of a user liking an image
+    init(likedImageURLs: [String] = [], appleUserRef: CKReference, likedImageIDs: [String] = [], imageId: [String] = []) {
         
-        self.likedImageRefs = likedImageRefs
-        self.likedImageURL = likedImageURL
-        self.likedImage = likedImage
+        self.likedImageURLs = likedImageURLs
         self.appleUserRef = appleUserRef
+        self.imageId = imageId
     }
     
     // FetchLogedInUserRecord 
     init?(cloudKitRecord: CKRecord) {
-        guard let likedImageRefs = cloudKitRecord[User.likedImageRefKey] as? CKReference,
-            let likedImage = cloudKitRecord[User.likedImageKey] as? Bool,
-            let appleUserRef = cloudKitRecord[User.appleUserRefKey] as? CKReference else { return nil }
+            guard let appleUserRef = cloudKitRecord[User.appleUserRefKey] as? CKReference else { return nil }
         
-        self.likedImageRefs = likedImageRefs
-        self.likedImageURL = cloudKitRecord[User.likedImageUrlKey] as? [String] ?? []
-        self.likedImage = likedImage
+        self.likedImageURLs = cloudKitRecord[User.likedImageUrlsKey] as? [String] ?? []
+        self.imageId = cloudKitRecord[User.imageIdKey] as? [String] ?? []
         self.appleUserRef = appleUserRef
         self.cloudKitRecordID = cloudKitRecord.recordID
     }
@@ -54,8 +49,8 @@ extension CKRecord {
         let recordID = user.cloudKitRecordID ?? CKRecordID(recordName: UUID().uuidString)
         
         self.init(recordType: User.recordTypeKey, recordID: recordID)
-        self.setValue(user.likedImageURL, forKey: User.likedImageUrlKey)
-        self.setValue(user.likedImageRefs, forKey: User.likedImageRefKey)
+        self.setValue(user.likedImageURLs, forKey: User.likedImageUrlsKey)
+        self.setValue(user.imageId, forKey: User.imageIdKey)
         self.setValue(user.appleUserRef, forKey: User.appleUserRefKey)
     }
 }
