@@ -56,7 +56,7 @@ class DecadeSearchController {
             
             guard let data = data,
                 let jsonDictionaries = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any],
-                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion([], .jsonConversionFailure); return }
+                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion([], .jsonConversionFailure); print("Json Conversion failure"); return }
             
             let decades = imageArray.flatMap( {Decade(jsonDictionary: $0)})
             let group = DispatchGroup()
@@ -83,16 +83,16 @@ class DecadeSearchController {
     }
     
     func searchForImagesWithKeywords(keywords: [String], completion: @escaping ([Decade]?, DecadeError?) -> Void) {
-        guard let baseURL = baseURL else { completion([], .baseUrlFailed); return }
+        guard let baseURL = baseURL else { completion([], .baseUrlFailed); print("base url failed"); return }
 
         let urlParameters: [String: String] = ["q": getRandomSearchTermFrom(searchTerms: keywords)]
         NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
             if let error = error { print("Error: searching for image \(error.localizedDescription)")
-                completion([], .imageSearchFailure); return }
+                completion([], .imageSearchFailure); print("imageSearch failure"); return }
             
             guard let data = data,
                 let jsonDictionaries = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any],
-                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion([], .jsonConversionFailure); return }
+                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion([], .jsonConversionFailure); print("jsonConversionFailure"); return }
             
             let decades = imageArray.flatMap( {Decade(jsonDictionary: $0)})
             
