@@ -9,16 +9,20 @@
 import UIKit
 
 class SavedDecadeTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var decadeImageView: UIImageView!
+    @IBOutlet weak var decadeNameLabel: UILabel!
+    
+    var decade: Decade? {
+        didSet {
+            
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func updateViews() {
+        guard let decade = decade else { return }
+        self.decadeImageView.image = decade.decadeImage
+        self.decadeNameLabel.text = decade.imageName
+        
     }
-
 }

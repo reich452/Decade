@@ -15,8 +15,32 @@ class CloudKitManager {
     
     let publicDatabase = CKContainer.default().publicCloudDatabase
     
+    func saveRecord(_ record: CKRecord, completion: ((_ record: CKRecord?, _ error: Error?) -> Void)?) {
+        
+        publicDatabase.save(record, completionHandler: { (record, error) in
+            
+            completion?(record, error)
+        })
+    }
     
-    func fetchCurrentUser(completion: @escaping (User?) -> Void) {
+    func modifyRecords(_ records: [CKRecord], perRecordCompletion: ((_ record: CKRecord?, _ error: Error?) -> Void)?, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
+        
+        let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        operation.queuePriority = .high
+        operation.qualityOfService = .userInteractive
+        
+        operation.perRecordCompletionBlock = perRecordCompletion
+        
+        operation.modifyRecordsCompletionBlock = { (records, recordIDs, error) -> Void in
+            if let error = error { print(error.localizedDescription) }
+            (completion?(records, error))!
+        }
+        
+        publicDatabase.add(operation)
+    }
+    
+    func fetchCurrentUser(completion: @escaping (User?, CKReference?) -> Void) {
         // Fetch default Apple 'Users' recordID
         
         CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
@@ -33,11 +57,11 @@ class CloudKitManager {
             
             // Fetch the real User record
             self.fetchRecordsWithType(User.recordTypeKey, predicate: predicate, recordFetchedBlock: nil, completion: { (records, error) in
-                guard let currentUserRecord = records?.first else { return }
+                guard let currentUserRecord = records?.first else {  completion(nil, appleUserReference); return }
                 
                 let currentUser = User(cloudKitRecord: currentUserRecord)
                 
-                completion(currentUser)
+                completion(currentUser, nil)
             })
         }
     }

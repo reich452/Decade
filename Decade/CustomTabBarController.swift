@@ -13,6 +13,8 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customTabBar()
+        
+        UserController.shared.fetchLoggedInUser()
     }
     
     func customTabBar() {

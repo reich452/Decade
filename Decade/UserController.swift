@@ -8,44 +8,80 @@
 
 import Foundation
 import CloudKit
+import NotificationCenter
 
 class UserController {
     
     static let shared = UserController()
     let publicDB = CKContainer.default().publicCloudDatabase
+    // Notifications are like a radio tower signal. You are tuned into a chanel and you hear the anouncement
+    let DidRefreshNotification = Notification.Name("DidRefreshNotification")
     var appleUserRecordID: CKRecordID?
     var currentUser: User?
+    private(set) var users = [User]() {
+        didSet {
+            DispatchQueue.main.async {
+                let notificationCenter = NotificationCenter.default
+                notificationCenter.post(name: self.DidRefreshNotification, object: self)
+            }
+        }
+    }
     
     init() {
-        CKContainer.default().fetchUserRecordID { (recordID, error) in
-            guard let recordID = recordID else { return }
-            self.appleUserRecordID = recordID
-        }
-        CloudKitManager.shared.fetchCurrentUser { (currentUser) in
-            self.currentUser = currentUser
+        // TODO: Notification Center
+    }
+    
+    func fetchLoggedInUser() {
+        
+        CloudKitManager.shared.fetchCurrentUser { (currentUser, appleUserRef) in
+            
+            if currentUser != nil {
+                
+                self.currentUser = currentUser
+            } else {
+                guard let appleUserRef = appleUserRef else { return }
+                let user = User(appleUserRef: appleUserRef)
+                let record = CKRecord(user: user)
+                CloudKitManager.shared.saveRecord(record, completion: { (record, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                    user.cloudKitRecordID = record?.recordID
+                    self.currentUser = user
+                })
+            }
         }
     }
     
     // MARK: - CRUD
     
     // This will get called when the user taps the hart button
-    func sendImagesToCloudKit(for likedImageRefs: CKReference, likedImageURL: [String] = [], likedImage: Bool, appleUserRef: CKReference, completion: @escaping (User?) -> Void) {
+    func sendImagesToCloudKit(for likedImageURLs: [String] = [], imageIds: [String] = [], appleUserRef: CKReference, completion: @escaping (User?) -> Void) {
         guard let appleUserRecordID = appleUserRecordID else { completion(nil); return }
         
         let appleUserRef = CKReference(recordID: appleUserRecordID, action: .deleteSelf)
-        let user = User(likedImageRefs: likedImageRefs, likedImageURL: likedImageURL, likedImage: likedImage, appleUserRef: appleUserRef)
+        let user = User(likedImageURLs: likedImageURLs, imageIds: imageIds, appleUserRef: appleUserRef)
         let userRecord = CKRecord(user: user)
         CKContainer.default().publicCloudDatabase.save(userRecord) { (record, error) in
             if let error = error { print (error.localizedDescription) }
             
             self.currentUser = user
             completion(user)
-            
         }
     }
-    
-    func fetchImagesFromCloudKit(for likeImages: CKReference, likedImageURL: [String] = [], completion: @escaping (User?) -> Void) {
-        // DON't need it... 
+
+    func updateUserInCloudKit() {
+        guard let currentUser = currentUser else { return }
+        
+        let record = CKRecord(user: currentUser)
+        var records: [CKRecord] = []
+        records.append(record)
+        
+        CloudKitManager.shared.modifyRecords(records, perRecordCompletion: nil) { (records, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

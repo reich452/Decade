@@ -20,16 +20,16 @@ class Decade {
     let imageName: String
     let contentUrlString: String
     var decadeImage: UIImage?
-    var imageID: String
+    var imageIds: String
     
     init?(jsonDictionary: [String : Any]) {
         guard let imageName = jsonDictionary[imageNameKey] as? String,
             let contentUrl = jsonDictionary[contentUrlKey] as? String,
-            let imageID = jsonDictionary[imageIdKey] as? String
+            let imageIds = jsonDictionary[imageIdKey] as? String
             else { return nil }
         
         self.imageName = imageName
         self.contentUrlString = contentUrl
-        self.imageID = imageID
+        self.imageIds = imageIds
     }
 }

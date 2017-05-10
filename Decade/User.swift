@@ -18,26 +18,26 @@ class User {
     static let appleUserRefKey = "appleUserRef"
     
     var likedImageURLs: [String] = []
-    var imageId: [String] = []
+    var imageIds: [String] = []
     var cloudKitRecordID: CKRecordID?
     
     // This is the reference to the default Apple User records ID
     let appleUserRef: CKReference
     
     // To create an instance of a user liking an image
-    init(likedImageURLs: [String] = [], appleUserRef: CKReference, likedImageIDs: [String] = [], imageId: [String] = []) {
+    init(likedImageURLs: [String] = [], imageIds: [String] = [], appleUserRef: CKReference) {
         
         self.likedImageURLs = likedImageURLs
+        self.imageIds = imageIds
         self.appleUserRef = appleUserRef
-        self.imageId = imageId
     }
     
-    // FetchLogedInUserRecord 
+    // FetchLogedInUserRecord
     init?(cloudKitRecord: CKRecord) {
-            guard let appleUserRef = cloudKitRecord[User.appleUserRefKey] as? CKReference else { return nil }
+        guard let appleUserRef = cloudKitRecord[User.appleUserRefKey] as? CKReference else { return nil }
         
         self.likedImageURLs = cloudKitRecord[User.likedImageUrlsKey] as? [String] ?? []
-        self.imageId = cloudKitRecord[User.imageIdKey] as? [String] ?? []
+        self.imageIds = cloudKitRecord[User.imageIdKey] as? [String] ?? []
         self.appleUserRef = appleUserRef
         self.cloudKitRecordID = cloudKitRecord.recordID
     }
@@ -50,7 +50,7 @@ extension CKRecord {
         
         self.init(recordType: User.recordTypeKey, recordID: recordID)
         self.setValue(user.likedImageURLs, forKey: User.likedImageUrlsKey)
-        self.setValue(user.imageId, forKey: User.imageIdKey)
+        self.setValue(user.imageIds, forKey: User.imageIdKey)
         self.setValue(user.appleUserRef, forKey: User.appleUserRefKey)
     }
 }

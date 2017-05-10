@@ -7,24 +7,38 @@
 //
 
 import UIKit
+import NotificationCenter
 
 class SavedDecadeTableViewController: UITableViewController {
+    
+    var decades: [Decade] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    func notificationUpdate() {
+//        let notificationCenter = NotificationCenter.default
+//        notificationCenter.addObserver(self, selector: #selector(refreshSavedItems), name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+    }
+    
+    func refreshSavedItems() {
+        
     }
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return decades.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "decadeSavedCell", for: indexPath) as? SavedDecadeTableViewCell else { return UITableViewCell() }
         
+        let decade = decades[indexPath.row]
+        cell.decade = decade
         return cell
     }
     

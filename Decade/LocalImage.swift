@@ -14,5 +14,6 @@ struct LocalImage {
     let name: String
     let localImage: UIImage?
     let localImageArray: [UIImage] = []
+    let imageID: String
 }
 
