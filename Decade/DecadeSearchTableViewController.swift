@@ -13,15 +13,16 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     @IBOutlet weak var imageSearchBar: UISearchBar!
     
     
-    // MARK: - Properties 
+    // MARK: - Properties
     var decades: [Decade] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBarUI()
         imageSearchBar.delegate = self
     }
     
@@ -36,7 +37,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
             }
         }
     }
-
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,11 +51,40 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         cell.decade = decade
         return cell
     }
-
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
-
+    
 }
+
+extension DecadeSearchTableViewController {
+    func searchBarUI() {
+       
+        let textFieldInsideSearchBar = imageSearchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = UIColor.black
+        imageSearchBar.backgroundColor = UIColor.black
+        imageSearchBar.placeholder = "Decade Search"
+        
+        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
+        textFieldInsideSearchBarLabel?.textColor = UIColor.lightGray
+        
+        let clearButton = textFieldInsideSearchBar?.value(forKey: "clearButton") as! UIButton
+        clearButton.setImage(clearButton.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        clearButton.tintColor = UIColor.red
+        
+        let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
+        
+        glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
+        glassIconView?.tintColor = UIColor.black
+    }
+   
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if imageSearchBar.isFirstResponder == true {
+            imageSearchBar.placeholder = ""
+        }
+    }
+}
+

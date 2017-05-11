@@ -20,9 +20,11 @@ class SavedDecadeTableViewCell: UITableViewCell {
     }
     
     func updateViews() {
-        guard let decade = decade else { return }
-        self.decadeImageView.image = decade.decadeImage
-        self.decadeNameLabel.text = decade.imageName
-        
+        guard let decade = decade, let savedImages = UserController.shared.currentUser?.imageIds else { return }
+        DispatchQueue.main.async {
+            self.decadeImageView.image = decade.decadeImage
+            self.decadeNameLabel.text = decade.imageName
+            
+        }
     }
 }

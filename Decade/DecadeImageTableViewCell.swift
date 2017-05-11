@@ -22,11 +22,14 @@ class DecadeImageTableViewCell: UITableViewCell {
         }
     }
     
-    
     // MARK: - Actions
     @IBAction func isLikedButtonTapped(_ sender: UIButton) {
         delegate?.isHeartButtonTapped(sender: self)
-        
+        updateLikeButton()
+    }
+    
+    // MARK: - Methods
+    func updateLikeButton() {
         guard let decade = decade,
             let currentUser = UserController.shared.currentUser
             else { return }
@@ -44,20 +47,6 @@ class DecadeImageTableViewCell: UITableViewCell {
         }
     }
     
-    //        if currentUser.likedImageURLs.contains(decade.contentUrlString) {
-    //            isLikedButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
-    //            guard let index = currentUser.likedImageURLs.index(of: decade.contentUrlString) else { print("Could not find index for decade.contentUrlString"); return }
-    //            currentUser.likedImageURLs.remove(at: index)
-    //            UserController.shared.updateUserInCloudKit()
-    //        } else {
-    //            isLikedButton.setImage(#imageLiteral(resourceName: "redHear"), for: .normal)
-    //            currentUser.likedImageURLs.append(decade.contentUrlString)
-    //            UserController.shared.updateUserInCloudKit()
-    //        }
-    //
-    //    }
-    
-    
     private func updateViews() {
         guard let decade = decade, let user = UserController.shared.currentUser else { return }
         
@@ -73,6 +62,7 @@ class DecadeImageTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Protocol
 protocol isLikedButtonTappedTableViewCellDelegate: class {
     func isHeartButtonTapped(sender: DecadeImageTableViewCell)
 }

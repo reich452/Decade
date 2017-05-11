@@ -31,6 +31,8 @@
 		01ACC3641EC252420010B17C /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC3631EC252420010B17C /* CloudKitManager.swift */; };
 		01ACC36C1EC365010010B17C /* SavedDecadeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC36B1EC365010010B17C /* SavedDecadeTableViewCell.swift */; };
 		01ACC36E1EC3B51F0010B17C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC36D1EC3B51F0010B17C /* Constants.swift */; };
+		01ACC3701EC3FEF40010B17C /* UISearchBarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC36F1EC3FEF40010B17C /* UISearchBarHelper.swift */; };
+		01ACC3721EC3FF630010B17C /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC3711EC3FF630010B17C /* UIImageHelper.swift */; };
 		01C65F131EC0CE0600DD675B /* DecadeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */; };
 		01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F181EC1452700DD675B /* UIColorHelper.swift */; };
 		01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */; };
@@ -65,6 +67,8 @@
 		01ACC3631EC252420010B17C /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		01ACC36B1EC365010010B17C /* SavedDecadeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedDecadeTableViewCell.swift; sourceTree = "<group>"; };
 		01ACC36D1EC3B51F0010B17C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		01ACC36F1EC3FEF40010B17C /* UISearchBarHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISearchBarHelper.swift; sourceTree = "<group>"; };
+		01ACC3711EC3FF630010B17C /* UIImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageHelper.swift; sourceTree = "<group>"; };
 		01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeHomeViewController.swift; sourceTree = "<group>"; };
 		01C65F181EC1452700DD675B /* UIColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
 		01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeWebViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 				01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */,
 				01C65F181EC1452700DD675B /* UIColorHelper.swift */,
 				01ACC36D1EC3B51F0010B17C /* Constants.swift */,
+				01ACC36F1EC3FEF40010B17C /* UISearchBarHelper.swift */,
+				01ACC3711EC3FF630010B17C /* UIImageHelper.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */,
 				01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */,
 				01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */,
+				01ACC3721EC3FF630010B17C /* UIImageHelper.swift in Sources */,
 				01C65F131EC0CE0600DD675B /* DecadeHomeViewController.swift in Sources */,
 				01417A0F1EB818DE00315C15 /* DecadeImageTableViewCell.swift in Sources */,
 				014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */,
@@ -321,6 +328,7 @@
 				01ACC36C1EC365010010B17C /* SavedDecadeTableViewCell.swift in Sources */,
 				01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */,
 				01417A0A1EB8112400315C15 /* DecadeTableViewController.swift in Sources */,
+				01ACC3701EC3FEF40010B17C /* UISearchBarHelper.swift in Sources */,
 				014179FA1EB79CDC00315C15 /* User.swift in Sources */,
 				014179FC1EB7A4FE00315C15 /* DecadeSearchController.swift in Sources */,
 				01417A111EB820B700315C15 /* DecadeHomeCollectionViewCell.swift in Sources */,
