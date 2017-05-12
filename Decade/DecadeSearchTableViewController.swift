@@ -12,8 +12,8 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     
     @IBOutlet weak var imageSearchBar: UISearchBar!
     
-    
     // MARK: - Properties
+    
     var decades: [Decade] = [] {
         didSet {
             tableView.reloadData()
@@ -26,6 +26,8 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         imageSearchBar.delegate = self
     }
     
+    // MARK: - SearchBar
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchTerm = searchBar.text else { return }
@@ -36,6 +38,17 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
                 self.decades = decades
             }
         }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        // TODO: - Not showing Up????
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.endEditing(true)
     }
     
     // MARK: - Table view data source
@@ -59,6 +72,8 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     }
     
 }
+
+// Mark Search Bar UI
 
 extension DecadeSearchTableViewController {
     func searchBarUI() {

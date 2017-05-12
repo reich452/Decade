@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CloudKit
 
 class DecadeSearchController {
     
@@ -47,7 +48,10 @@ class DecadeSearchController {
     }
     
     func searchForImagesWith(searchTerm: String, completion: @escaping ([Decade]?, DecadeError?) -> Void) {
-        guard let baseURL = baseURL else { completion([], .baseUrlFailed); return }
+        guard let baseURL = baseURL,
+        let currentUserRecordId = UserController.shared.currentUser?.cloudKitRecordID
+            else { completion([], .baseUrlFailed); return }
+        
         
         let urlParameters = ["q": searchTerm]
         NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
@@ -60,11 +64,13 @@ class DecadeSearchController {
             
             let decades = imageArray.flatMap( {Decade(jsonDictionary: $0)})
             let group = DispatchGroup()
+        
             
             for decade in decades {
                 group.enter()
                 ImageController.image(forURL: decade.contentUrlString, completion: { (newImage) in
                     decade.decadeImage = newImage
+                    decade.ownerReference = CKReference(recordID: currentUserRecordId, action: .none)
                     group.leave()
                 })
             }
@@ -83,7 +89,9 @@ class DecadeSearchController {
     }
     
     func searchForImagesWithKeywords(keywords: [String], completion: @escaping ([Decade]?, DecadeError?) -> Void) {
-        guard let baseURL = baseURL else { completion([], .baseUrlFailed); print("base url failed"); return }
+        guard let baseURL = baseURL,
+            let currentUserRecordId = UserController.shared.currentUser?.cloudKitRecordID
+            else { completion([], .baseUrlFailed); print("base url failed"); return }
 
         let urlParameters: [String: String] = ["q": getRandomSearchTermFrom(searchTerms: keywords)]
         NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
@@ -102,6 +110,7 @@ class DecadeSearchController {
                 group.enter()
                 ImageController.image(forURL: decade.contentUrlString, completion: { (newImage) in
                     decade.decadeImage = newImage
+                    decade.ownerReference = CKReference(recordID: currentUserRecordId, action: .none)
                     group.leave()
                 })
             }

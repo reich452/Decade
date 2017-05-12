@@ -9,7 +9,7 @@
 import UIKit
 
 class DecadeTableViewController: UITableViewController, isLikedButtonTappedTableViewCellDelegate {
-  
+
     var decades: [Decade] = []
  
     override func viewDidLoad() {
@@ -22,11 +22,10 @@ class DecadeTableViewController: UITableViewController, isLikedButtonTappedTable
     func isHeartButtonTapped(sender: DecadeImageTableViewCell) {
         
     }
-    
+
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.decades.count
     }
     

@@ -29,11 +29,13 @@ class CustomTabBarController: UITabBarController {
         secondNavigationController.title = "Search"
         secondNavigationController.tabBarItem.image = #imageLiteral(resourceName: "searchIcon")
         
-        let savedTableViewController = SavedDecadeTableViewController()
-        savedTableViewController.title = "Saved"
-        savedTableViewController.tabBarItem.image = #imageLiteral(resourceName: "heartIcon")
+        let storyboard3 = UIStoryboard(name: "Main", bundle: nil)
+        let saveSearchTVC = storyboard3.instantiateViewController(withIdentifier: "savedImages")
+        let thridNavigationController = UINavigationController(rootViewController: saveSearchTVC)
+        thridNavigationController.title = "Saved"
+        thridNavigationController.tabBarItem.image = #imageLiteral(resourceName: "heartIcon")
         
-        viewControllers = [navigationController, secondNavigationController, savedTableViewController]
+        viewControllers = [navigationController, secondNavigationController, thridNavigationController]
         
         tabBar.isTranslucent = true
         
@@ -41,3 +43,4 @@ class CustomTabBarController: UITabBarController {
         //let topBorder = CALayer()
     }
 }
+

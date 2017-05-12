@@ -6,7 +6,7 @@
 //  Copyright © 2017 Nick Reichard. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CloudKit
 import NotificationCenter
 
@@ -81,6 +81,18 @@ class UserController {
             if let error = error {
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func fetchLikedImages(completion: @escaping ([UIImage]) -> Void) {
+        guard let imageUrls = self.currentUser?.likedImageURLs else { return }
+        let group = DispatchGroup()
+        for likedImageUrl in imageUrls {
+            group.enter()
+            ImageController.image(forURL: likedImageUrl) { (likedImage) in
+                
+            }
+            
         }
     }
 }

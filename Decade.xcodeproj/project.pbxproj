@@ -33,6 +33,7 @@
 		01ACC36E1EC3B51F0010B17C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC36D1EC3B51F0010B17C /* Constants.swift */; };
 		01ACC3701EC3FEF40010B17C /* UISearchBarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC36F1EC3FEF40010B17C /* UISearchBarHelper.swift */; };
 		01ACC3721EC3FF630010B17C /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC3711EC3FF630010B17C /* UIImageHelper.swift */; };
+		01ACC3741EC4DB820010B17C /* DecadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC3731EC4DB820010B17C /* DecadeController.swift */; };
 		01C65F131EC0CE0600DD675B /* DecadeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */; };
 		01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F181EC1452700DD675B /* UIColorHelper.swift */; };
 		01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */; };
@@ -69,6 +70,7 @@
 		01ACC36D1EC3B51F0010B17C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		01ACC36F1EC3FEF40010B17C /* UISearchBarHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISearchBarHelper.swift; sourceTree = "<group>"; };
 		01ACC3711EC3FF630010B17C /* UIImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageHelper.swift; sourceTree = "<group>"; };
+		01ACC3731EC4DB820010B17C /* DecadeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeController.swift; sourceTree = "<group>"; };
 		01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeHomeViewController.swift; sourceTree = "<group>"; };
 		01C65F181EC1452700DD675B /* UIColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
 		01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeWebViewController.swift; sourceTree = "<group>"; };
@@ -127,8 +129,8 @@
 		014179ED1EB792BB00315C15 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				014179F71EB7963A00315C15 /* Decade.swift */,
 				014179F91EB79CDC00315C15 /* User.swift */,
+				014179F71EB7963A00315C15 /* Decade.swift */,
 				01A795051EBAA49300E62DD6 /* LocalImage.swift */,
 			);
 			name = Model;
@@ -139,6 +141,7 @@
 			children = (
 				014179FB1EB7A4FE00315C15 /* DecadeSearchController.swift */,
 				01C65F1C1EC2264B00DD675B /* UserController.swift */,
+				01ACC3731EC4DB820010B17C /* DecadeController.swift */,
 				01A795071EBAA4F100E62DD6 /* LocalImageController.swift */,
 				01ACC3631EC252420010B17C /* CloudKitManager.swift */,
 			);
@@ -150,9 +153,9 @@
 			children = (
 				01C65F121EC0CE0600DD675B /* DecadeHomeViewController.swift */,
 				01417A091EB8112400315C15 /* DecadeTableViewController.swift */,
-				01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */,
 				01417A0B1EB8117400315C15 /* DecadeSearchTableViewController.swift */,
 				01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */,
+				01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				014179FC1EB7A4FE00315C15 /* DecadeSearchController.swift in Sources */,
 				01417A111EB820B700315C15 /* DecadeHomeCollectionViewCell.swift in Sources */,
 				01417A0C1EB8117400315C15 /* DecadeSearchTableViewController.swift in Sources */,
+				01ACC3741EC4DB820010B17C /* DecadeController.swift in Sources */,
 				01C65F1D1EC2264B00DD675B /* UserController.swift in Sources */,
 				01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */,
 				01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */,

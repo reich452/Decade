@@ -7,37 +7,44 @@
 //
 
 import UIKit
-import NotificationCenter
 
-class SavedDecadeTableViewController: UITableViewController {
+
+class SavedDecadeTableViewController: UITableViewController, isLikedButtonTappedTVCellDelegateDestination {
     
     var decades: [Decade] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        DecadeController.shared.fetchUserLikedDecades { (decades) in
+            print(decades.count)
+            self.tableView.reloadData()
+        }
     }
     
-    func notificationUpdate() {
-//        let notificationCenter = NotificationCenter.default
-//        notificationCenter.addObserver(self, selector: #selector(refreshSavedItems), name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+    
+    
+    func updateViews() {
+        DecadeController.shared.fetchUserLikedDecades { (likedDecade) in
+            
+        }
     }
     
-    func refreshSavedItems() {
-        
+    func sendLikedImagesToSavedTVController(sender: DecadeImageTableViewCell) {
+        guard let user = sender.user,
+            let indexPath = tableView.indexPath(for: sender) else { print("Can't send liked image to cell"); return }
     }
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return decades.count
+     
+        return DecadeController.shared.likedDecades.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "decadeSavedCell", for: indexPath) as? SavedDecadeTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "savedImagesCell", for: indexPath) as? SavedDecadeTableViewCell else { return SavedDecadeTableViewCell() }
         
-        let decade = decades[indexPath.row]
+        let decade = DecadeController.shared.likedDecades[indexPath.row]
         cell.decade = decade
         return cell
     }

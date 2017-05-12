@@ -11,6 +11,7 @@ import UIKit
 class DecadeImageTableViewCell: UITableViewCell {
     
     weak var delegate: isLikedButtonTappedTableViewCellDelegate?
+    weak var delegateDestination: isLikedButtonTappedTVCellDelegateDestination?
     
     @IBOutlet weak var decadeNameLabel: UILabel!
     @IBOutlet weak var decadeImageView: UIImageView!
@@ -21,6 +22,8 @@ class DecadeImageTableViewCell: UITableViewCell {
             updateViews()
         }
     }
+    
+    var user: User? 
     
     // MARK: - Actions
     @IBAction func isLikedButtonTapped(_ sender: UIButton) {
@@ -34,16 +37,19 @@ class DecadeImageTableViewCell: UITableViewCell {
             let currentUser = UserController.shared.currentUser
             else { return }
         
-        if currentUser.imageIds.contains(decade.imageIds) {
-            isLikedButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
-            guard let index = currentUser.imageIds.index(of: decade.imageIds) else {
-                print("Could not find index for decade.contentUrlString"); return }
-            currentUser.imageIds.remove(at: index)
-            UserController.shared.updateUserInCloudKit()
+        if decade.ownerReference == currentUser.cloudKitRecordID {
+            DecadeController.shared.saveLikedDecadeToCloudKit(decade: decade) {
+                DispatchQueue.main.async {
+                    self.isLikedButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
+                }
+            }
         } else {
-            isLikedButton.setImage(#imageLiteral(resourceName: "redHear"), for: .normal)
-            currentUser.imageIds.append(decade.imageIds)
-            UserController.shared.updateUserInCloudKit()
+            decade.owner = currentUser
+            DecadeController.shared.saveLikedDecadeToCloudKit(decade: decade) {
+                DispatchQueue.main.async {
+                    self.isLikedButton.setImage(#imageLiteral(resourceName: "redHear"), for: .normal)
+                }
+            }
         }
     }
     
@@ -53,7 +59,7 @@ class DecadeImageTableViewCell: UITableViewCell {
         self.decadeNameLabel.text = decade.imageName
         self.decadeImageView.image = decade.decadeImage
         
-        if user.imageIds.contains(decade.contentUrlString) {
+        if decade.ownerReference == user.cloudKitRecordID {
             isLikedButton.setImage(#imageLiteral(resourceName: "redHear"), for: .normal)
             
         } else {
@@ -66,3 +72,9 @@ class DecadeImageTableViewCell: UITableViewCell {
 protocol isLikedButtonTappedTableViewCellDelegate: class {
     func isHeartButtonTapped(sender: DecadeImageTableViewCell)
 }
+
+protocol isLikedButtonTappedTVCellDelegateDestination: class {
+      func sendLikedImagesToSavedTVController(sender: DecadeImageTableViewCell)
+}
+
+
