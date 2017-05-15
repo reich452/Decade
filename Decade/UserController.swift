@@ -31,23 +31,26 @@ class UserController {
         // TODO: Notification Center
     }
     
-    func fetchLoggedInUser() {
+    func fetchLoggedInUser(completion: @escaping () -> Void) {
         
         CloudKitManager.shared.fetchCurrentUser { (currentUser, appleUserRef) in
             
             if currentUser != nil {
-                
                 self.currentUser = currentUser
+                completion()
             } else {
-                guard let appleUserRef = appleUserRef else { return }
+                guard let appleUserRef = appleUserRef else { completion(); return }
                 let user = User(appleUserRef: appleUserRef)
                 let record = CKRecord(user: user)
                 CloudKitManager.shared.saveRecord(record, completion: { (record, error) in
                     if let error = error {
-                        print(error.localizedDescription)
+                        print("Can't user saveRecord \(error.localizedDescription)")
+                        completion()
+                        return
                     }
                     user.cloudKitRecordID = record?.recordID
                     self.currentUser = user
+                    completion()
                 })
             }
         }
@@ -56,11 +59,11 @@ class UserController {
     // MARK: - CRUD
     
     // This will get called when the user taps the hart button
-    func sendImagesToCloudKit(for likedImageURLs: [String] = [], imageIds: [String] = [], hostPageUrls: [String] = [], appleUserRef: CKReference, completion: @escaping (User?) -> Void) {
+    func sendImagesToCloudKit(for likedImageURLs: [String] = [], imageIds: [String] = [], appleUserRef: CKReference, completion: @escaping (User?) -> Void) {
         guard let appleUserRecordID = appleUserRecordID else { completion(nil); return }
         
         let appleUserRef = CKReference(recordID: appleUserRecordID, action: .deleteSelf)
-        let user = User(likedImageURLs: likedImageURLs, imageIds: imageIds, hostPageUrls: hostPageUrls, appleUserRef: appleUserRef)
+        let user = User(likedImageURLs: likedImageURLs, imageIds: imageIds, appleUserRef: appleUserRef)
         let userRecord = CKRecord(user: user)
         CKContainer.default().publicCloudDatabase.save(userRecord) { (record, error) in
             if let error = error { print (error.localizedDescription) }
@@ -70,8 +73,8 @@ class UserController {
         }
     }
 
-    func updateUserInCloudKit() {
-        guard let currentUser = currentUser else { return }
+    func updateUserInCloudKit(completion: @escaping () -> Void) {
+        guard let currentUser = currentUser else { completion(); print("Cannot update currten user to CK");return }
         
         let record = CKRecord(user: currentUser)
         var records: [CKRecord] = []
@@ -79,8 +82,10 @@ class UserController {
         
         CloudKitManager.shared.modifyRecords(records, perRecordCompletion: nil) { (records, error) in
             if let error = error {
-                print(error.localizedDescription)
+                print("Cannot modify user record \(error.localizedDescription)")
+                completion(); return
             }
+            completion()
         }
     }
     

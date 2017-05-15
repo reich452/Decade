@@ -30,26 +30,18 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let searchTerm = searchBar.text else { return }
         
         DecadeSearchController.shared.searchForImagesWith(searchTerm: searchTerm) { (newDecades, decadeError) in
             guard let decades = newDecades else { return }
             DispatchQueue.main.async {
                 self.decades = decades
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(true, animated: true)
-        // TODO: - Not showing Up????
-    }
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchBar.text = nil
-        searchBar.setShowsCancelButton(false, animated: true)
-        searchBar.endEditing(true)
-    }
     
     // MARK: - Table view data source
     
@@ -67,13 +59,6 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     
     // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toWebView" {
-            if let decadeWebVC = segue.destination as? DecadeWebViewController {
-                decadeWebVC.decades = self.decades
-            }
-        }
-    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let decadeWebVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "decadeWebView") as? DecadeWebViewController else { print("Can't load decadeWebVC"); return }
@@ -104,7 +89,9 @@ extension DecadeSearchTableViewController {
         let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
         
         glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
+        
         glassIconView?.tintColor = UIColor.black
+        
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -112,5 +99,16 @@ extension DecadeSearchTableViewController {
             imageSearchBar.placeholder = ""
         }
     }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        imageSearchBar.setShowsCancelButton(true, animated: true)
+        // TODO: - Not showing Up????
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        imageSearchBar.text = nil
+        imageSearchBar.setShowsCancelButton(true, animated: true)
+        imageSearchBar.endEditing(true)
+    }
+    
 }
 

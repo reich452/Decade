@@ -15,17 +15,24 @@ class SavedDecadeTableViewController: UITableViewController, isLikedButtonTapped
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DecadeController.shared.fetchUserLikedDecades { (decades) in
-            print("\(decades.count) saved decades.")
-            self.tableView.reloadData()
+      
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DecadeController.shared.fetchUserLikedDecades { 
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
-    func updateViews() {
-        DecadeController.shared.fetchUserLikedDecades { (likedDecade) in
-            
-        }
-    }
+//    func updateViews() {
+//        DecadeController.shared.fetchUserLikedDecades { (likedDecade) in
+//            
+//        }
+//    }
     
     func sendLikedImagesToSavedTVController(sender: DecadeImageTableViewCell) {
         guard let user = sender.user,

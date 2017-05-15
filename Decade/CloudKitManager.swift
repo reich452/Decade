@@ -111,4 +111,13 @@ class CloudKitManager {
         
         self.publicDatabase.add(queryOperation)
     }
+    
+    // MARK: - Delete
+    
+    func deleteRecordWithID(_ recordID: CKRecordID, completion: ((_ recordID: CKRecordID?, _ error: Error?) -> Void)?) {
+        
+        publicDatabase.delete(withRecordID: recordID) { (recordID, error) in
+            completion?(recordID, error)
+        }
+    } // The record with the specified will be DESTROYED
 }

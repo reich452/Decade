@@ -108,8 +108,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.39878306670000002" green="0.73680696089999997" blue="0.97384597080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbT-oH-dcE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbT-oH-dcE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eq6-oD-0DA">
@@ -134,6 +134,7 @@
                             <constraint firstAttribute="trailing" secondItem="RbT-oH-dcE" secondAttribute="trailing" id="yzv-E3-nzE"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="avA-Wy-R36"/>
                     <navigationItem key="navigationItem" title="Decade Web" id="l4f-3R-2V0"/>
                     <connections>
                         <outlet property="webView" destination="RbT-oH-dcE" id="cFc-pc-xPN"/>
@@ -141,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppj-VW-i0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3916" y="597"/>
+            <point key="canvasLocation" x="4222" y="597"/>
         </scene>
         <!--Decade Search Table View Controller-->
         <scene sceneID="mjd-eO-keq">
@@ -465,23 +466,22 @@
             </objects>
             <point key="canvasLocation" x="2364" y="1273.313343328336"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="qxv-Ww-dMe">
+        <!--Tab Bar Controller-->
+        <scene sceneID="ctb-lD-wyl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WJ4-O7-B7W" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dme-Fa-bqX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ntl-4w-MKF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ss0-j7-FKx">
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
                     <connections>
-                        <segue destination="Ao6-X3-dYe" kind="relationship" relationship="rootViewController" id="txy-mh-W8J"/>
+                        <segue destination="Ao6-X3-dYe" kind="relationship" relationship="viewControllers" id="BgM-fX-aW1"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hKN-Ow-N9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9M-9G-xrL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3094" y="597"/>
+            <point key="canvasLocation" x="3393" y="597"/>
         </scene>
     </scenes>
     <resources>

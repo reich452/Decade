@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class DecadeImageTableViewCell: UITableViewCell {
     
     weak var delegate: isLikedButtonTappedTableViewCellDelegate?
@@ -23,7 +24,7 @@ class DecadeImageTableViewCell: UITableViewCell {
         }
     }
     
-    var user: User? 
+    var user: User?
     
     // MARK: - Actions
     @IBAction func isLikedButtonTapped(_ sender: UIButton) {
@@ -37,17 +38,35 @@ class DecadeImageTableViewCell: UITableViewCell {
             let currentUser = UserController.shared.currentUser
             else { return }
         
-        if decade.ownerReference == currentUser.cloudKitRecordID {
-            DecadeController.shared.saveLikedDecadeToCloudKit(decade: decade) {
-                DispatchQueue.main.async {
-                    self.isLikedButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
+        if currentUser.imageIds.contains(decade.imageId) {
+            // Unliking a decade
+            // You have to get the index of the decade.ImageID first. What decade do we want to remove??
+            guard let index = currentUser.imageIds.index(of: decade.imageId) else { print("Cant find index of decade.imageID");return }
+            currentUser.imageIds.remove(at: index)
+            guard let indexAt = DecadeController.shared.likedDecades.index(where: {  $0.imageId == decade.imageId })
+                else { print("Not equal inexAt"); return } // Similar to euatable
+            let decadeToDelete = DecadeController.shared.likedDecades[indexAt]
+            DecadeController.shared.deleteLikedDecadeFromCloudKit(decade: decadeToDelete, completion: {
+                DecadeController.shared.likedDecades.remove(at: indexAt)
+                UserController.shared.updateUserInCloudKit {
+                    DispatchQueue.main.async {
+                        self.isLikedButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
+                    }
                 }
-            }
+            })
         } else {
+            // Liking a decade
+            currentUser.imageIds.append(decade.imageId)
             decade.owner = currentUser
-            DecadeController.shared.saveLikedDecadeToCloudKit(decade: decade) {
-                DispatchQueue.main.async {
-                    self.isLikedButton.setImage(#imageLiteral(resourceName: "filledHeart"), for: .normal)
+            
+            DecadeController.shared.saveLikedDecadeToCloudKit(decade: decade) { (recordID) in
+                decade.cloudKitRecordID = recordID
+                DecadeController.shared.likedDecades.append(decade)
+                // Saving must complete before it can update. May take time if bad network
+                UserController.shared.updateUserInCloudKit {
+                    DispatchQueue.main.async {
+                        self.isLikedButton.setImage(#imageLiteral(resourceName: "filledHeart"), for: .normal)
+                    }
                 }
             }
         }
@@ -59,9 +78,8 @@ class DecadeImageTableViewCell: UITableViewCell {
         self.decadeNameLabel.text = decade.imageName
         self.decadeImageView.image = decade.decadeImage
         
-        if decade.ownerReference == user.cloudKitRecordID {
+        if user.imageIds.contains(decade.imageId) {
             isLikedButton.setImage(#imageLiteral(resourceName: "filledHeart"), for: .normal)
-            
         } else {
             isLikedButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
         }
@@ -74,7 +92,7 @@ protocol isLikedButtonTappedTableViewCellDelegate: class {
 }
 
 protocol isLikedButtonTappedTVCellDelegateDestination: class {
-      func sendLikedImagesToSavedTVController(sender: DecadeImageTableViewCell)
+    func sendLikedImagesToSavedTVController(sender: DecadeImageTableViewCell)
 }
 
 

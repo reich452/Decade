@@ -20,7 +20,9 @@ class DecadeHomeViewController: UIViewController {
     override func viewDidLoad() {
         updateCount = 0
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector (DecadeHomeViewController.updateTimer), userInfo: nil, repeats: true)
-        
+        UserController.shared.fetchLoggedInUser {
+           self.updateLikedDeades()
+        }
     }
     
     internal func updateTimer() {
@@ -30,6 +32,12 @@ class DecadeHomeViewController: UIViewController {
             updateCount = updateCount + 1
         } else {
             updateCount = 0
+        }
+    }
+    
+    internal func updateLikedDeades() {
+        DecadeController.shared.fetchUserLikedDecades { 
+            
         }
     }
 }

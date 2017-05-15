@@ -23,8 +23,12 @@ class DecadeWebViewController: UIViewController {
     
     func loadWebView() {
         // TODO safly unwrap!
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let url = url, let webView = webView else { print("Can not load url"); return }
-        webView.loadRequest(URLRequest(url: URL(string: url)!))
+        DispatchQueue.main.async {
+            webView.loadRequest(URLRequest(url: URL(string: url)!))
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
     }
     
 }
