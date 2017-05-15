@@ -14,15 +14,16 @@ class Decade {
     
     static let imageNameKey = "name"
     static let contentUrlKey = "contentUrl"
-    static let hostPageDislayUrlKey = "hostPageDisplayUrl"  // TODO: Open in a web view.
     static let imageIdKey = "imageId"
     static let imageDataKey = "imageData"
     static let ownerReferenceKey = "ownerReference"
     static let typeKey = "Decade"
+    static let hostPageUrlKey = "hostPageUrl"
     
    // var resultImages: [UIImage]
     let imageName: String
     let contentUrlString: String
+    var hostPageUrl: String?
     var decadeImage: UIImage?
     var imageId: String
     var owner: User?
@@ -43,17 +44,20 @@ class Decade {
     init?(jsonDictionary: [String : Any]) {
         guard let imageName = jsonDictionary[Decade.imageNameKey] as? String,
             let contentUrl = jsonDictionary[Decade.contentUrlKey] as? String,
+            let hostPageUrl = jsonDictionary[Decade.hostPageUrlKey] as? String,
             let imageId = jsonDictionary[Decade.imageIdKey] as? String
             else { return nil }
         
         self.imageName = imageName
         self.contentUrlString = contentUrl
+        self.hostPageUrl = hostPageUrl
         self.imageId = imageId
     }
     
-    init(imageName: String, contentUrlString: String, decadeImage: UIImage?, imageId: String, owner: User, ownerReference: CKReference) {
+    init(imageName: String, contentUrlString: String, hostPageUrl: String?, decadeImage: UIImage?, imageId: String, owner: User, ownerReference: CKReference) {
         self.imageName = imageName
         self.contentUrlString = contentUrlString
+        self.hostPageUrl = hostPageUrl
         self.decadeImage = decadeImage
         self.imageId = imageId
         self.owner = owner
@@ -65,11 +69,13 @@ class Decade {
     init?(cloudKitRecord: CKRecord) {
         guard let imageName = cloudKitRecord[Decade.imageNameKey] as? String,
             let contentUrlString = cloudKitRecord[Decade.contentUrlKey] as? String,
+            let hostPageUrl = cloudKitRecord[Decade.hostPageUrlKey] as? String,
             let imageId = cloudKitRecord[Decade.imageIdKey] as? String,
             let ownerReference = cloudKitRecord[Decade.ownerReferenceKey] as? CKReference else { return nil }
         
         self.imageName = imageName
         self.contentUrlString = contentUrlString
+        self.hostPageUrl = hostPageUrl
         self.imageId = imageId
         self.ownerReference = ownerReference
         self.cloudKitRecordID = cloudKitRecord.recordID
@@ -83,6 +89,7 @@ extension CKRecord {
         self.init(recordType: decade.recordType, recordID: recordID)
         setValue(decade.imageName, forKey: Decade.imageNameKey)
         setValue(decade.contentUrlString, forKey: Decade.contentUrlKey)
+        setValue(decade.hostPageUrl, forKey: Decade.hostPageUrlKey)
         setValue(decade.imageId, forKey: Decade.imageIdKey)
         guard let owner = decade.owner,
             let ownerRecordID = owner.cloudKitRecordID else { return }

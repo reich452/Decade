@@ -47,7 +47,7 @@ class DecadeImageTableViewCell: UITableViewCell {
             decade.owner = currentUser
             DecadeController.shared.saveLikedDecadeToCloudKit(decade: decade) {
                 DispatchQueue.main.async {
-                    self.isLikedButton.setImage(#imageLiteral(resourceName: "redHear"), for: .normal)
+                    self.isLikedButton.setImage(#imageLiteral(resourceName: "filledHeart"), for: .normal)
                 }
             }
         }
@@ -60,7 +60,7 @@ class DecadeImageTableViewCell: UITableViewCell {
         self.decadeImageView.image = decade.decadeImage
         
         if decade.ownerReference == user.cloudKitRecordID {
-            isLikedButton.setImage(#imageLiteral(resourceName: "redHear"), for: .normal)
+            isLikedButton.setImage(#imageLiteral(resourceName: "filledHeart"), for: .normal)
             
         } else {
             isLikedButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)

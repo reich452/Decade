@@ -16,12 +16,10 @@ class SavedDecadeTableViewController: UITableViewController, isLikedButtonTapped
     override func viewDidLoad() {
         super.viewDidLoad()
         DecadeController.shared.fetchUserLikedDecades { (decades) in
-            print(decades.count)
+            print("\(decades.count) saved decades.")
             self.tableView.reloadData()
         }
     }
-    
-    
     
     func updateViews() {
         DecadeController.shared.fetchUserLikedDecades { (likedDecade) in

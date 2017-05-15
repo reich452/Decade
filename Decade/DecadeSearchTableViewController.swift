@@ -68,7 +68,18 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWebView" {
+            if let decadeWebVC = segue.destination as? DecadeWebViewController {
+                decadeWebVC.decades = self.decades
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let decadeWebVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "decadeWebView") as? DecadeWebViewController else { print("Can't load decadeWebVC"); return }
         
+        decadeWebVC.url = self.decades[indexPath.item].hostPageUrl
+        self.present(decadeWebVC, animated: true, completion: nil)
     }
     
 }
@@ -77,7 +88,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
 
 extension DecadeSearchTableViewController {
     func searchBarUI() {
-       
+        
         let textFieldInsideSearchBar = imageSearchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = UIColor.black
         imageSearchBar.backgroundColor = UIColor.black
@@ -95,7 +106,7 @@ extension DecadeSearchTableViewController {
         glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
         glassIconView?.tintColor = UIColor.black
     }
-   
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         if imageSearchBar.isFirstResponder == true {
             imageSearchBar.placeholder = ""

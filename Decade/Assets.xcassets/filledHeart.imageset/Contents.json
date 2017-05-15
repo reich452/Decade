@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "1950s.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "filledHeart.png",
       "scale" : "2x"
     },
     {

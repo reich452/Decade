@@ -50,6 +50,7 @@ class DecadeController {
         }
     }
     
+    // TODO: - test this
     func fetchUserLikedDecades2(completion: @escaping ([Decade]) -> Void) {
         let predicate = NSPredicate(format: "contentUrl == %@", argumentArray: likedDecades)
         let query = CKQuery(recordType: "Decade", predicate: predicate)

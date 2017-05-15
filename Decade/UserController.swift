@@ -56,11 +56,11 @@ class UserController {
     // MARK: - CRUD
     
     // This will get called when the user taps the hart button
-    func sendImagesToCloudKit(for likedImageURLs: [String] = [], imageIds: [String] = [], appleUserRef: CKReference, completion: @escaping (User?) -> Void) {
+    func sendImagesToCloudKit(for likedImageURLs: [String] = [], imageIds: [String] = [], hostPageUrls: [String] = [], appleUserRef: CKReference, completion: @escaping (User?) -> Void) {
         guard let appleUserRecordID = appleUserRecordID else { completion(nil); return }
         
         let appleUserRef = CKReference(recordID: appleUserRecordID, action: .deleteSelf)
-        let user = User(likedImageURLs: likedImageURLs, imageIds: imageIds, appleUserRef: appleUserRef)
+        let user = User(likedImageURLs: likedImageURLs, imageIds: imageIds, hostPageUrls: hostPageUrls, appleUserRef: appleUserRef)
         let userRecord = CKRecord(user: user)
         CKContainer.default().publicCloudDatabase.save(userRecord) { (record, error) in
             if let error = error { print (error.localizedDescription) }

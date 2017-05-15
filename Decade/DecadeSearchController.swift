@@ -52,7 +52,6 @@ class DecadeSearchController {
         let currentUserRecordId = UserController.shared.currentUser?.cloudKitRecordID
             else { completion([], .baseUrlFailed); return }
         
-        
         let urlParameters = ["q": searchTerm]
         NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
             if let error = error { print("Error: searching for image \(error.localizedDescription)")
@@ -64,8 +63,7 @@ class DecadeSearchController {
             
             let decades = imageArray.flatMap( {Decade(jsonDictionary: $0)})
             let group = DispatchGroup()
-        
-            
+    
             for decade in decades {
                 group.enter()
                 ImageController.image(forURL: decade.contentUrlString, completion: { (newImage) in
