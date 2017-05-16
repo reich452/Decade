@@ -14,11 +14,15 @@ class DecadeWebViewController: UIViewController {
     var decades: [Decade] = []
     var url: String?
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         loadWebView()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     func loadWebView() {
@@ -30,5 +34,4 @@ class DecadeWebViewController: UIViewController {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
-    
 }

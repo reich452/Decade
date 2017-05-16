@@ -27,7 +27,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L7b-2Y-sLo">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L7b-2Y-sLo">
                                             <rect key="frame" x="7" y="8" width="360" height="365"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image name" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJC-RL-W0K">
@@ -117,11 +117,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="KvQ-gF-Epc">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="z9b-zu-bBS">
-                                            <connections>
-                                                <segue destination="5X2-ig-YyD" kind="show" identifier="backToSearch" id="uP5-SR-R1m"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="z9b-zu-bBS"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -148,7 +144,7 @@
         <scene sceneID="mjd-eO-keq">
             <objects>
                 <tableViewController storyboardIdentifier="decadeSearchTVC" id="5X2-ig-YyD" customClass="DecadeSearchTableViewController" customModule="Decade" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="S4N-G0-ByG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" id="S4N-G0-ByG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,43 +154,43 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="84" id="Ulu-w2-EAf" customClass="DecadeSearchTableViewCell" customModule="Decade" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="84"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="decadeSearchCell" rowHeight="79" id="Ulu-w2-EAf" customClass="DecadeSearchTableViewCell" customModule="Decade" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ulu-w2-EAf" id="0PY-KZ-E0e">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oNz-Cy-5u2">
-                                            <rect key="frame" x="8" y="14" width="55" height="54"/>
+                                            <rect key="frame" x="8" y="14" width="55" height="51"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="55" id="XGM-67-35e"/>
+                                                <constraint firstAttribute="width" constant="55" id="JW3-mV-LXh"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkc-ic-B4c">
-                                            <rect key="frame" x="98" y="26" width="257" height="20"/>
+                                            <rect key="frame" x="98" y="35" width="257" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upArrow" translatesAutoresizingMaskIntoConstraints="NO" id="E11-3e-tus">
-                                            <rect key="frame" x="70" y="32" width="20" height="14"/>
+                                            <rect key="frame" x="70" y="38" width="20" height="9"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="20" id="IwI-X0-qXT"/>
+                                                <constraint firstAttribute="width" constant="20" id="Xz1-mw-fs0"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="wkc-ic-B4c" secondAttribute="trailing" constant="12" id="Ca6-07-reg"/>
-                                        <constraint firstItem="E11-3e-tus" firstAttribute="top" secondItem="0PY-KZ-E0e" secondAttribute="topMargin" constant="24" id="EUO-GE-q4g"/>
-                                        <constraint firstItem="E11-3e-tus" firstAttribute="leading" secondItem="oNz-Cy-5u2" secondAttribute="trailing" constant="7" id="Hr5-fK-Z2n"/>
-                                        <constraint firstItem="wkc-ic-B4c" firstAttribute="leading" secondItem="E11-3e-tus" secondAttribute="trailing" constant="8" symbolic="YES" id="JFg-iV-I8r"/>
-                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="leading" secondItem="0PY-KZ-E0e" secondAttribute="leadingMargin" id="JfU-Vw-QnG"/>
-                                        <constraint firstItem="wkc-ic-B4c" firstAttribute="top" secondItem="0PY-KZ-E0e" secondAttribute="topMargin" constant="18" id="PIv-0E-ZRY"/>
-                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="centerY" secondItem="0PY-KZ-E0e" secondAttribute="centerY" id="ab2-im-Z6Z"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="E11-3e-tus" secondAttribute="bottom" constant="29.5" id="aqL-Ru-x7q"/>
-                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="top" secondItem="0PY-KZ-E0e" secondAttribute="topMargin" constant="6" id="cnv-pA-ivq"/>
-                                        <constraint firstItem="E11-3e-tus" firstAttribute="bottom" secondItem="wkc-ic-B4c" secondAttribute="bottom" id="uzn-aF-PZp"/>
+                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="leading" secondItem="0PY-KZ-E0e" secondAttribute="leadingMargin" id="0Gz-84-emu"/>
+                                        <constraint firstItem="wkc-ic-B4c" firstAttribute="leading" secondItem="E11-3e-tus" secondAttribute="trailing" constant="8" symbolic="YES" id="I67-JJ-iBD"/>
+                                        <constraint firstItem="wkc-ic-B4c" firstAttribute="top" secondItem="0PY-KZ-E0e" secondAttribute="topMargin" constant="27" id="L0H-MM-POi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wkc-ic-B4c" secondAttribute="bottom" constant="20.5" id="LrI-Gc-4z0"/>
+                                        <constraint firstItem="E11-3e-tus" firstAttribute="leading" secondItem="oNz-Cy-5u2" secondAttribute="trailing" constant="7" id="PQp-uS-wJ2"/>
+                                        <constraint firstItem="E11-3e-tus" firstAttribute="centerY" secondItem="wkc-ic-B4c" secondAttribute="centerY" id="RWN-CS-ol9"/>
+                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="centerY" secondItem="0PY-KZ-E0e" secondAttribute="centerY" id="Ugi-8q-2oF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wkc-ic-B4c" secondAttribute="trailing" constant="12" id="max-p7-EOM"/>
+                                        <constraint firstItem="oNz-Cy-5u2" firstAttribute="top" secondItem="0PY-KZ-E0e" secondAttribute="topMargin" constant="6" id="sfH-Ez-1NV"/>
+                                        <constraint firstItem="E11-3e-tus" firstAttribute="top" secondItem="0PY-KZ-E0e" secondAttribute="topMargin" constant="30" id="vKI-c4-SIk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -489,7 +485,4 @@
         <image name="heart" width="64" height="64"/>
         <image name="upArrow" width="176" height="135"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="uP5-SR-R1m"/>
-    </inferredMetricsTieBreakers>
 </document>

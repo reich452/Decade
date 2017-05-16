@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegate {
+class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegate, SFSafariViewControllerDelegate {
     
     @IBOutlet weak var imageSearchBar: UISearchBar!
     
@@ -19,6 +20,8 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
             tableView.reloadData()
         }
     }
+    
+    var safariVC: SFSafariViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,14 +60,25 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         return cell
     }
     
-    // MARK: - Navigation
+    // MARK: - Navigation Safari 
     
+    func showSafariView(urlString: String) {
+        guard let url = NSURL(string: urlString) else { return }
+        
+        let webVC = SFSafariViewController(url: url as URL, entersReaderIfAvailable: true)
+        webVC.delegate = self
+        present(webVC, animated: true, completion: nil)
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let decadeWebVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "decadeWebView") as? DecadeWebViewController else { print("Can't load decadeWebVC"); return }
+        let decade = decades[indexPath.row]
         
-        decadeWebVC.url = self.decades[indexPath.item].hostPageUrl
-        self.present(decadeWebVC, animated: true, completion: nil)
+        guard let url = decade.hostPageUrl else { print("Can't get the decade host page url"); return }
+        self.showSafariView(urlString: url)
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -106,7 +120,7 @@ extension DecadeSearchTableViewController {
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         imageSearchBar.text = nil
-        imageSearchBar.setShowsCancelButton(true, animated: true)
+        searchBar.setShowsCancelButton(true, animated: true)
         imageSearchBar.endEditing(true)
     }
     

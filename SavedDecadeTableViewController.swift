@@ -12,37 +12,32 @@ import UIKit
 class SavedDecadeTableViewController: UITableViewController, isLikedButtonTappedTVCellDelegateDestination {
     
     var decades: [Decade] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DecadeController.shared.fetchUserLikedDecades { 
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        DecadeController.shared.fetchUserLikedDecades {
+            DecadeController.shared.fetchUserLikedImages {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
     
-//    func updateViews() {
-//        DecadeController.shared.fetchUserLikedDecades { (likedDecade) in
-//            
-//        }
-//    }
-    
     func sendLikedImagesToSavedTVController(sender: DecadeImageTableViewCell) {
-        guard let user = sender.user,
-            let indexPath = tableView.indexPath(for: sender) else { print("Can't send liked image to cell"); return }
+        //        guard let user = sender.user,
+        //            let indexPath = tableView.indexPath(for: sender) else { print("Can't send liked image to cell"); return }
     }
-
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
+        
         return DecadeController.shared.likedDecades.count
     }
     

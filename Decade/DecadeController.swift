@@ -31,12 +31,24 @@ class DecadeController {
             let decades = records.flatMap { Decade(cloudKitRecord: $0) }
             self.likedDecades = decades
             completion()
-            
         })
-        
+    }
+    
+    func fetchUserLikedImages(completion: @escaping () -> Void) {
+        let group = DispatchGroup()
+        for likedDecade in likedDecades {
+            group.enter()
+            // This is cool!
+            ImageController.image(forURL: likedDecade.contentUrlString, completion: { (likeImage) in
+                likedDecade.decadeImage = likeImage
+                group.leave()
+            })
+        }
+        group.notify(queue: DispatchQueue.main) { 
+            completion()
+        }
     }
 
-    
     /// Saves liked decade to CloudKit.
     func saveLikedDecadeToCloudKit(decade: Decade, completion: @escaping (CKRecordID?) -> Void) {
         guard let cloudKitRecordID = UserController.shared.currentUser?.cloudKitRecordID else { print("Cant find current user"); completion(nil); return }
@@ -61,7 +73,6 @@ class DecadeController {
     
     func deleteLikedDecadeFromCloudKit(decade: Decade, completion: @escaping () -> Void) {
         let record = CKRecord(decade)
-        
         cloudKitManager.deleteRecordWithID(record.recordID) { (deletedRecord, error) in
             
             if let error = error {
@@ -71,7 +82,6 @@ class DecadeController {
             completion()
         }
     }
-    
 }
 
 

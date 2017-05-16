@@ -26,27 +26,6 @@ class DecadeSearchController {
     
     var decades = [Decade]()
     
-    func searchTermsFor(decade: Decades) -> [String] {
-        switch decade {
-        case .currentYear:
-            return ["hipsters 2017", "hipster fashion", "hipster trends"]
-        case .twothousands:
-            return ["early 2000s", "early 2000s mtv"]
-        case .ninties:
-            return ["90s"]
-        case .eightys:
-            return ["80s fashion"]
-        case .seventies:
-            return ["70s style"]
-        case .sixties:
-            return ["1960s people black and white photos"]
-        case .fifties:
-            return ["1950s photos", "1950s famous people black and white photos"]
-        case .none:
-            return []
-        }
-    }
-    
     func searchForImagesWith(searchTerm: String, completion: @escaping ([Decade]?, DecadeError?) -> Void) {
         guard let baseURL = baseURL,
         let currentUserRecordId = UserController.shared.currentUser?.cloudKitRecordID
@@ -80,10 +59,35 @@ class DecadeSearchController {
         }
     }
     
+    func safaiFromSearch(searchTerm: String) {
+        
+    }
+    
     func getRandomSearchTermFrom(searchTerms: [String]) -> String {
         let randomIndex = Int(arc4random_uniform(UInt32(searchTerms.count - 1)))
         
         return searchTerms[randomIndex]
+    }
+    
+    func searchTermsFor(decade: Decades) -> [String] {
+        switch decade {
+        case .currentYear:
+            return ["hipsters 2017", "hipster fashion", "hipster trends"]
+        case .twothousands:
+            return ["early 2000s", "early 2000s mtv"]
+        case .ninties:
+            return ["90s"]
+        case .eightys:
+            return ["80s fashion"]
+        case .seventies:
+            return ["70s style"]
+        case .sixties:
+            return ["1960s people black and white photos"]
+        case .fifties:
+            return ["1950s photos", "1950s famous people black and white photos"]
+        case .none:
+            return []
+        }
     }
     
     func searchForImagesWithKeywords(keywords: [String], completion: @escaping ([Decade]?, DecadeError?) -> Void) {
