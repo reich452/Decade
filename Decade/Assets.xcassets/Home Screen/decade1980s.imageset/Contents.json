@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Fourth1980s.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Fourth1980s.png",
       "scale" : "2x"
     },
     {

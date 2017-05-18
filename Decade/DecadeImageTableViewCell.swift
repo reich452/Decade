@@ -12,7 +12,6 @@ import UIKit
 class DecadeImageTableViewCell: UITableViewCell {
     
     weak var delegate: isLikedButtonTappedTableViewCellDelegate?
-    weak var delegateDestination: isLikedButtonTappedTVCellDelegateDestination?
     
     @IBOutlet weak var decadeNameLabel: UILabel!
     @IBOutlet weak var decadeImageView: UIImageView!
@@ -91,8 +90,5 @@ protocol isLikedButtonTappedTableViewCellDelegate: class {
     func isHeartButtonTapped(sender: DecadeImageTableViewCell)
 }
 
-protocol isLikedButtonTappedTVCellDelegateDestination: class {
-    func sendLikedImagesToSavedTVController(sender: DecadeImageTableViewCell)
-}
 
 

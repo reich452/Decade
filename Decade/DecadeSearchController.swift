@@ -13,6 +13,8 @@ import CloudKit
 class DecadeSearchController {
     
     static let shared = DecadeSearchController()
+
+    weak var delegate: DecadesWereAddedToDelegate?
     
     private let searchTermKey = "q"
     private let countKey = "count"
@@ -20,7 +22,10 @@ class DecadeSearchController {
     private let contentURLKey = "contentUrl"
     private let apiParameter = "Ocp-Apim-Subscription-Key"
     private let baseURL = URL(string: "https://api.cognitive.microsoft.com/bing/v5.0/images/search")
+    private let baseURL2 = URL(string: "https://api.cognitive.microsoft.com/bing/v7.0/images/search")
     private let apiKey = "0231de06566d4717873444afb447e586"
+    private let apiKey2 = "c3f846e0028943f5afd96e9cdd6eae73"
+    
     
     // MARK: - Properties 
     
@@ -90,19 +95,19 @@ class DecadeSearchController {
         }
     }
     
-    func searchForImagesWithKeywords(keywords: [String], completion: @escaping ([Decade]?, DecadeError?) -> Void) {
+    func searchForImagesWithKeywords(keywords: [String], completion: @escaping (DecadeError?) -> Void) {
         guard let baseURL = baseURL,
             let currentUserRecordId = UserController.shared.currentUser?.cloudKitRecordID
-            else { completion([], .baseUrlFailed); print("base url failed"); return }
+            else { completion(.baseUrlFailed); print("base url failed"); return }
 
         let urlParameters: [String: String] = ["q": getRandomSearchTermFrom(searchTerms: keywords)]
         NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
             if let error = error { print("Error: searching for image \(error.localizedDescription)")
-                completion([], .imageSearchFailure); print("imageSearch failure"); return }
+                completion(.imageSearchFailure); print("imageSearch failure"); return }
             
             guard let data = data,
                 let jsonDictionaries = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any],
-                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion([], .jsonConversionFailure); print("jsonConversionFailure"); return }
+                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion(.jsonConversionFailure); print("jsonConversionFailure"); return }
             
             let decades = imageArray.flatMap( {Decade(jsonDictionary: $0)})
             
@@ -110,20 +115,25 @@ class DecadeSearchController {
             
             for decade in decades {
                 group.enter()
+                decade.ownerReference = CKReference(recordID: currentUserRecordId, action: .none)
                 ImageController.image(forURL: decade.contentUrlString, completion: { (newImage) in
                     decade.decadeImage = newImage
-                    decade.ownerReference = CKReference(recordID: currentUserRecordId, action: .none)
+                    self.decades.append(decade)
+                    self.delegate?.decadesWereAddedTo()
                     group.leave()
                 })
             }
             
             group.notify(queue: DispatchQueue.main, execute: {
                 
-                completion(decades, nil)
+                completion(nil)
             })
         }
     }
-    
+}
+
+protocol DecadesWereAddedToDelegate: class {
+    func decadesWereAddedTo()
 }
 
 enum Decades {

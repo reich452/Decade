@@ -44,6 +44,11 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
             }
         }
     }
+//    
+//    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+//        print("yay")
+//        return true
+//    }
     
     
     // MARK: - Table view data source
@@ -106,23 +111,23 @@ extension DecadeSearchTableViewController {
         
         glassIconView?.tintColor = UIColor.black
         
+        
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        imageSearchBar.showsCancelButton = true
         if imageSearchBar.isFirstResponder == true {
             imageSearchBar.placeholder = ""
         }
     }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        imageSearchBar.setShowsCancelButton(true, animated: true)
-        // TODO: - Not showing Up????
-    }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        imageSearchBar.text = nil
+        searchBar.text = nil
         searchBar.setShowsCancelButton(true, animated: true)
-        imageSearchBar.endEditing(true)
+        
+        // Remove focus from the search bar.
+        searchBar.endEditing(true)
     }
-    
+
 }
 

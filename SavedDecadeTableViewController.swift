@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SavedDecadeTableViewController: UITableViewController, isLikedButtonTappedTVCellDelegateDestination {
+class SavedDecadeTableViewController: UITableViewController {
     
     var decades: [Decade] = []
     
@@ -29,10 +29,7 @@ class SavedDecadeTableViewController: UITableViewController, isLikedButtonTapped
         }
     }
     
-    func sendLikedImagesToSavedTVController(sender: DecadeImageTableViewCell) {
-        //        guard let user = sender.user,
-        //            let indexPath = tableView.indexPath(for: sender) else { print("Can't send liked image to cell"); return }
-    }
+
     
     // MARK: - Table view data source
     
