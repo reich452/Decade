@@ -15,7 +15,7 @@ class SavedDecadeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title =  "Saved Images"
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -31,19 +31,19 @@ class DecadeSearchController {
     
     var decades = [Decade]()
     
-    func searchForImagesWith(searchTerm: String, completion: @escaping ([Decade]?, DecadeError?) -> Void) {
+    func searchForImagesWith(searchTerm: String, recordFetchedBlock: @escaping (Decade?) -> Void, completion: @escaping (DecadeError?) -> Void) {
         guard let baseURL = baseURL,
         let currentUserRecordId = UserController.shared.currentUser?.cloudKitRecordID
-            else { completion([], .baseUrlFailed); return }
+            else { completion(.baseUrlFailed); print("Base url failed"); return }
         
         let urlParameters = ["q": searchTerm]
         NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
             if let error = error { print("Error: searching for image \(error.localizedDescription)")
-                completion([], .imageSearchFailure); return }
+                completion(.imageSearchFailure); return }
             
             guard let data = data,
                 let jsonDictionaries = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any],
-                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion([], .jsonConversionFailure); print("Json Conversion failure"); return }
+                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion(.jsonConversionFailure); print("Json Conversion failure"); return }
             
             let decades = imageArray.flatMap( {Decade(jsonDictionary: $0)})
             let group = DispatchGroup()
@@ -53,13 +53,14 @@ class DecadeSearchController {
                 ImageController.image(forURL: decade.contentUrlString, completion: { (newImage) in
                     decade.decadeImage = newImage
                     decade.ownerReference = CKReference(recordID: currentUserRecordId, action: .none)
+                    recordFetchedBlock(decade)
                     group.leave()
                 })
             }
             
             group.notify(queue: DispatchQueue.main, execute: {
                 
-                completion(decades, nil)
+                completion(nil)
             })
         }
     }

@@ -22,13 +22,13 @@ class DecadeHomeTableViewController: UITableViewController {
     var headerImageArray = LocalImageHelper.headerImageArray
     var headerImagesViews: [HeaderImage] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         loadHorizontalScrollView()
         timeSchedule()
+        setUpUI()
         UserController.shared.fetchLoggedInUser {
             print("Sucessfully fetched LoggedIn User")
             self.updateLikedDeades()
@@ -169,4 +169,11 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
         }
     }
     
+}
+
+extension DecadeHomeTableViewController {
+    
+    func setUpUI() {
+        self.title = "HOME"
+    }
 }

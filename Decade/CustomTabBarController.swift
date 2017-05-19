@@ -38,8 +38,12 @@ class CustomTabBarController: UITabBarController {
         
         tabBar.isTranslucent = true
         
-        // Mark: - TODO: Style the one pixel bar color and height
-        //let topBorder = CALayer()
+        let topBorder = CALayer()
+        topBorder.frame = CGRect(x: 0, y: 0, width: 1000, height: 0.5)
+        topBorder.backgroundColor = UIColor.rgb(229, green: 231, blue: 235).cgColor
+        tabBar.layer.addSublayer(topBorder)
+        tabBar.clipsToBounds = true 
+        
     }
 }
 

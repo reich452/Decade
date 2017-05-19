@@ -15,11 +15,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     
     // MARK: - Properties
     
-    var decades: [Decade] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var decades: [Decade] = []
     
     var safariVC: SFSafariViewController?
     
@@ -27,6 +23,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         super.viewDidLoad()
         searchBarUI()
         imageSearchBar.delegate = self
+        self.title = "Search"
     }
     
     // MARK: - SearchBar
@@ -36,21 +33,26 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let searchTerm = searchBar.text else { return }
         
-        DecadeSearchController.shared.searchForImagesWith(searchTerm: searchTerm) { (newDecades, decadeError) in
-            guard let decades = newDecades else { return }
+        DecadeSearchController.shared.searchForImagesWith(searchTerm: searchTerm, recordFetchedBlock: { (decade) in
+            guard let decade = decade else { return }
             DispatchQueue.main.async {
-                self.decades = decades
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.decades.append(decade)
+                let indexPath = IndexPath(row: self.decades.count - 1, section: 0)
+                let indexPaths = [indexPath]
+                self.tableView.insertRows(at: indexPaths, with: .fade)
+            }
+            
+        }) { (decadeError) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            if let decadeError = decadeError {
+                print("Error fetching searchTerm \(decadeError.localizedDescription)")
+                // TODO add alert controleller
+                return
             }
         }
     }
-//    
-//    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-//        print("yay")
-//        return true
-//    }
-    
-    
+
+
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,7 +67,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         return cell
     }
     
-    // MARK: - Navigation Safari 
+    // MARK: - Navigation Safari
     
     func showSafariView(urlString: String) {
         guard let url = NSURL(string: urlString) else { return }
@@ -116,18 +118,12 @@ extension DecadeSearchTableViewController {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         imageSearchBar.showsCancelButton = true
-        if imageSearchBar.isFirstResponder == true {
-            imageSearchBar.placeholder = ""
-        }
     }
     
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        imageSearchBar.showsCancelButton = false
         searchBar.text = nil
-        searchBar.setShowsCancelButton(true, animated: true)
-        
-        // Remove focus from the search bar.
-        searchBar.endEditing(true)
+        searchBar.resignFirstResponder()
     }
-
 }
 
