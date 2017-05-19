@@ -77,7 +77,6 @@ extension DecadeHomeViewController: UICollectionViewDelegate, UICollectionViewDa
     
     // MARK: UICollectionViewDataSource
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return LocalImageHelper.localImageArray.count
     }

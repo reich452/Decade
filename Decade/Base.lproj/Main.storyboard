@@ -319,20 +319,31 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="THW-Ew-Zge">
-                                    <rect key="frame" x="168" y="100" width="39" height="37"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </pageControl>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundHanger" translatesAutoresizingMaskIntoConstraints="NO" id="azd-Zm-GC5">
+                                    <rect key="frame" x="129" y="-50" width="108" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="108" id="hUO-ZE-fLz"/>
+                                    </constraints>
+                                </imageView>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffu-Sf-ocT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                                 </scrollView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="THW-Ew-Zge">
+                                    <rect key="frame" x="168" y="199" width="39" height="37"/>
+                                    <color key="backgroundColor" red="1" green="0.41708858812310945" blue="0.52401899833859367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </pageControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="ffu-Sf-ocT" firstAttribute="top" secondItem="UDo-5i-HQb" secondAttribute="top" id="Qmc-qo-tJr"/>
-                                <constraint firstAttribute="trailing" secondItem="ffu-Sf-ocT" secondAttribute="trailing" id="Tk8-MG-GV1"/>
-                                <constraint firstItem="ffu-Sf-ocT" firstAttribute="leading" secondItem="UDo-5i-HQb" secondAttribute="leading" id="i54-Se-Nbp"/>
-                                <constraint firstAttribute="bottom" secondItem="ffu-Sf-ocT" secondAttribute="bottom" id="pFa-DG-TWT"/>
+                                <constraint firstAttribute="bottom" secondItem="THW-Ew-Zge" secondAttribute="bottom" constant="2" id="0bI-Y6-Woa"/>
+                                <constraint firstItem="ffu-Sf-ocT" firstAttribute="top" secondItem="UDo-5i-HQb" secondAttribute="top" id="JfF-Ec-iy5"/>
+                                <constraint firstItem="ffu-Sf-ocT" firstAttribute="centerX" secondItem="THW-Ew-Zge" secondAttribute="centerX" id="MUt-ih-sCJ"/>
+                                <constraint firstItem="ffu-Sf-ocT" firstAttribute="leading" secondItem="UDo-5i-HQb" secondAttribute="leading" id="SV9-6Z-Bk4"/>
+                                <constraint firstItem="ffu-Sf-ocT" firstAttribute="top" secondItem="azd-Zm-GC5" secondAttribute="bottom" constant="22" id="jRr-Tx-UwA"/>
+                                <constraint firstItem="azd-Zm-GC5" firstAttribute="top" secondItem="UDo-5i-HQb" secondAttribute="top" constant="-50" id="lcV-V4-wM1"/>
+                                <constraint firstAttribute="trailing" secondItem="ffu-Sf-ocT" secondAttribute="trailing" id="lr8-G5-hau"/>
+                                <constraint firstItem="azd-Zm-GC5" firstAttribute="leading" secondItem="UDo-5i-HQb" secondAttribute="leading" constant="129" id="mlQ-GW-5ge"/>
+                                <constraint firstAttribute="bottom" secondItem="ffu-Sf-ocT" secondAttribute="bottom" id="sBH-6H-bS5"/>
                             </constraints>
                         </view>
                         <collectionView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9Nc-Zc-fnd">
@@ -340,30 +351,25 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pQO-wg-29S">
-                                <size key="itemSize" width="164" height="164"/>
+                                <size key="itemSize" width="162" height="168"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="15" minY="10" maxX="15" maxY="10"/>
                             </collectionViewFlowLayout>
                             <cells>
                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="decadeCell" id="5Gb-fd-49U" customClass="DecadeHomeCollectionViewCell" customModule="Decade" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="10" width="164" height="164"/>
+                                    <rect key="frame" x="15" y="10" width="162" height="168"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                        <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="168"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RzO-vW-TcK">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RzO-vW-TcK">
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                     </view>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="RzO-vW-TcK" secondAttribute="bottom" id="54L-ew-8AL"/>
-                                        <constraint firstItem="RzO-vW-TcK" firstAttribute="top" secondItem="5Gb-fd-49U" secondAttribute="top" id="ASP-cX-dzW"/>
-                                        <constraint firstItem="RzO-vW-TcK" firstAttribute="leading" secondItem="5Gb-fd-49U" secondAttribute="leading" id="XFA-qE-uHI"/>
-                                        <constraint firstAttribute="trailing" secondItem="RzO-vW-TcK" secondAttribute="trailing" id="chI-Su-sRc"/>
-                                    </constraints>
                                     <connections>
                                         <outlet property="decadeImageView" destination="RzO-vW-TcK" id="zSr-cL-byi"/>
                                     </connections>
@@ -459,6 +465,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backgroundHanger" width="330" height="133"/>
         <image name="heart" width="64" height="64"/>
         <image name="upArrow" width="176" height="135"/>
     </resources>

@@ -20,24 +20,45 @@ class DecadeHomeTableViewController: UITableViewController {
     var updateCount: Int = 0
     var headerImages = [UIImage]()
     var headerImageArray = LocalImageHelper.headerImageArray
+    var headerImagesViews: [HeaderImage] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadHorizontalScrollView()
         collectionView.delegate = self
         collectionView.dataSource = self
+        loadHorizontalScrollView()
+        timeSchedule()
         UserController.shared.fetchLoggedInUser {
             print("Sucessfully fetched LoggedIn User")
             self.updateLikedDeades()
         }
     }
     
-    internal func updateLikedDeades() {
+    private func updateLikedDeades() {
         DecadeController.shared.fetchUserLikedDecades {
             print("Feched User Liked Deades")
         }
     }
     
+    internal func timeSchedule() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
+    }
+    
+    internal func moveToNextPage (){
+        
+        let pageWidth:CGFloat = self.headerScrollView.frame.width
+        let maxWidth:CGFloat = pageWidth * 4
+        let contentOffset:CGFloat = self.headerScrollView.contentOffset.x
+        
+        var slideToX = contentOffset + pageWidth
+        
+        if  contentOffset + pageWidth == maxWidth
+        {
+            slideToX = 0
+        }
+        self.headerScrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:self.headerScrollView.frame.height), animated: true)
+    }
 }
 
 // MARK: - Horizonal Scroll View
@@ -46,8 +67,8 @@ extension DecadeHomeTableViewController {
     
     func loadHorizontalScrollView() {
         headerScrollView.delegate = self
-        let headerScroll: [HeaderImage] = createSlides()
-        setUpSlideScrollView(headerImages: headerScroll)
+        self.headerImagesViews = createSlides()
+        setUpSlideScrollView(headerImages: self.headerImagesViews)
         headerPageControl.numberOfPages = headerImages.count
         headerPageControl.currentPage = 0
         view.bringSubview(toFront: headerPageControl)
@@ -68,8 +89,8 @@ extension DecadeHomeTableViewController {
     }
     
     func setUpSlideScrollView(headerImages: [HeaderImage]) {
-        headerScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        headerScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(headerImages.count), height: view.frame.height)
+        headerScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 4)
+        headerScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(headerImages.count), height: view.frame.height / 4)
         
         headerScrollView.isPagingEnabled = true
         
