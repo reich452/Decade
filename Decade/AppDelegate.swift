@@ -23,8 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = customTabBarVC
         window?.makeKeyAndVisible()
         
-        UINavigationBar.appearance().tintColor = .customTabBarColor
+        // TODO Style the title font 
+        UINavigationBar.appearance().barTintColor = UIColor(red: 31/255, green: 32/255, blue: 34/255, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UITabBar.appearance().tintColor = UIColor.white
         application.statusBarStyle = .lightContent
         
         return true

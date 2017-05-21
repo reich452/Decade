@@ -13,7 +13,7 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customTabBar()
-        
+        self.tabBar.barTintColor = UIColor.customTabBarColor
     }
     
     func customTabBar() {
@@ -42,7 +42,7 @@ class CustomTabBarController: UITabBarController {
         topBorder.frame = CGRect(x: 0, y: 0, width: 1000, height: 0.5)
         topBorder.backgroundColor = UIColor.rgb(229, green: 231, blue: 235).cgColor
         tabBar.layer.addSublayer(topBorder)
-        tabBar.clipsToBounds = true 
+        tabBar.clipsToBounds = true
         
     }
 }

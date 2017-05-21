@@ -26,7 +26,6 @@ class DecadeSearchController {
     private let apiKey = "0231de06566d4717873444afb447e586"
     private let apiKey2 = "c3f846e0028943f5afd96e9cdd6eae73"
     
-    
     // MARK: - Properties 
     
     var decades = [Decade]()
