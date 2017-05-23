@@ -16,6 +16,7 @@ class DecadeSearchTableViewCell: UITableViewCell {
     var decade: Decade? {
         didSet {
             self.updateViews()
+            self.setUpUI()
         }
     }
     
@@ -26,6 +27,11 @@ class DecadeSearchTableViewCell: UITableViewCell {
             self.decadeTitleLabel.text = decade.imageName
             self.decadeImageView.image = decade.decadeImage
         }
+    }
+    
+    func setUpUI(){
+        decadeImageView.layer.cornerRadius = decadeImageView.frame.size.width / 2
+        decadeImageView.clipsToBounds = true
     }
 }
 
