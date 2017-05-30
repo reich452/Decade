@@ -63,11 +63,7 @@ class DecadeSearchController {
             })
         }
     }
-    
-    func safaiFromSearch(searchTerm: String) {
-        
-    }
-    
+
     func getRandomSearchTermFrom(searchTerms: [String]) -> String {
         let randomIndex = Int(arc4random_uniform(UInt32(searchTerms.count - 1)))
         
@@ -77,7 +73,7 @@ class DecadeSearchController {
     func searchTermsFor(decade: Decades) -> [String] {
         switch decade {
         case .currentYear:
-            return ["hipsters 2017", "hipster fashion", "hipster trends"]
+            return ["hipsters 2017", "hipster fashion", "hipster trends", "hipster girls"]
         case .twothousands:
             return ["early 2000s", "early 2000s mtv"]
         case .ninties:
@@ -90,6 +86,8 @@ class DecadeSearchController {
             return ["1960s people black and white photos"]
         case .fifties:
             return ["1950s photos", "1950s famous people black and white photos"]
+        case .fourteys:
+            return ["1940s photos black and white", "1940s big events"]
         case .none:
             return []
         }
@@ -144,5 +142,6 @@ enum Decades {
     case seventies
     case sixties
     case fifties
+    case fourteys
     case none
 }

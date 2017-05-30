@@ -44,7 +44,7 @@ class UserController {
                 let record = CKRecord(user: user)
                 CloudKitManager.shared.saveRecord(record, completion: { (record, error) in
                     if let error = error {
-                        print("Can't user saveRecord \(error.localizedDescription)")
+                        print("Can't create user record \(error.localizedDescription)")
                         completion()
                         return
                     }
@@ -97,7 +97,6 @@ class UserController {
             ImageController.image(forURL: likedImageUrl) { (likedImage) in
                 
             }
-            
         }
     }
 }
