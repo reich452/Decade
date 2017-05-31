@@ -73,15 +73,15 @@ class DecadeSearchController {
     func searchTermsFor(decade: Decades) -> [String] {
         switch decade {
         case .currentYear:
-            return ["hipsters 2017", "hipster fashion", "hipster trends", "hipster girls"]
+            return ["hipsters 2017", "hipster fashion", "hipster trends", "hipster girls", "2017 fashion"]
         case .twothousands:
             return ["early 2000s", "early 2000s mtv"]
         case .ninties:
-            return ["90s"]
+            return ["90s", "1990s style", "1990s style funny"]
         case .eightys:
             return ["80s fashion"]
         case .seventies:
-            return ["70s style"]
+            return ["70s style", "1970s hippie fashion"]
         case .sixties:
             return ["1960s people black and white photos"]
         case .fifties:

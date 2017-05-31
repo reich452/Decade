@@ -16,6 +16,8 @@ class DecadeImageTableViewCell: UITableViewCell {
     @IBOutlet weak var decadeNameLabel: UILabel!
     @IBOutlet weak var decadeImageView: UIImageView!
     @IBOutlet weak var isLikedButton: UIButton!
+    @IBOutlet weak var viewsLabel: UILabel!
+    
     
     var decade: Decade? {
         didSet {
@@ -82,7 +84,19 @@ class DecadeImageTableViewCell: UITableViewCell {
         } else {
             isLikedButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
         }
+        amountOfViews()
     }
+    
+    func amountOfViews() {
+        let randomNum:UInt32 = arc4random_uniform(108)
+
+        if randomNum <= 1 {
+            viewsLabel.text = ("View \(randomNum)")
+        } else {
+            viewsLabel.text = ("Views \(randomNum)")
+        }
+    }
+    
 }
 
 // MARK: - Protocol

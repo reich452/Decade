@@ -12,6 +12,7 @@ class SavedDecadeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var decadeImageView: UIImageView!
     @IBOutlet weak var decadeNameLabel: UILabel!
+    @IBOutlet weak var yearLable: UILabel!
     
     var users: User?
     
@@ -26,6 +27,7 @@ class SavedDecadeTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.decadeImageView.image = decade.decadeImage
             self.decadeNameLabel.text = decade.imageName
+            self.yearLable.text = decade.imageName.decadeYear
             
         }
     }

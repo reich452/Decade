@@ -12,6 +12,9 @@ import UIKit
 class SavedDecadeTableViewController: UITableViewController {
     
     var decades: [Decade] = []
+    var headerView: UIView?
+    var newHeaderLayer: CAShapeLayer?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,20 @@ class SavedDecadeTableViewController: UITableViewController {
         }
     }
     
-
+    func updateView() {
+        tableView.backgroundColor = UIColor.white
+        headerView = tableView.tableHeaderView
+        tableView.tableHeaderView = nil
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.addSubview(headerView ?? UIView())
+        
+        newHeaderLayer = CAShapeLayer()
+        newHeaderLayer?.fillColor = UIColor.black.cgColor
+        headerView?.layer.mask = newHeaderLayer
+        
+     }
+    
+    
     
     // MARK: - Table view data source
     
@@ -45,19 +61,11 @@ class SavedDecadeTableViewController: UITableViewController {
         cell.decade = decade
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-        }
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
+}
+
+struct StretchHeader {
+    private let headerHeight: CGFloat = 300
+    private let headerCut: CGFloat = 50
 }
 
 

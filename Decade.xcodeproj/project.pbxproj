@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013B25BC1EDF539400F9E635 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013B25BB1EDF539400F9E635 /* StringHelper.swift */; };
 		014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014179D71EB791FB00315C15 /* AppDelegate.swift */; };
 		014179DD1EB791FB00315C15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 014179DB1EB791FB00315C15 /* Main.storyboard */; };
 		014179DF1EB791FB00315C15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 014179DE1EB791FB00315C15 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013B25BB1EDF539400F9E635 /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		014179D41EB791FB00315C15 /* Decade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		014179D71EB791FB00315C15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		014179DC1EB791FB00315C15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				01C65F181EC1452700DD675B /* UIColorHelper.swift */,
 				01ACC36D1EC3B51F0010B17C /* Constants.swift */,
 				01ACC36F1EC3FEF40010B17C /* UISearchBarHelper.swift */,
+				013B25BB1EDF539400F9E635 /* StringHelper.swift */,
 				01ACC3711EC3FF630010B17C /* UIImageHelper.swift */,
 			);
 			name = "Helper Files";
@@ -350,6 +353,7 @@
 				01FB2DE31ECD2F45007B0607 /* HeaderImage.swift in Sources */,
 				01ACC36C1EC365010010B17C /* SavedDecadeTableViewCell.swift in Sources */,
 				01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */,
+				013B25BC1EDF539400F9E635 /* StringHelper.swift in Sources */,
 				01417A0A1EB8112400315C15 /* DecadeTableViewController.swift in Sources */,
 				01ACC3701EC3FEF40010B17C /* UISearchBarHelper.swift in Sources */,
 				014179FA1EB79CDC00315C15 /* User.swift in Sources */,

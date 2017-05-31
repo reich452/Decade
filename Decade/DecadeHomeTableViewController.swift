@@ -53,8 +53,7 @@ class DecadeHomeTableViewController: UITableViewController {
         
         var slideToX = contentOffset + pageWidth
         
-        if  contentOffset + pageWidth == maxWidth
-        {
+        if  contentOffset + pageWidth == maxWidth {
             slideToX = 0
         }
         self.headerScrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:self.headerScrollView.frame.height), animated: true)
@@ -157,6 +156,8 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
             selectedDecade = .sixties
         case 6:
             selectedDecade = .fifties
+        case 7:
+            selectedDecade = .fourteys
         default:
             print("Can't preset decade \(DecadeError.noPreslectedDecades)")
             break

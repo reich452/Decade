@@ -27,9 +27,9 @@ class DecadeTableViewController: UITableViewController, isLikedButtonTappedTable
     // MARK: - Protocol
     
     func isHeartButtonTapped(sender: DecadeImageTableViewCell) {
-        print("Hearto button tapped")
+        print("Heart button tapped")
     }
-    
+
     func decadesWereAddedTo() {
         let indexPath = IndexPath(row: DecadeSearchController.shared.decades.count - 1, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .fade)
@@ -58,11 +58,6 @@ class DecadeTableViewController: UITableViewController, isLikedButtonTappedTable
         return cell
     }
     
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
 }
 
 
