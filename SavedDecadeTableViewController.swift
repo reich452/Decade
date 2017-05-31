@@ -11,14 +11,15 @@ import UIKit
 
 class SavedDecadeTableViewController: UITableViewController {
     
+    let stretchyHeader = StretchHeader()
     var decades: [Decade] = []
     var headerView: UIView?
     var newHeaderLayer: CAShapeLayer?
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title =  "Saved Images"
+        updateView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,11 +44,44 @@ class SavedDecadeTableViewController: UITableViewController {
         newHeaderLayer?.fillColor = UIColor.black.cgColor
         headerView?.layer.mask = newHeaderLayer
         
+        let newHeight = stretchyHeader.headerHeight - stretchyHeader.headerCut / 2
+        
+        tableView.contentInset = UIEdgeInsets(top: newHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -newHeight)
+        setNewView()
      }
+    
+    func setNewView() {
+        
+        let newHeight = stretchyHeader.headerHeight - stretchyHeader.headerCut / 2
+        var getHeaderFrame = CGRect(x: 0, y: -newHeight, width: tableView.bounds.width, height: stretchyHeader.headerHeight)
+        
+        if tableView.contentOffset.y < newHeight {
+            getHeaderFrame.origin.y = tableView.contentOffset.y
+            getHeaderFrame.size.height = -tableView.contentOffset.y + stretchyHeader.headerCut / 2
+        }
+        
+        headerView?.frame = getHeaderFrame
+        let cutDirecrtion = UIBezierPath()
+        cutDirecrtion.move(to: CGPoint(x: 0, y: 0))
+        cutDirecrtion.addLine(to: CGPoint(x: getHeaderFrame.width, y: 0))
+        cutDirecrtion.addLine(to: CGPoint(x: getHeaderFrame.width, y: getHeaderFrame.height))
+        cutDirecrtion.addLine(to: CGPoint(x: 0, y: getHeaderFrame.height - stretchyHeader.headerCut))
+        newHeaderLayer?.path = cutDirecrtion.cgPath
+    
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        setNewView()
+    }
     
     
     
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 350
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -64,8 +98,8 @@ class SavedDecadeTableViewController: UITableViewController {
 }
 
 struct StretchHeader {
-    private let headerHeight: CGFloat = 300
-    private let headerCut: CGFloat = 50
+    fileprivate let headerHeight: CGFloat = 250
+    fileprivate let headerCut: CGFloat = -30
 }
 
 
