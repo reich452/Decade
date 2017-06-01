@@ -18,7 +18,6 @@ class DecadeImageTableViewCell: UITableViewCell {
     @IBOutlet weak var isLikedButton: UIButton!
     @IBOutlet weak var viewsLabel: UILabel!
     
-    
     var decade: Decade? {
         didSet {
             updateViews()
@@ -33,8 +32,10 @@ class DecadeImageTableViewCell: UITableViewCell {
         updateLikeButton()
     }
     
+    // TODO: - Refactor into cotroller. Cells need to be dumb
+    
     // MARK: - Methods
-    func updateLikeButton() {
+   func updateLikeButton() {
         guard let decade = decade,
             let currentUser = UserController.shared.currentUser
             else { return }
@@ -73,7 +74,7 @@ class DecadeImageTableViewCell: UITableViewCell {
         }
     }
     
-    private func updateViews() {
+    func updateViews() {
         guard let decade = decade, let user = UserController.shared.currentUser else { return }
         
         self.decadeNameLabel.text = decade.imageName
@@ -87,7 +88,7 @@ class DecadeImageTableViewCell: UITableViewCell {
         amountOfViews()
     }
     
-    func amountOfViews() {
+   private func amountOfViews() {
         let randomNum:UInt32 = arc4random_uniform(108)
 
         if randomNum <= 1 {
