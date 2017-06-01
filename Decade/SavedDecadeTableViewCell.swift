@@ -28,7 +28,7 @@ class SavedDecadeTableViewCell: UITableViewCell {
             self.decadeImageView.image = decade.decadeImage
             self.decadeNameLabel.text = decade.imageName
             self.yearLable.text = decade.imageName.decadeYear
-            
         }
     }
+   
 }

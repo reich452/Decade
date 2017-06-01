@@ -56,7 +56,7 @@ class DecadeHomeTableViewController: UITableViewController {
         if  contentOffset + pageWidth == maxWidth {
             slideToX = 0
         }
-        self.headerScrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:self.headerScrollView.frame.height), animated: true)
+        self.headerScrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height: self.headerScrollView.frame.height), animated: true)
     }
 }
 
@@ -80,9 +80,9 @@ extension DecadeHomeTableViewController {
         let secondHeader: HeaderImage = Bundle.main.loadNibNamed("HeaderImage", owner: self, options: nil)?.first as! HeaderImage
         secondHeader.headerImageView.image = #imageLiteral(resourceName: "2.jpg")
         let thirdHeader: HeaderImage = Bundle.main.loadNibNamed("HeaderImage", owner: self, options: nil)?.first as! HeaderImage
-        thirdHeader.headerImageView.image = #imageLiteral(resourceName: "fashion2017")
+        thirdHeader.headerImageView.image = #imageLiteral(resourceName: "3.jpg")
         let fourthHeader: HeaderImage = Bundle.main.loadNibNamed("HeaderImage", owner: self, options: nil)?.first as! HeaderImage
-        fourthHeader.headerImageView.image = #imageLiteral(resourceName: "3.jpg")
+        fourthHeader.headerImageView.image = #imageLiteral(resourceName: "4.jpg")
         
         return [firstHeader, secondHeader, thirdHeader, fourthHeader]
     }

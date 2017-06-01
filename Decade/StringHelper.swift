@@ -15,3 +15,10 @@ extension String {
         return stringArray.filter({$0.characters.count == 4}).first
     }
 }
+
+extension String {
+    var decadeYearAbb: String? {
+        let stringArray = self.components(separatedBy: CharacterSet.decimalDigits.inverted)
+        return stringArray.filter({$0.characters.count == 2}).first
+    }
+}

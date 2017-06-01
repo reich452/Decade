@@ -232,7 +232,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="268"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ftc-uW-cbi">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likedDecadeHeader" translatesAutoresizingMaskIntoConstraints="NO" id="Ftc-uW-cbi">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 </imageView>
                             </subviews>
@@ -500,9 +500,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1.jpg" width="838" height="480"/>
         <image name="backgroundHanger" width="330" height="133"/>
         <image name="heart" width="64" height="64"/>
+        <image name="likedDecadeHeader" width="440" height="292"/>
         <image name="upArrow" width="176" height="135"/>
     </resources>
 </document>
