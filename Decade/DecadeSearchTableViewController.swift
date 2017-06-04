@@ -35,24 +35,25 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         
         DecadeSearchController.shared.searchForImagesWith(searchTerm: searchTerm, recordFetchedBlock: { (decade) in
             guard let decade = decade else { return }
+            
             DispatchQueue.main.async {
                 self.decades.append(decade)
                 let indexPath = IndexPath(row: self.decades.count - 1, section: 0)
                 let indexPaths = [indexPath]
                 self.tableView.insertRows(at: indexPaths, with: .fade)
+                
             }
             
         }) { (decadeError) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let decadeError = decadeError {
                 print("Error fetching searchTerm \(decadeError.localizedDescription)")
-                // TODO add alert controleller
+                // TODO add alert controleller for the user
                 return
             }
         }
     }
-
-
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -116,14 +117,24 @@ extension DecadeSearchTableViewController {
         
     }
     
+    // MARK: - Delegate Methods 
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         imageSearchBar.showsCancelButton = true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty == true {
+            decades.removeAll()
+            tableView.reloadData()
+        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         imageSearchBar.showsCancelButton = false
         searchBar.text = nil
         searchBar.resignFirstResponder()
+        
     }
 }
 
