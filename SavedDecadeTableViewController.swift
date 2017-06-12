@@ -9,10 +9,12 @@
 import UIKit
 
 
-class SavedDecadeTableViewController: UITableViewController {
+class SavedDecadeTableViewController: UITableViewController, SavedDecadeTableViewCellDelegate {
     
     let stretchyHeader = StretchHeader()
     var decades: [Decade] = []
+    var decade: Decade?
+    var user: User?
     var headerView: UIView?
     var newHeaderLayer: CAShapeLayer?
 
@@ -71,11 +73,23 @@ class SavedDecadeTableViewController: UITableViewController {
     
     }
     
+    // MARK: ShareButtonTableViewCellDelegate
+    
+    func shareButtonTapped(_ sender: SavedDecadeTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: sender) else { return }
+        
+        let decade = DecadeController.shared.likedDecades[indexPath.row]
+        guard let decadeImage = decade.decadeImage else { return }
+        let decadeName = decade.imageName
+    
+        let activityVC = UIActivityViewController(activityItems: [decadeImage, decadeName], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         setNewView()
     }
-    
-    
     
     // MARK: - Table view data source
     
@@ -93,6 +107,9 @@ class SavedDecadeTableViewController: UITableViewController {
         
         let decade = DecadeController.shared.likedDecades[indexPath.row]
         cell.decade = decade
+        cell.delegate = self
+        cell.shareButtonTapped(self)
+        
         return cell
     }
 }

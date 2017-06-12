@@ -26,6 +26,9 @@
 		01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */; };
 		01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A141EB8F3C100315C15 /* CustomTabBarController.swift */; };
 		01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */; };
+		01681B631EEB9AB900D4712D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01681B621EEB9AB900D4712D /* Photo.swift */; };
+		01681B651EEC412700D4712D /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01681B641EEC412700D4712D /* PhotoController.swift */; };
+		01681B671EECAD4D00D4712D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01681B661EECAD4D00D4712D /* CameraController.swift */; };
 		01A795061EBAA49300E62DD6 /* LocalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795051EBAA49300E62DD6 /* LocalImage.swift */; };
 		01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795071EBAA4F100E62DD6 /* LocalImageController.swift */; };
 		01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */; };
@@ -67,6 +70,9 @@
 		01417A121EB8231A00315C15 /* DecadeSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeSearchTableViewCell.swift; sourceTree = "<group>"; };
 		01417A141EB8F3C100315C15 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedDecadeTableViewController.swift; path = ../SavedDecadeTableViewController.swift; sourceTree = "<group>"; };
+		01681B621EEB9AB900D4712D /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		01681B641EEC412700D4712D /* PhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		01681B661EECAD4D00D4712D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		01A795051EBAA49300E62DD6 /* LocalImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImage.swift; sourceTree = "<group>"; };
 		01A795071EBAA4F100E62DD6 /* LocalImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageController.swift; sourceTree = "<group>"; };
 		01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageHelper.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			children = (
 				014179F91EB79CDC00315C15 /* User.swift */,
 				014179F71EB7963A00315C15 /* Decade.swift */,
+				01681B621EEB9AB900D4712D /* Photo.swift */,
 				01A795051EBAA49300E62DD6 /* LocalImage.swift */,
 			);
 			name = Model;
@@ -150,6 +157,8 @@
 				014179FB1EB7A4FE00315C15 /* DecadeSearchController.swift */,
 				01C65F1C1EC2264B00DD675B /* UserController.swift */,
 				01ACC3731EC4DB820010B17C /* DecadeController.swift */,
+				01681B641EEC412700D4712D /* PhotoController.swift */,
+				01681B661EECAD4D00D4712D /* CameraController.swift */,
 				01A795071EBAA4F100E62DD6 /* LocalImageController.swift */,
 				01ACC3631EC252420010B17C /* CloudKitManager.swift */,
 			);
@@ -341,6 +350,7 @@
 				01FB2D961ECCCB0D007B0607 /* DecadeHomeTableViewController.swift in Sources */,
 				01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */,
 				01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */,
+				01681B671EECAD4D00D4712D /* CameraController.swift in Sources */,
 				014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */,
 				01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */,
 				01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */,
@@ -352,6 +362,7 @@
 				01ACC3641EC252420010B17C /* CloudKitManager.swift in Sources */,
 				01FB2DE31ECD2F45007B0607 /* HeaderImage.swift in Sources */,
 				01ACC36C1EC365010010B17C /* SavedDecadeTableViewCell.swift in Sources */,
+				01681B631EEB9AB900D4712D /* Photo.swift in Sources */,
 				01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */,
 				013B25BC1EDF539400F9E635 /* StringHelper.swift in Sources */,
 				01417A0A1EB8112400315C15 /* DecadeTableViewController.swift in Sources */,
@@ -364,6 +375,7 @@
 				01C65F1D1EC2264B00DD675B /* UserController.swift in Sources */,
 				01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */,
 				01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */,
+				01681B651EEC412700D4712D /* PhotoController.swift in Sources */,
 				01ACC36E1EC3B51F0010B17C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

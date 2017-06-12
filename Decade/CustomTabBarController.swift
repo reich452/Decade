@@ -34,8 +34,14 @@ class CustomTabBarController: UITabBarController {
         thridNavigationController.title = "Saved"
         thridNavigationController.tabBarItem.image = #imageLiteral(resourceName: "heartIcon")
         
-        viewControllers = [navigationController, secondNavigationController, thridNavigationController]
+        // TODO: - add the cammera Tab bar 
+//        let storyboard4 = UIStoryboard(name: "Main", bundle: nil)
+//        let cameraTVC = storyboard4.instantiateViewController(withIdentifier: "cameraTVC")
+//        let fourthNavigationController = UINavigationController(rootViewController: cameraTVC)
+//        fourthNavigationController.title = "Your Decade"
+//        fourthNavigationController.tabBarItem.image = #imageLiteral(resourceName: "plussButton")
         
+        viewControllers = [navigationController, secondNavigationController, thridNavigationController]
         tabBar.isTranslucent = true
         
         let topBorder = CALayer()

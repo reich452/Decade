@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "1940s.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "PlussButton.png",
       "scale" : "2x"
     },
     {
