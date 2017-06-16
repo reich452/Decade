@@ -42,6 +42,9 @@
 		01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F181EC1452700DD675B /* UIColorHelper.swift */; };
 		01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */; };
 		01C65F1D1EC2264B00DD675B /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1C1EC2264B00DD675B /* UserController.swift */; };
+		01D169871EF46BC90063BDAC /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D169861EF46BC90063BDAC /* PostController.swift */; };
+		01EA61B71EF2260D003936B9 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA61B61EF2260D003936B9 /* CommentTableViewController.swift */; };
+		01EA61BD1EF2EEDD003936B9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA61BC1EF2EEDD003936B9 /* Post.swift */; };
 		01FB2D961ECCCB0D007B0607 /* DecadeHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB2D951ECCCB0D007B0607 /* DecadeHomeTableViewController.swift */; };
 		01FB2DE01ECD2EBC007B0607 /* HeaderImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FB2DDF1ECD2EBC007B0607 /* HeaderImage.xib */; };
 		01FB2DE31ECD2F45007B0607 /* HeaderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB2DE21ECD2F45007B0607 /* HeaderImage.swift */; };
@@ -86,6 +89,9 @@
 		01C65F181EC1452700DD675B /* UIColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
 		01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeWebViewController.swift; sourceTree = "<group>"; };
 		01C65F1C1EC2264B00DD675B /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		01D169861EF46BC90063BDAC /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		01EA61B61EF2260D003936B9 /* CommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
+		01EA61BC1EF2EEDD003936B9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		01FB2D951ECCCB0D007B0607 /* DecadeHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeHomeTableViewController.swift; sourceTree = "<group>"; };
 		01FB2DDF1ECD2EBC007B0607 /* HeaderImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderImage.xib; sourceTree = "<group>"; };
 		01FB2DE21ECD2F45007B0607 /* HeaderImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderImage.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 			children = (
 				014179F91EB79CDC00315C15 /* User.swift */,
 				014179F71EB7963A00315C15 /* Decade.swift */,
+				01EA61BC1EF2EEDD003936B9 /* Post.swift */,
 				01681B621EEB9AB900D4712D /* Photo.swift */,
 				01A795051EBAA49300E62DD6 /* LocalImage.swift */,
 			);
@@ -156,6 +163,7 @@
 			children = (
 				014179FB1EB7A4FE00315C15 /* DecadeSearchController.swift */,
 				01C65F1C1EC2264B00DD675B /* UserController.swift */,
+				01D169861EF46BC90063BDAC /* PostController.swift */,
 				01ACC3731EC4DB820010B17C /* DecadeController.swift */,
 				01681B641EEC412700D4712D /* PhotoController.swift */,
 				01681B661EECAD4D00D4712D /* CameraController.swift */,
@@ -172,6 +180,7 @@
 				01417A091EB8112400315C15 /* DecadeTableViewController.swift */,
 				01417A0B1EB8117400315C15 /* DecadeSearchTableViewController.swift */,
 				01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */,
+				01EA61B61EF2260D003936B9 /* CommentTableViewController.swift */,
 				01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */,
 			);
 			name = "View Controller";
@@ -348,9 +357,12 @@
 				01417A001EB7B20E00315C15 /* DecadeError.swift in Sources */,
 				01417A021EB7E8C200315C15 /* ImageController .swift in Sources */,
 				01FB2D961ECCCB0D007B0607 /* DecadeHomeTableViewController.swift in Sources */,
+				01EA61BD1EF2EEDD003936B9 /* Post.swift in Sources */,
+				01D169871EF46BC90063BDAC /* PostController.swift in Sources */,
 				01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */,
 				01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */,
 				01681B671EECAD4D00D4712D /* CameraController.swift in Sources */,
+				01EA61B71EF2260D003936B9 /* CommentTableViewController.swift in Sources */,
 				014179FE1EB7A80C00315C15 /* NetworkController.swift in Sources */,
 				01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */,
 				01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */,
@@ -508,6 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickreichard.Decade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -522,6 +535,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickreichard.Decade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

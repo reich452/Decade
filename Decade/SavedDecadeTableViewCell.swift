@@ -13,10 +13,9 @@ class SavedDecadeTableViewCell: UITableViewCell {
     @IBOutlet weak var decadeImageView: UIImageView!
     @IBOutlet weak var decadeNameLabel: UILabel!
     @IBOutlet weak var yearLable: UILabel!
-    
+
     var users: User?
     weak var delegate: SavedDecadeTableViewCellDelegate?
-    weak var parentTableViewController = UITableViewController()
     
     var decade: Decade? {
         didSet {
@@ -30,7 +29,12 @@ class SavedDecadeTableViewCell: UITableViewCell {
         delegate?.shareButtonTapped(self)
     }
     
-   private func updateViews() {
+    @IBAction func postButtonTapped(_ sender: Any) {
+    
+    }
+    
+    
+    private func updateViews() {
         guard let decade = decade else { return }
         DispatchQueue.main.async {
             self.decadeImageView.image = decade.decadeImage
@@ -38,6 +42,7 @@ class SavedDecadeTableViewCell: UITableViewCell {
             self.yearLable.text = decade.imageName.decadeYear
         }
     }
+    
 }
 
 protocol SavedDecadeTableViewCellDelegate: class {

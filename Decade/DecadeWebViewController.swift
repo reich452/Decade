@@ -11,7 +11,6 @@ import UIKit
 class DecadeWebViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     
-    var decades: [Decade] = []
     var url: String?
 
     override func viewDidLoad() {

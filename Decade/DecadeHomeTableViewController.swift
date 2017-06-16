@@ -14,7 +14,7 @@ class DecadeHomeTableViewController: UITableViewController {
     @IBOutlet weak var headerPageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var decades: [Decade] = []
+    
     var searchTerms: [String] = []
     var timer: Timer!
     var updateCount: Int = 0
@@ -58,6 +58,7 @@ class DecadeHomeTableViewController: UITableViewController {
         }
         self.headerScrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height: self.headerScrollView.frame.height), animated: true)
     }
+  
 }
 
 // MARK: - Horizonal Scroll View
@@ -94,7 +95,7 @@ extension DecadeHomeTableViewController {
         headerScrollView.isPagingEnabled = true
         
         for i in 0 ..< headerImages.count {
-            headerImages[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+            headerImages[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height / 4)
             headerScrollView.addSubview(headerImages[i])
         }
     }

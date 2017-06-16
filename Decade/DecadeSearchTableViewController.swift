@@ -48,7 +48,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let decadeError = decadeError {
                 print("Error fetching searchTerm \(decadeError.localizedDescription)")
-                // TODO add alert controleller for the user
+                self.connectionFailedAlert()
                 return
             }
         }
@@ -109,11 +109,8 @@ extension DecadeSearchTableViewController {
         clearButton.tintColor = UIColor.red
         
         let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
-        
         glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
-        
         glassIconView?.tintColor = UIColor.black
-        
         
     }
     
@@ -135,6 +132,15 @@ extension DecadeSearchTableViewController {
         searchBar.text = nil
         searchBar.resignFirstResponder()
         
+    }
+}
+
+extension DecadeSearchTableViewController {
+    func connectionFailedAlert() {
+        let alertController = UIAlertController(title: "Connection Failed", message: "Please wait unitl you have service", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 

@@ -11,7 +11,6 @@ import UIKit
 
 class DecadeImageTableViewCell: UITableViewCell {
     
-    weak var delegate: isLikedButtonTappedTableViewCellDelegate?
     
     @IBOutlet weak var decadeNameLabel: UILabel!
     @IBOutlet weak var decadeImageView: UIImageView!
@@ -28,7 +27,6 @@ class DecadeImageTableViewCell: UITableViewCell {
     
     // MARK: - Actions
     @IBAction func isLikedButtonTapped(_ sender: UIButton) {
-        delegate?.isHeartButtonTapped(sender: self)
         updateLikeButton()
     }
     
@@ -46,7 +44,7 @@ class DecadeImageTableViewCell: UITableViewCell {
             guard let index = currentUser.imageIds.index(of: decade.imageId) else { print("Cant find index of decade.imageID");return }
             currentUser.imageIds.remove(at: index)
             guard let indexAt = DecadeController.shared.likedDecades.index(where: {  $0.imageId == decade.imageId })
-                else { print("Not equal inexAt"); return } // Similar to euatable
+                else { print("Not equal inexAt"); return } // Similar to equatable
             let decadeToDelete = DecadeController.shared.likedDecades[indexAt]
             DecadeController.shared.deleteLikedDecadeFromCloudKit(decade: decadeToDelete, completion: {
                 DecadeController.shared.likedDecades.remove(at: indexAt)
@@ -100,10 +98,6 @@ class DecadeImageTableViewCell: UITableViewCell {
     
 }
 
-// MARK: - Protocol
-protocol isLikedButtonTappedTableViewCellDelegate: class {
-    func isHeartButtonTapped(sender: DecadeImageTableViewCell)
-}
 
 
 

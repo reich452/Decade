@@ -15,6 +15,7 @@ class User {
     static let likedImageUrlsKey = "likedImageURLs"
     static let likedImageKey = "likedImage"
     static let imageIdKey = "imageId"
+    static let commentsKey = "comment"
     static let appleUserRefKey = "appleUserRef"
     
     var likedImageURLs: [String] = []

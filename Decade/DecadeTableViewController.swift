@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DecadeTableViewController: UITableViewController, isLikedButtonTappedTableViewCellDelegate, DecadesWereAddedToDelegate  {
+class DecadeTableViewController: UITableViewController, DecadesWereAddedToDelegate  {
     
-    var decades: [Decade] = []
+    
     var searchTerms: [String] = []
     
     override func viewDidLoad() {
@@ -25,10 +25,6 @@ class DecadeTableViewController: UITableViewController, isLikedButtonTappedTable
     }
     
     // MARK: - Protocol
-    
-    func isHeartButtonTapped(sender: DecadeImageTableViewCell) {
-        print("Heart button tapped")
-    }
 
     func decadesWereAddedTo() {
         let indexPath = IndexPath(row: DecadeSearchController.shared.decades.count - 1, section: 0)
@@ -57,7 +53,6 @@ class DecadeTableViewController: UITableViewController, isLikedButtonTappedTable
         
         return cell
     }
-    
 }
 
 

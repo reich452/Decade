@@ -14,22 +14,22 @@ class UserController {
     
     static let shared = UserController()
     let publicDB = CKContainer.default().publicCloudDatabase
+    let cloudKitManager = CloudKitManager()
     // Notifications are like a radio tower signal. You are tuned into a chanel and you hear the anouncement
-    let DidRefreshNotification = Notification.Name("DidRefreshNotification")
+    // let DidRefreshNotification = Notification.Name("DidRefreshNotification")
     var appleUserRecordID: CKRecordID?
     var currentUser: User?
+ 
     private(set) var users = [User]() {
         didSet {
-            DispatchQueue.main.async {
-                let notificationCenter = NotificationCenter.default
-                notificationCenter.post(name: self.DidRefreshNotification, object: self)
-            }
+            //            DispatchQueue.main.async { TODO: add if delegate does not work 
+            //                let notificationCenter = NotificationCenter.default
+            //                notificationCenter.post(name: self.DidRefreshNotification, object: self)
+            //            }
         }
     }
     
-    init() {
-        // TODO: Notification Center
-    }
+
     
     func fetchLoggedInUser(completion: @escaping () -> Void) {
         
@@ -72,7 +72,7 @@ class UserController {
             completion(user)
         }
     }
-
+    
     func updateUserInCloudKit(completion: @escaping () -> Void) {
         guard let currentUser = currentUser else { completion(); print("Cannot update currten user to CK");return }
         
@@ -91,6 +91,7 @@ class UserController {
     
     func fetchLikedImages(completion: @escaping ([UIImage]) -> Void) {
         guard let imageUrls = self.currentUser?.likedImageURLs else { return }
+        
         let group = DispatchGroup()
         for likedImageUrl in imageUrls {
             group.enter()

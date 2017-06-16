@@ -8,11 +8,9 @@
 
 import UIKit
 
-
 class SavedDecadeTableViewController: UITableViewController, SavedDecadeTableViewCellDelegate {
     
     let stretchyHeader = StretchHeader()
-    var decades: [Decade] = []
     var decade: Decade?
     var user: User?
     var headerView: UIView?
@@ -30,6 +28,7 @@ class SavedDecadeTableViewController: UITableViewController, SavedDecadeTableVie
             DecadeController.shared.fetchUserLikedImages {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                
                 }
             }
         }
@@ -112,11 +111,13 @@ class SavedDecadeTableViewController: UITableViewController, SavedDecadeTableVie
         
         return cell
     }
+    
 }
 
 struct StretchHeader {
     fileprivate let headerHeight: CGFloat = 250
     fileprivate let headerCut: CGFloat = -30
 }
+
 
 
