@@ -21,7 +21,7 @@ class LocalImageController {
     func createAllLocalImages() -> [LocalImage] {
         var placeHolderImages: [LocalImage] = []
         for localImageName in LocalImageHelper.localImageNames {
-            guard let index = LocalImageHelper.localImageNames.index(of: localImageName) else { print("local images are not available "); return [] }
+            guard let index = LocalImageHelper.localImageNames.index(of: localImageName) else { print("local images are not matching indexOf "); return [] }
             let image = LocalImageHelper.localImageArray[index]
             let imageId = LocalImageHelper.ImageId[index]
             let localImages = LocalImage(name: localImageName, localImage: image, imageID: imageId)

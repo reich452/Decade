@@ -61,17 +61,35 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate, Po
         
         // TODO: - match the index's of the image and post
         
-//        let decadeImage = DecadeController.shared.likedDecades[indexPath.row]
-//        let cellImage = decadeImage.decadeImage
-//        
-//        cell.imageView?.layer.cornerRadius = 20.0
-//        cell.imageView?.layer.masksToBounds = true
-//        cell.imageView?.image = cellImage
+        //        let decadeImage = DecadeController.shared.likedDecades[indexPath.row]
+        //        let cellImage = decadeImage.decadeImage
+        //
+        //        cell.imageView?.layer.cornerRadius = 20.0
+        //        cell.imageView?.layer.masksToBounds = true
+        //        cell.imageView?.image = cellImage
         cell.textLabel?.text = post.post
         
         return cell
     }
-
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let post = PostController.shared.posts[indexPath.row]
+            guard let index = PostController.shared.posts.index(of: post) else { return }
+            PostController.shared.posts.remove(at: index)
+            
+            guard let recordID = post.cloudKitRecordID else { return }
+            PostController.shared.deletePostWIth(recordID: recordID, completion: { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                tableView.reloadData()
+            })
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 extension CommentTableViewController {
