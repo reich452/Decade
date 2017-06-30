@@ -24,6 +24,7 @@ class SavedDecadeTableViewController: UITableViewController, SavedDecadeTableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         DecadeController.shared.fetchUserLikedDecades {
             DecadeController.shared.fetchUserLikedImages {
                 DispatchQueue.main.async {

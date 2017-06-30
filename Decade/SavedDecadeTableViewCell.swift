@@ -33,7 +33,6 @@ class SavedDecadeTableViewCell: UITableViewCell {
     
     }
     
-    
     private func updateViews() {
         guard let decade = decade else { return }
         DispatchQueue.main.async {

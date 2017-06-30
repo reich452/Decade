@@ -14,7 +14,6 @@ class DecadeHomeTableViewController: UITableViewController {
     @IBOutlet weak var headerPageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     var searchTerms: [String] = []
     var timer: Timer!
     var updateCount: Int = 0

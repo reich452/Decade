@@ -13,7 +13,7 @@ class Post: Equatable {
     
     static let postKey = "post"
     static let typeKey = "Post"
-    static let ownterReferenceKey = "ownerReference"
+    static let ownerReferenceKey = "ownerReference"
     
     // MARK: Properties
     let post: String
@@ -40,15 +40,6 @@ class Post: Equatable {
         let record = CKRecord(recordType: "Post")
         record.setValue(post, forKey: Post.postKey)
         return record
-    }
-}
-
-extension CKRecord {
-    convenience init(_ post: Post) {
-        let recordID = post.cloudKitRecordID ?? CKRecordID(recordName: UUID().uuidString)
-        self.init(recordType: post.recordType, recordID: recordID)
-        setValue(post.post, forKey: Post.postKey)
-        self[Post.ownterReferenceKey] = CKReference(recordID: recordID, action: .deleteSelf)
     }
 }
 

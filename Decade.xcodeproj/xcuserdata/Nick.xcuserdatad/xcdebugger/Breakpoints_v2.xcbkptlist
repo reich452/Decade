@@ -25,60 +25,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Decade/CommentTableViewController.swift"
-            timestampString = "520443848.849217"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Decade.CommentTableViewController.viewWillAppear (Swift.Bool) -&gt; ()"
-                  moduleName = "Decade"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nick/Desktop/Decade/Decade/CommentTableViewController.swift"
-                  timestampString = "520475997.355257"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Decade.CommentTableViewController.(viewWillAppear (Swift.Bool) -&gt; ()).(closure #1)"
-                  moduleName = "Decade"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nick/Desktop/Decade/Decade/CommentTableViewController.swift"
-                  timestampString = "520475997.357991"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Decade/PhotoController.swift"
-            timestampString = "520463715.256499"
+            timestampString = "520528131.640248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "fetchPhotoRecords(completion:)"
             landmarkType = "7">
             <Locations>
@@ -122,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Decade/PhotoController.swift"
-            timestampString = "520463715.256499"
+            timestampString = "520528131.640248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "fetchPhotoRecords(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Decade/PhotoController.swift"
-            timestampString = "520463715.256499"
+            timestampString = "520528131.640248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "fetchPhotoRecords(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -153,60 +105,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Decade/FeedTableViewController.swift"
-            timestampString = "520527012.847958"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Decade/FeedTableViewController.swift"
-            timestampString = "520527012.847958"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Decade/FeedTableViewController.swift"
-            timestampString = "520527012.847958"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Decade/PhotoController.swift"
-            timestampString = "520466175.614995"
+            timestampString = "520528131.640248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "fetchPhotoRecords(completion:)"
             landmarkType = "7">
             <Locations>
@@ -250,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Decade/PhotoController.swift"
-            timestampString = "520466180.583102"
+            timestampString = "520528131.640248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "fetchPhotoRecords(completion:)"
             landmarkType = "7">
          </BreakpointContent>

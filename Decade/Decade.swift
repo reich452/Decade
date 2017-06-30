@@ -20,7 +20,6 @@ class Decade {
     static let typeKey = "Decade"
     static let hostPageUrlKey = "hostPageUrl"
     
-   // var resultImages: [UIImage]
     let imageName: String
     let contentUrlString: String
     var hostPageUrl: String?

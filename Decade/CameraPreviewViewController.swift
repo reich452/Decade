@@ -86,7 +86,6 @@ class CameraPreviewViewController: UIViewController, UITextFieldDelegate {
         
         translation.x = max(translation.x, imageView.frame.minX - imageCaptionTextField.frame.minX)
         translation.x = min(translation.x, imageView.frame.maxX - imageCaptionTextField.frame.maxX)
-        
         translation.y = max(translation.y, imageView.frame.minY - imageCaptionTextField.frame.minY)
         translation.y = min(translation.y, imageView.frame.maxY - imageCaptionTextField.frame.maxY)
         

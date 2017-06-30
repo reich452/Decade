@@ -25,7 +25,5 @@ struct Constants {
     
     static let imageIdKey = "imageId"
     
-    // Notification
-    static let DidRefreshNotification = Notification.Name("DidRefreshNotification")
 
 }

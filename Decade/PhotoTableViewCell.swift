@@ -23,7 +23,6 @@ class PhotoTableViewCell: UITableViewCell {
     func updateViews() {
         guard let photo = self.photo, let dateYear = photo.timestamp.currentYear else { return }
         
-        
         DispatchQueue.main.async {
             self.userPhotoImageView.image = photo.photoImage
             self.commentLable.text = photo.caption

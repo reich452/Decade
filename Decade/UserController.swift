@@ -20,17 +20,6 @@ class UserController {
     var appleUserRecordID: CKRecordID?
     var currentUser: User?
  
-    private(set) var users = [User]() {
-        didSet {
-            //            DispatchQueue.main.async { TODO: add if delegate does not work 
-            //                let notificationCenter = NotificationCenter.default
-            //                notificationCenter.post(name: self.DidRefreshNotification, object: self)
-            //            }
-        }
-    }
-    
-
-    
     func fetchLoggedInUser(completion: @escaping () -> Void) {
         
         CloudKitManager.shared.fetchCurrentUser { (currentUser, appleUserRef) in

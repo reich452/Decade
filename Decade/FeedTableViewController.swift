@@ -15,7 +15,6 @@ class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
         super.viewDidLoad()
         
         PhotoController.shared.delegate = self
-        
     }
     
     // MARK: Custom Protocol
@@ -41,14 +40,4 @@ class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
         
         return cell
     }
-    
-    
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-    
-    
 }

@@ -12,5 +12,4 @@ class HeaderImage: UIView {
 
     @IBOutlet weak var headerImageView: UIImageView!
 
-
 }

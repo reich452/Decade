@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 import CloudKit
 
-
-
 class PhotoController {
     
     static let shared = PhotoController()
@@ -19,31 +17,13 @@ class PhotoController {
     // MARK: Proprties
     
     let publicDB = CKContainer.default().publicCloudDatabase
+   
     var cloudKitManager = CloudKitManager()
-    
     var applePhotoRecordID: CKRecordID?
     var currentPhoto: Photo?
-    weak var delegate: PhotoUpdateToDelegate?
-    
     var photos = [Photo]()
+    weak var delegate: PhotoUpdateToDelegate?
 
-
-    func fetchPhotos(completion: @escaping ([Photo]) -> Void) {
-        
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Photo", predicate: predicate)
-        
-        publicDB.perform(query, inZoneWith: nil) { (records, error) in
-            if let error = error {
-                print("Can't perform query for photo \(error.localizedDescription)")
-            }
-            guard let records = records else { return }
-            let photos = records.flatMap({Photo(cloudKitRecord: $0)})
-            self.photos = photos
-            completion(photos)
-        }
-    }
-    
     func fetchPhotoRecords(completion: @escaping ([Photo]) -> Void) {
         
         cloudKitManager.fetchRecordsWithType("Photo", recordFetchedBlock: nil) { (records, error) in

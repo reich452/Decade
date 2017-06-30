@@ -16,7 +16,6 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     // MARK: - Properties
     
     var decades: [Decade] = []
-    
     var safariVC: SFSafariViewController?
     
     override func viewDidLoad() {

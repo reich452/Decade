@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class DecadeImageTableViewCell: UITableViewCell {
     
     
@@ -95,7 +94,6 @@ class DecadeImageTableViewCell: UITableViewCell {
             viewsLabel.text = ("Views \(randomNum)")
         }
     }
-    
 }
 
 
