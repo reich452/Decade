@@ -15,6 +15,9 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     
     // MARK: - Properties
     
+   fileprivate let decadeSearchCell = "decadeSearchCell"
+    
+    
     var decades: [Decade] = []
     var safariVC: SFSafariViewController?
     
@@ -60,7 +63,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "decadeSearchCell", for: indexPath) as? DecadeSearchTableViewCell else { print("Can't return DecadeSearchTableViewCell"); return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: decadeSearchCell, for: indexPath) as? DecadeSearchTableViewCell else { print("Can't return DecadeSearchTableViewCell"); return UITableViewCell() }
         
         let decade = decades[indexPath.row]
         cell.decade = decade

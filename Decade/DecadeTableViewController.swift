@@ -10,6 +10,7 @@ import UIKit
 
 class DecadeTableViewController: UITableViewController, DecadesWereAddedToDelegate  {
     
+   fileprivate let decadeImageCell = "decadeImageCell"
     
     var searchTerms: [String] = []
     
@@ -46,7 +47,7 @@ class DecadeTableViewController: UITableViewController, DecadesWereAddedToDelega
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "decadeImageCell", for: indexPath) as? DecadeImageTableViewCell else { print("Can't return DecadeImageTableViewCell"); return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: decadeImageCell, for: indexPath) as? DecadeImageTableViewCell else { print("Can't return DecadeImageTableViewCell"); return UITableViewCell() }
         
         let decade = DecadeSearchController.shared.decades[indexPath.row]
         cell.decade = decade

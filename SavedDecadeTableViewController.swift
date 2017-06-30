@@ -10,6 +10,7 @@ import UIKit
 
 class SavedDecadeTableViewController: UITableViewController, SavedDecadeTableViewCellDelegate {
     
+    fileprivate let savedImagesCell = "savedImagesCell"
     let stretchyHeader = StretchHeader()
     var decade: Decade?
     var user: User?
@@ -103,7 +104,7 @@ class SavedDecadeTableViewController: UITableViewController, SavedDecadeTableVie
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "savedImagesCell", for: indexPath) as? SavedDecadeTableViewCell else { return SavedDecadeTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: savedImagesCell, for: indexPath) as? SavedDecadeTableViewCell else { return SavedDecadeTableViewCell() }
         
         let decade = DecadeController.shared.likedDecades[indexPath.row]
         cell.decade = decade

@@ -10,6 +10,7 @@ import UIKit
 
 class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
     
+    fileprivate let feedCell = "feedCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as? PhotoTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: feedCell, for: indexPath) as? PhotoTableViewCell else { return UITableViewCell() }
         
         let photo = PhotoController.shared.photos[indexPath.row]
         cell.photo = photo

@@ -14,8 +14,8 @@ class DecadeHomeTableViewController: UITableViewController {
     @IBOutlet weak var headerPageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let toDecadeDetail = "toDecadeDetail"
-    let decadeCell = "decadeCell"
+   fileprivate let toDecadeDetail = "toDecadeDetail"
+   fileprivate let decadeCell = "decadeCell"
     
     var searchTerms: [String] = []
     var timer: Timer!

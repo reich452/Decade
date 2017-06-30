@@ -13,6 +13,9 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate, Po
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var postButton: UIButton!
     
+    // MARK: - Properties 
+    fileprivate let commentCell = "commentCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,7 +60,7 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate, Po
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: commentCell, for: indexPath)
         let post = PostController.shared.posts[indexPath.row]
         
         // TODO: - match the index's of the image and post
