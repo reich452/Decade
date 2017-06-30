@@ -14,6 +14,9 @@ class DecadeHomeTableViewController: UITableViewController {
     @IBOutlet weak var headerPageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let toDecadeDetail = "toDecadeDetail"
+    let decadeCell = "decadeCell"
+    
     var searchTerms: [String] = []
     var timer: Timer!
     var updateCount: Int = 0
@@ -118,7 +121,7 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDecadeDetail" {
+        if segue.identifier == toDecadeDetail {
             if let decadeDetailTVC = segue.destination as? DecadeTableViewController {
                 decadeDetailTVC.searchTerms = self.searchTerms
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -147,7 +150,7 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "decadeCell", for: indexPath) as? DecadeHomeCollectionViewCell else { return DecadeHomeCollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: decadeCell, for: indexPath) as? DecadeHomeCollectionViewCell else { return DecadeHomeCollectionViewCell() }
         let image = LocalImageHelper.localImageArray[indexPath.row]
         cell.decadeImageView.image = image
         
@@ -187,7 +190,7 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
         
         self.searchTerms = searchTerms
         DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "toDecadeDetail", sender: self)
+            self.performSegue(withIdentifier: self.toDecadeDetail, sender: self)
         }
     }
     
