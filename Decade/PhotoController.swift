@@ -2,83 +2,88 @@
 //  PhotoController.swift
 //  Decade
 //
-//  Created by Nick Reichard on 6/10/17.
+//  Created by Nick Reichard on 6/27/17.
 //  Copyright © 2017 Nick Reichard. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CloudKit
 
-// TODO: - add PhotoController to let users post photos on their own feed 
 
-//class PhotoController {
-//    
-//    static let shared = PhotoController()
-//    
-//    // MARK: Proprties 
-//    
-//    let publicDB = CKContainer.default().publicCloudDatabase
-//    var cloudKitManager = CloudKitManager()
-//    var photos: [Photo] = []
-//    var applePhotoRecordID: CKRecordID?
-//    var currentPhoto: Photo?
-//    
-//    func createPhotoWith(photoImage: UIImage, caption: String, owner: User?, photoReference: CKReference? = nil) {
-//        
-//        let photo = Photo(photoImage: photoImage, caption: caption, timestamp: Date(), owner: owner, photoReference: photoReference)
-//        
-//        let photoRecord = CKRecord(photo: photo)
-//        
-//        publicDB.save(photoRecord) { (reocord, error) in
-//            if let error = error {
-//                print("Error saving photo record \(error.localizedDescription)")
-//            }
-//        }
-//    }
-//    
-//    func createPhoto(with photoImage: UIImage?, caption: String, owner: User?, completion: @escaping (Photo?) -> Void) {
-//        
-//        CKContainer.default().fetchUserRecordID { (recordID, error) in
-//            guard let recordID = recordID, error == nil else {
-//                print("Error carating recordID \(String(describing: error?.localizedDescription))")
-//                return }
-//            self.applePhotoRecordID = recordID
-//            let photoReference = CKReference(recordID: recordID, action: .deleteSelf)
-//            
-//            let photo = Photo(photoImage: photoImage, caption: caption, timestamp: Date(), owner: owner, photoReference: photoReference)
-//            
-//            let photoRecord = CKRecord(photo: photo)
-//            
-//            self.publicDB.save(photoRecord, completionHandler: { (record, error) in
-//                if let reocord = record, error == nil {
-//                    let currentPhoto = Photo(cloudKitRecord: reocord)
-//                    self.currentPhoto = currentPhoto
-//                    completion(photo)
-//                    
-//                    print("Success creating photo")
-//                } else {
-//                    guard let error = error else { print("Can't Unwrap error"); return }
-//                    print("Error saving photo record:\(error.localizedDescription)")
-//                }
-//                
-//            })
-//            
-//        }
-//    }
-//    
-//    func savePhotoToCloudKit(photo: Photo, completion: @escaping (CKRecordID?) -> Void) {
-//        guard let cloudKitRecordID = UserController.shared.currentUser?.cloudKitRecordID else { print("Cannot find current user"); completion(nil); return }
-//        
-//        let reference = CKReference(recordID: cloudKitRecordID, action: .deleteSelf)
-//        photo.photoReference = reference
-//        let record = CKRecord(photo: photo)
-//        
-//        cloudKitManager.saveRecord(record) { (record, error) in
-//            if let error = error {
-//                print("Error saving to cloudKit: \(error.localizedDescription)")
-//                completion(nil)
-//                return
-//            }
-//        }
-//    }
-//}
+
+class PhotoController {
+    
+    static let shared = PhotoController()
+    
+    // MARK: Proprties
+    
+    let publicDB = CKContainer.default().publicCloudDatabase
+    var cloudKitManager = CloudKitManager()
+    
+    var applePhotoRecordID: CKRecordID?
+    var currentPhoto: Photo?
+    weak var delegate: PhotoUpdateToDelegate?
+    
+    var photos = [Photo]()
+
+
+    func fetchPhotos(completion: @escaping ([Photo]) -> Void) {
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Photo", predicate: predicate)
+        
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("Can't perform query for photo \(error.localizedDescription)")
+            }
+            guard let records = records else { return }
+            let photos = records.flatMap({Photo(cloudKitRecord: $0)})
+            self.photos = photos
+            completion(photos)
+        }
+    }
+    
+    func fetchPhotoRecords(completion: @escaping ([Photo]) -> Void) {
+        
+        cloudKitManager.fetchRecordsWithType("Photo", recordFetchedBlock: nil) { (records, error) in
+            if let error = error {
+                print("Cannot fetch records with type \(error.localizedDescription)")
+            }
+            guard let records = records else { return }
+            let photos = records.flatMap {Photo(cloudKitRecord: $0)}
+            self.photos = photos
+            completion(photos)
+        }
+    }
+    
+    func createPhoto(photoImage: Data, caption: String, owner: User?, completion: @escaping (Photo?) -> Void) {
+        
+        CKContainer.default().fetchUserRecordID { (recordID, error) in
+            guard let recordID = recordID, error == nil else {
+                print("Error carating recordID \(String(describing: error?.localizedDescription))")
+                return }
+            self.applePhotoRecordID = recordID
+            let photoReference = CKReference(recordID: recordID, action: .deleteSelf)
+            
+            let photo = Photo(photoImageData: photoImage, caption: caption, timestamp: Date(), owner: owner, photoReference: photoReference)
+            
+            let photoRecord = CKRecord(photo: photo)
+            
+            self.cloudKitManager.saveRecord(photoRecord, completion: { (record, error) in
+                if let error = error {
+                    print( "Cannot save record \(error.localizedDescription)")
+                }
+                completion(photo)
+                print("Created a photo")
+                self.photos.insert(photo, at: 0)
+                self.delegate?.photosWereUpdatedTo()
+            })
+            
+        }
+    }
+}
+
+protocol PhotoUpdateToDelegate: class {
+    func photosWereUpdatedTo() 
+}

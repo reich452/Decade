@@ -37,7 +37,7 @@ class DecadeHomeTableViewController: UITableViewController {
     
     private func updateLikedDeades() {
         DecadeController.shared.fetchUserLikedDecades {
-            print("Feched User Liked Deades")
+            print("Feched User Liked Decades")
         }
     }
     
@@ -107,7 +107,7 @@ extension DecadeHomeTableViewController {
     
 }
 
-extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Navigation
     
@@ -121,6 +121,20 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
     }
     
     // MARK: UICollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        // number of Col. 
+        let nbCol = 2
+        
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let totalSpace = flowLayout.sectionInset.left
+            + flowLayout.sectionInset.right
+            + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+        return CGSize(width: size, height: size)
+     
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return LocalImageHelper.localImageArray.count

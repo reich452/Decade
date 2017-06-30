@@ -17,12 +17,12 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate, Po
         super.viewDidLoad()
         
         self.hideKeyboard()
-        PostController.shared.delegate = self
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       
         PostController.shared.fetchPosts { (posts) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -38,6 +38,7 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate, Po
             self.tableView.reloadData()
         }
     }
+    
     
     // MARK: Actions
     

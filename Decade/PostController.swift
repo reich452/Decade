@@ -62,23 +62,6 @@ class PostController {
             }
             completion(error)
         }
-        //        cloudKitManager.publicDatabase.delete(withRecordID: recordID) { (recordID, error) in
-        //            if let error = error {
-        //                print("Cannot delete post recordID \(error.localizedDescription)")
-        //            }
-        //            completion(error)
-        //        }
-    }
-
-
-    func deletePostWith3(recordID: CKRecordID, compeletion: @escaping () -> Void) {
-        
-        cloudKitManager.deleteRecordWithID(recordID) { (recordID, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            compeletion()
-        }
     }
 }
 
