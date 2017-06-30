@@ -33,11 +33,18 @@ class DecadeHomeTableViewController: UITableViewController {
             print("Sucessfully fetched LoggedIn User")
             self.updateLikedDeades()
         }
+        updateUsersCreatedPhotos()
     }
     
     private func updateLikedDeades() {
         DecadeController.shared.fetchUserLikedDecades {
             print("Fetched User Liked Decades")
+        }
+    }
+    
+    private func updateUsersCreatedPhotos() {
+        PhotoController.shared.fetchPhotoRecords { (photo) in
+            print("Fetched Users Created Photos")
         }
     }
     
