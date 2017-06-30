@@ -16,9 +16,7 @@ class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
         
         PhotoController.shared.delegate = self
         
-        
     }
-    
     
     // MARK: Custom Protocol
     
