@@ -27,13 +27,13 @@
 		01417A151EB8F3C100315C15 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A141EB8F3C100315C15 /* CustomTabBarController.swift */; };
 		01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */; };
 		01681B671EECAD4D00D4712D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01681B661EECAD4D00D4712D /* CameraController.swift */; };
-		016E65FF1F030DC500DDFD27 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E65FE1F030DC500DDFD27 /* Photo.swift */; };
 		016E66011F03180C00DDFD27 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E66001F03180C00DDFD27 /* PhotoController.swift */; };
 		016E66031F0328BE00DDFD27 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E66021F0328BE00DDFD27 /* CameraViewController.swift */; };
 		016E66051F0328FC00DDFD27 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E66041F0328FC00DDFD27 /* CameraPreviewViewController.swift */; };
 		016E66071F032F8B00DDFD27 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E66061F032F8B00DDFD27 /* DateFormatter.swift */; };
 		016E66091F0331DD00DDFD27 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E66081F0331DD00DDFD27 /* FeedTableViewController.swift */; };
 		016E660B1F034ABB00DDFD27 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E660A1F034ABB00DDFD27 /* PhotoTableViewCell.swift */; };
+		017715A41F06932A00D671B2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017715A31F06932A00D671B2 /* Photo.swift */; };
 		01A795061EBAA49300E62DD6 /* LocalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795051EBAA49300E62DD6 /* LocalImage.swift */; };
 		01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795071EBAA4F100E62DD6 /* LocalImageController.swift */; };
 		01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */; };
@@ -79,13 +79,13 @@
 		01417A141EB8F3C100315C15 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		01417A181EB9192D00315C15 /* SavedDecadeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedDecadeTableViewController.swift; path = ../SavedDecadeTableViewController.swift; sourceTree = "<group>"; };
 		01681B661EECAD4D00D4712D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
-		016E65FE1F030DC500DDFD27 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = ../../../.Trash/Photo.swift; sourceTree = "<group>"; };
 		016E66001F03180C00DDFD27 /* PhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		016E66021F0328BE00DDFD27 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		016E66041F0328FC00DDFD27 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		016E66061F032F8B00DDFD27 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		016E66081F0331DD00DDFD27 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		016E660A1F034ABB00DDFD27 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		017715A31F06932A00D671B2 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		01A795051EBAA49300E62DD6 /* LocalImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImage.swift; sourceTree = "<group>"; };
 		01A795071EBAA4F100E62DD6 /* LocalImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageController.swift; sourceTree = "<group>"; };
 		01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageHelper.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				014179F91EB79CDC00315C15 /* User.swift */,
 				014179F71EB7963A00315C15 /* Decade.swift */,
 				01EA61BC1EF2EEDD003936B9 /* Post.swift */,
-				016E65FE1F030DC500DDFD27 /* Photo.swift */,
+				017715A31F06932A00D671B2 /* Photo.swift */,
 				01A795051EBAA49300E62DD6 /* LocalImage.swift */,
 			);
 			name = Model;
@@ -376,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017715A41F06932A00D671B2 /* Photo.swift in Sources */,
 				01ACC3781ECB7C490010B17C /* CasheController.swift in Sources */,
 				01417A001EB7B20E00315C15 /* DecadeError.swift in Sources */,
 				01417A021EB7E8C200315C15 /* ImageController .swift in Sources */,
@@ -391,7 +392,6 @@
 				01417A131EB8231A00315C15 /* DecadeSearchTableViewCell.swift in Sources */,
 				01417A191EB9192D00315C15 /* SavedDecadeTableViewController.swift in Sources */,
 				01ACC3721EC3FF630010B17C /* UIImageHelper.swift in Sources */,
-				016E65FF1F030DC500DDFD27 /* Photo.swift in Sources */,
 				016E66051F0328FC00DDFD27 /* CameraPreviewViewController.swift in Sources */,
 				01417A0F1EB818DE00315C15 /* DecadeImageTableViewCell.swift in Sources */,
 				014179D81EB791FB00315C15 /* AppDelegate.swift in Sources */,

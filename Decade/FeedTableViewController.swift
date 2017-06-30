@@ -19,6 +19,7 @@ class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
         PhotoController.shared.fetchPhotoRecords { (photo) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                print("Fetched Users Photos")
             }
         }
         

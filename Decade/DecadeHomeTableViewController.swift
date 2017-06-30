@@ -37,7 +37,7 @@ class DecadeHomeTableViewController: UITableViewController {
     
     private func updateLikedDeades() {
         DecadeController.shared.fetchUserLikedDecades {
-            print("Feched User Liked Decades")
+            print("Fetched User Liked Decades")
         }
     }
     
