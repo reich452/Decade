@@ -17,7 +17,7 @@ class User {
     static let imageIdKey = "imageId"
     static let commentsKey = "comment"
     static let appleUserRefKey = "appleUserRef"
-    
+     
     var likedImageURLs: [String] = []
     var imageIds: [String] = []
     var cloudKitRecordID: CKRecordID?

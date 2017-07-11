@@ -96,7 +96,7 @@ class DecadeSearchController {
     func searchForImagesWithKeywords(keywords: [String], completion: @escaping (DecadeError?) -> Void) {
         guard let baseURL = baseURL,
             let currentUserRecordId = UserController.shared.currentUser?.cloudKitRecordID
-            else { completion(.baseUrlFailed); print("base url failed"); return }
+            else { completion(.baseUrlFailed); print("base url failed keywords"); return }
 
         let urlParameters: [String: String] = ["q": getRandomSearchTermFrom(searchTerms: keywords)]
         NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
@@ -145,3 +145,27 @@ enum Decades {
     case fourteys
     case none
 }
+
+// TODO: - Handel no connection 
+
+enum DecadesError {
+    case currentYearError
+    case twothousandsError
+    case nintiesError
+    case eightysError
+    case seventiesError
+    case sixtiesError
+    case fiftiesError
+    case fourteys
+    case none
+}
+
+
+
+
+
+
+
+
+
+
