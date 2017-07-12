@@ -49,7 +49,6 @@ class DecadeHomeTableViewController: UITableViewController {
             print("Fetched Users Created Photos")
         }
     }
-
     
     internal func timeSchedule() {
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
@@ -130,7 +129,7 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
         }
     }
     
-    // MARK: UICollectionDelegateFlowLayout
+    // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -146,8 +145,6 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
      
     }
     
-    // MARK: UICollectionViewDataSouce
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return LocalImageHelper.localImageArray.count
     }
@@ -159,8 +156,6 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
         
         return cell
     }
-    
-    // MARK: UICollectionViewDelegate 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -188,7 +183,6 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
         case 7:
             selectedDecade = .fourteys
         default:
-        
             print("Can't preset decade \(DecadeError.noPreslectedDecades)")
             break
         }
@@ -200,35 +194,11 @@ extension DecadeHomeTableViewController: UICollectionViewDelegate, UICollectionV
         }
     }
     
-    // TODO - TEST THIS 
-    
-    func noWifiConnection() {
-        DecadeSearchController.shared.searchForImagesWithKeywords(keywords: searchTerms) { (decadeError) in
-            
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            if let decadeError = decadeError {
-                print("No connection to WIFI \(decadeError.localizedDescription)")
-                self.connectionFailedAlert()
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false 
-                return
-            }
-        }
-    }
 }
 
 extension DecadeHomeTableViewController {
     
     func setUpUI() {
         self.title = "HOME"
-    }
-}
-
-extension DecadeHomeTableViewController {
-    
-    func connectionFailedAlert() {
-        let alertController = UIAlertController(title: "Connection Failed", message: "Please wait unitl you have service", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
     }
 }

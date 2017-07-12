@@ -17,6 +17,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     
    fileprivate let decadeSearchCell = "decadeSearchCell"
     
+    
     var decades: [Decade] = []
     var safariVC: SFSafariViewController?
     
@@ -33,7 +34,6 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
         searchBar.resignFirstResponder()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let searchTerm = searchBar.text else { return }
-        
         
         DecadeSearchController.shared.searchForImagesWith(searchTerm: searchTerm, recordFetchedBlock: { (decade) in
             guard let decade = decade else { return }
@@ -57,7 +57,7 @@ class DecadeSearchTableViewController: UITableViewController, UISearchBarDelegat
     }
     
     // MARK: - Table view data source
-      
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return decades.count
     }
