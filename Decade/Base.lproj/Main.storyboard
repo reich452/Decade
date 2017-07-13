@@ -757,7 +757,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="476"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c7R-Ah-faz" id="0Zl-DF-vnO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="475.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="476"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcu-ai-ChL">
@@ -774,19 +774,27 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqv-BI-c4C">
                                             <rect key="frame" x="17" y="61" width="342" height="361"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="361" id="ivN-Hd-7pQ"/>
-                                            </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiJ-61-jWR">
+                                            <rect key="frame" x="62" y="430" width="30" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="KfU-YX-DAM"/>
+                                                <constraint firstAttribute="width" constant="30" id="rUt-Kb-Uct"/>
+                                            </constraints>
+                                            <state key="normal" image="shareIcon"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vqv-BI-c4C" firstAttribute="leading" secondItem="siq-ah-gkK" secondAttribute="leading" id="BeT-qB-uPg"/>
-                                        <constraint firstItem="siq-ah-gkK" firstAttribute="top" secondItem="Wcu-ai-ChL" secondAttribute="bottom" id="DHD-bV-Hcj"/>
-                                        <constraint firstItem="vqv-BI-c4C" firstAttribute="centerX" secondItem="0Zl-DF-vnO" secondAttribute="centerX" id="J7N-yM-1eR"/>
-                                        <constraint firstItem="vqv-BI-c4C" firstAttribute="leading" secondItem="0Zl-DF-vnO" secondAttribute="leadingMargin" constant="9" id="QLq-vP-omG"/>
-                                        <constraint firstItem="vqv-BI-c4C" firstAttribute="top" secondItem="siq-ah-gkK" secondAttribute="bottom" constant="8" symbolic="YES" id="TfG-CD-TZa"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="vqv-BI-c4C" secondAttribute="bottom" constant="45.5" id="cAt-dC-g0y"/>
-                                        <constraint firstItem="vqv-BI-c4C" firstAttribute="leading" secondItem="Wcu-ai-ChL" secondAttribute="leading" id="gPO-vF-pcg"/>
+                                        <constraint firstItem="Wcu-ai-ChL" firstAttribute="leading" secondItem="0Zl-DF-vnO" secondAttribute="leadingMargin" constant="9" id="M5t-Sd-0Hc"/>
+                                        <constraint firstItem="siq-ah-gkK" firstAttribute="trailing" secondItem="aiJ-61-jWR" secondAttribute="trailing" id="Qdo-ab-BWB"/>
+                                        <constraint firstItem="vqv-BI-c4C" firstAttribute="centerX" secondItem="0Zl-DF-vnO" secondAttribute="centerX" id="Xdz-XX-pqD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="aiJ-61-jWR" secondAttribute="bottom" constant="2.5" id="fun-ma-6Ro"/>
+                                        <constraint firstItem="aiJ-61-jWR" firstAttribute="top" secondItem="vqv-BI-c4C" secondAttribute="bottom" constant="8" symbolic="YES" id="gig-k5-aeY"/>
+                                        <constraint firstItem="vqv-BI-c4C" firstAttribute="top" secondItem="siq-ah-gkK" secondAttribute="bottom" constant="8" symbolic="YES" id="hIC-Z6-G1L"/>
+                                        <constraint firstItem="siq-ah-gkK" firstAttribute="leading" secondItem="vqv-BI-c4C" secondAttribute="leading" id="oUk-Nd-CB2"/>
+                                        <constraint firstItem="Wcu-ai-ChL" firstAttribute="leading" secondItem="siq-ah-gkK" secondAttribute="leading" id="shD-AL-ekV"/>
+                                        <constraint firstItem="Wcu-ai-ChL" firstAttribute="top" secondItem="0Zl-DF-vnO" secondAttribute="topMargin" constant="4" id="xhF-FB-ij9"/>
+                                        <constraint firstItem="siq-ah-gkK" firstAttribute="top" secondItem="Wcu-ai-ChL" secondAttribute="bottom" id="zeO-K5-sbW"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

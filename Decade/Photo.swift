@@ -42,7 +42,7 @@ class Photo {
         
         let temporaryDirectory = NSTemporaryDirectory()
         let temporaryDirectoryURL = URL(fileURLWithPath: temporaryDirectory)
-        let fileURL = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString).appendingPathComponent("jpg")
+        let fileURL = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString).appendingPathExtension("jpg")
         
         try? photoImageData.write(to: fileURL, options: [.atomic])
         
@@ -87,8 +87,8 @@ extension CKRecord {
         // UIImage -> Data -> Store the data at a URL -> Asset with the URL
         
         self.setValue(photo.caption, forKey: Photo.captionKey)
-        self.setValue(photo.timestamp, forKey: Photo.photoImageKey)
-        self.setValue(photo.photoReference, forKey: Photo.recordTypeKey)
+        self.setValue(photo.timestamp, forKey: Photo.timestampKey)
+        self.setValue(photo.photoReference, forKey: Photo.photoReferenceKey)
         let imageAsset = CKAsset(fileURL: photo.temporaryPhotoURL)
         self.setValue(imageAsset, forKey: Photo.photoImageKey)
     }
