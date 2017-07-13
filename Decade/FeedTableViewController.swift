@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
+class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate, UserPhotoShareButtonTappedDelegate {
     
     fileprivate let feedCell = "feedCell"
     
@@ -26,6 +26,19 @@ class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
         }
     }
     
+    func userShareButtonTapped(_ sender: PhotoTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: sender) else { return }
+        
+        let photo = PhotoController.shared.photos[indexPath.row]
+        let userPhoto = photo.photoImage
+        let timestamp = photo.timestamp
+        let caption = photo.caption
+        
+        let activityVC = UIActivityViewController.init(activityItems: [userPhoto, timestamp, caption], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +51,8 @@ class FeedTableViewController: UITableViewController, PhotoUpdateToDelegate {
         
         let photo = PhotoController.shared.photos[indexPath.row]
         cell.photo = photo
+        cell.delegate = self
+        cell.shareButtonTapped(self)
         
         return cell
     }

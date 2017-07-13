@@ -20,6 +20,13 @@ class PhotoTableViewCell: UITableViewCell {
         }
     }
     
+    weak var delegate: UserPhotoShareButtonTappedDelegate?
+    
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        delegate?.userShareButtonTapped(self)
+    }
+    
     func updateViews() {
         guard let photo = self.photo, let dateYear = photo.timestamp.currentYear else { return }
         
@@ -29,4 +36,8 @@ class PhotoTableViewCell: UITableViewCell {
             self.dateLabel.text = "\(dateYear)"
         }
     }
+}
+
+protocol UserPhotoShareButtonTappedDelegate: class {
+    func userShareButtonTapped(_ sender: PhotoTableViewCell)
 }

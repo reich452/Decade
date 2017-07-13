@@ -776,18 +776,21 @@
                                             <rect key="frame" x="17" y="61" width="342" height="361"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiJ-61-jWR">
-                                            <rect key="frame" x="62" y="430" width="30" height="35"/>
+                                            <rect key="frame" x="39" y="430" width="30" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="KfU-YX-DAM"/>
                                                 <constraint firstAttribute="width" constant="30" id="rUt-Kb-Uct"/>
                                             </constraints>
                                             <state key="normal" image="shareIcon"/>
+                                            <connections>
+                                                <action selector="shareButtonTapped:" destination="c7R-Ah-faz" eventType="touchUpInside" id="QPT-WW-Xtr"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Wcu-ai-ChL" firstAttribute="leading" secondItem="0Zl-DF-vnO" secondAttribute="leadingMargin" constant="9" id="M5t-Sd-0Hc"/>
-                                        <constraint firstItem="siq-ah-gkK" firstAttribute="trailing" secondItem="aiJ-61-jWR" secondAttribute="trailing" id="Qdo-ab-BWB"/>
                                         <constraint firstItem="vqv-BI-c4C" firstAttribute="centerX" secondItem="0Zl-DF-vnO" secondAttribute="centerX" id="Xdz-XX-pqD"/>
+                                        <constraint firstItem="aiJ-61-jWR" firstAttribute="centerX" secondItem="siq-ah-gkK" secondAttribute="centerX" id="YWD-1d-dFx"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="aiJ-61-jWR" secondAttribute="bottom" constant="2.5" id="fun-ma-6Ro"/>
                                         <constraint firstItem="aiJ-61-jWR" firstAttribute="top" secondItem="vqv-BI-c4C" secondAttribute="bottom" constant="8" symbolic="YES" id="gig-k5-aeY"/>
                                         <constraint firstItem="vqv-BI-c4C" firstAttribute="top" secondItem="siq-ah-gkK" secondAttribute="bottom" constant="8" symbolic="YES" id="hIC-Z6-G1L"/>
