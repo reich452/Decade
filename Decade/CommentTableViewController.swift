@@ -18,14 +18,14 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate, Po
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         self.hideKeyboard()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
+        PostController.shared.delegate = self
         PostController.shared.fetchPosts { (posts) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
