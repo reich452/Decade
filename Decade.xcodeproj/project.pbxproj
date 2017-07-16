@@ -34,6 +34,7 @@
 		016E66091F0331DD00DDFD27 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E66081F0331DD00DDFD27 /* FeedTableViewController.swift */; };
 		016E660B1F034ABB00DDFD27 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E660A1F034ABB00DDFD27 /* PhotoTableViewCell.swift */; };
 		017715A41F06932A00D671B2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017715A31F06932A00D671B2 /* Photo.swift */; };
+		017715E01F1A850300D671B2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017715DF1F1A850300D671B2 /* Reachability.swift */; };
 		01A795061EBAA49300E62DD6 /* LocalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795051EBAA49300E62DD6 /* LocalImage.swift */; };
 		01A795081EBAA4F100E62DD6 /* LocalImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795071EBAA4F100E62DD6 /* LocalImageController.swift */; };
 		01A795281EBAB5DE00E62DD6 /* LocalImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */; };
@@ -84,6 +85,7 @@
 		016E66081F0331DD00DDFD27 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		016E660A1F034ABB00DDFD27 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		017715A31F06932A00D671B2 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		017715DF1F1A850300D671B2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		01A795051EBAA49300E62DD6 /* LocalImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImage.swift; sourceTree = "<group>"; };
 		01A795071EBAA4F100E62DD6 /* LocalImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageController.swift; sourceTree = "<group>"; };
 		01A795271EBAB5DE00E62DD6 /* LocalImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageHelper.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		014179F41EB7932800315C15 /* Network Controller */ = {
 			isa = PBXGroup;
 			children = (
+				017715DF1F1A850300D671B2 /* Reachability.swift */,
 				014179FD1EB7A80C00315C15 /* NetworkController.swift */,
 				01417A011EB7E8C200315C15 /* ImageController .swift */,
 				01ACC3771ECB7C490010B17C /* CasheController.swift */,
@@ -408,6 +411,7 @@
 				01C65F1D1EC2264B00DD675B /* UserController.swift in Sources */,
 				01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */,
 				01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */,
+				017715E01F1A850300D671B2 /* Reachability.swift in Sources */,
 				01ACC36E1EC3B51F0010B17C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

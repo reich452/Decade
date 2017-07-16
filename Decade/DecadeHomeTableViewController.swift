@@ -31,6 +31,7 @@ class DecadeHomeTableViewController: UITableViewController {
         loadHorizontalScrollView()
         timeSchedule()
         setUpUI()
+        checkUsersConnection()
         UserController.shared.fetchLoggedInUser {
             print("Sucessfully fetched LoggedIn User")
             self.updateLikedDeades()
@@ -48,6 +49,17 @@ class DecadeHomeTableViewController: UITableViewController {
         PhotoController.shared.fetchPhotoRecords { (photo) in
             print("Fetched Users Created Photos")
         }
+    }
+    
+    private func checkUsersConnection() {
+        
+        if currentReachabilityStatus == .notReachable {
+            let alertController = UIAlertController(title: "Connection Failed", message: "Please wait unitl you have wifi", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
+        print(currentReachabilityStatus != .notReachable ) // true connected
     }
     
     internal func timeSchedule() {
