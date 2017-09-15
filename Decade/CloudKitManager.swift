@@ -76,42 +76,42 @@ class CloudKitManager {
     
     func fetchRecordsWithType(_ type: String,
                               predicate: NSPredicate = NSPredicate(value: true),
-                              recordFetchedBlock: ((_ record: CKRecord) -> Void)?,
-                              completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
+                              recordFetchedBlock: ((_ record: CKRecord) -> Void)?, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
         
         var fetchedRecords: [CKRecord] = []
         
-        let query = CKQuery(recordType: type, predicate: predicate)
-        let queryOperation = CKQueryOperation(query: query)
+        // create a query inorder to search what you want
+        let query = CKQuery(recordType: type, predicate: predicate) // Yes give me it all
+        let queryOperation = CKQueryOperation(query: query) // Go and exequte the search critera
         
-        let perRecordBlock = { (fetchedRecord: CKRecord) -> Void in
-            fetchedRecords.append(fetchedRecord)
-            recordFetchedBlock?(fetchedRecord)
+        let perRecordBlock = { (fetchRecord: CKRecord) -> Void in
+            fetchedRecords.append(fetchRecord) // appending the record that we are getting back
+            recordFetchedBlock?(fetchRecord)
         }
         queryOperation.recordFetchedBlock = perRecordBlock
         
-        var queryCompletionBlock: (CKQueryCursor?, Error?) -> Void = { (_, _) in }
+        var queryCompletionBlock: ((CKQueryCursor?, Error?) -> Void)?
         
-        queryCompletionBlock = { (queryCursor: CKQueryCursor?, error: Error?) -> Void in
+        queryCompletionBlock = { [weak self] (queryCursor: CKQueryCursor?, error: Error?) -> Void in
             
             if let queryCursor = queryCursor {
-                // there are more results, go fetch them
+                // if There are more results, go and fetch them
                 
                 let continuedQueryOperation = CKQueryOperation(cursor: queryCursor)
                 continuedQueryOperation.recordFetchedBlock = perRecordBlock
                 continuedQueryOperation.queryCompletionBlock = queryCompletionBlock
                 
-                self.publicDatabase.add(continuedQueryOperation)
-                
+                self?.publicDatabase.add(continuedQueryOperation)
             } else {
                 completion?(fetchedRecords, error)
             }
         }
+        queryCompletionBlock = nil
         queryOperation.queryCompletionBlock = queryCompletionBlock
         
         self.publicDatabase.add(queryOperation)
+        
     }
-    
     // MARK: - Delete
     
     func deleteRecordWithID(_ recordID: CKRecordID, completion: ((_ recordID: CKRecordID?, _ error: Error?) -> Void)?) {

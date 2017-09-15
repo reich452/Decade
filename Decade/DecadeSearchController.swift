@@ -23,7 +23,7 @@ class DecadeSearchController {
     private let apiParameter = "Ocp-Apim-Subscription-Key"
     private let baseURL = URL(string: "https://api.cognitive.microsoft.com/bing/v5.0/images/search")
     private let baseURL2 = URL(string: "https://api.cognitive.microsoft.com/bing/v7.0/images/search")
-    private let apiKey = "0231de06566d4717873444afb447e586"
+    private let apiKey = "df427e03b60e43f3b68af6ea34973806"
     private let apiKey2 = "c3f846e0028943f5afd96e9cdd6eae73"
     
     // MARK: - Properties 
@@ -105,7 +105,8 @@ class DecadeSearchController {
             
             guard let data = data,
                 let jsonDictionaries = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any],
-                let imageArray = jsonDictionaries["value"] as? [[String: Any]] else { completion(.jsonConversionFailure); print("jsonConversionFailure"); return }
+                let imageArray = jsonDictionaries["value"] as? [[String: Any]]
+                else { completion(.jsonConversionFailure); print("jsonConversionFailure"); return }
             
             let decades = imageArray.flatMap( {Decade(jsonDictionary: $0)})
             
