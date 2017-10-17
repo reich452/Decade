@@ -25,5 +25,8 @@ struct Constants {
     
     static let imageIdKey = "imageId"
     
+    // Camera
+    static let cameraPreviewViewController = "CameraPreviewViewController"
+    
 
 }

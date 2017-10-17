@@ -11,16 +11,16 @@ import CloudKit
 
 class Post: Equatable {
     
-    static let postKey = "post"
-    static let typeKey = "Post"
-    static let ownerReferenceKey = "ownerReference"
+    private let postKey = "post"
+    private let typeKey = "Post"
+    private let ownerReferenceKey = "ownerReference"
     
     // MARK: Properties
     let post: String
     var cloudKitRecordID: CKRecordID?
     
     var recordType: String {
-        return Post.typeKey
+        return typeKey
     }
     
     init(post: String) {
@@ -29,7 +29,7 @@ class Post: Equatable {
     
     // Turn post into our model object
     init?(cloudKitRecord: CKRecord) {
-        guard let post = cloudKitRecord[Post.postKey] as? String else { return nil }
+        guard let post = cloudKitRecord[postKey] as? String else { return nil }
         self.cloudKitRecordID = cloudKitRecord.recordID
         self.post = post
     }
@@ -38,7 +38,7 @@ class Post: Equatable {
     /// like a dictoaryRepresentaion. CloudKit verson. Turn this into something that cloudKit can store
     var cloudKitRecord: CKRecord {
         let record = CKRecord(recordType: "Post")
-        record.setValue(post, forKey: Post.postKey)
+        record.setValue(post, forKey: postKey)
         return record
     }
 }

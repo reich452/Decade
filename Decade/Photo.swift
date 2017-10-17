@@ -13,10 +13,10 @@ import CloudKit
 class Photo {
     
     static let recordTypeKey = "Photo"
-    static let photoImageKey = "photoImage"
-    static let captionKey = "caption"
-    static let timestampKey = "timestamp"
-    static let photoReferenceKey = "photoReference"
+    fileprivate static let photoImageKey = "photoImage"
+    fileprivate static let captionKey = "caption"
+    fileprivate static let timestampKey = "timestamp"
+    fileprivate static let photoReferenceKey = "photoReference"
     
     // MARK: Properties
     

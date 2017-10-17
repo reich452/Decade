@@ -42,7 +42,6 @@
 		01ACC36C1EC365010010B17C /* SavedDecadeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC36B1EC365010010B17C /* SavedDecadeTableViewCell.swift */; };
 		01ACC36E1EC3B51F0010B17C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC36D1EC3B51F0010B17C /* Constants.swift */; };
 		01ACC3741EC4DB820010B17C /* DecadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC3731EC4DB820010B17C /* DecadeController.swift */; };
-		01ACC3781ECB7C490010B17C /* CasheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACC3771ECB7C490010B17C /* CasheController.swift */; };
 		01C65F191EC1452700DD675B /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F181EC1452700DD675B /* UIColorHelper.swift */; };
 		01C65F1B1EC1642200DD675B /* DecadeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */; };
 		01C65F1D1EC2264B00DD675B /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C65F1C1EC2264B00DD675B /* UserController.swift */; };
@@ -93,7 +92,6 @@
 		01ACC36B1EC365010010B17C /* SavedDecadeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedDecadeTableViewCell.swift; sourceTree = "<group>"; };
 		01ACC36D1EC3B51F0010B17C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		01ACC3731EC4DB820010B17C /* DecadeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeController.swift; sourceTree = "<group>"; };
-		01ACC3771ECB7C490010B17C /* CasheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasheController.swift; sourceTree = "<group>"; };
 		01C65F181EC1452700DD675B /* UIColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
 		01C65F1A1EC1642200DD675B /* DecadeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeWebViewController.swift; sourceTree = "<group>"; };
 		01C65F1C1EC2264B00DD675B /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 				017715DF1F1A850300D671B2 /* Reachability.swift */,
 				014179FD1EB7A80C00315C15 /* NetworkController.swift */,
 				01417A011EB7E8C200315C15 /* ImageController .swift */,
-				01ACC3771ECB7C490010B17C /* CasheController.swift */,
 			);
 			name = "Network Controller";
 			sourceTree = "<group>";
@@ -374,7 +371,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				017715A41F06932A00D671B2 /* Photo.swift in Sources */,
-				01ACC3781ECB7C490010B17C /* CasheController.swift in Sources */,
 				01417A001EB7B20E00315C15 /* DecadeError.swift in Sources */,
 				01417A021EB7E8C200315C15 /* ImageController .swift in Sources */,
 				01FB2D961ECCCB0D007B0607 /* DecadeHomeTableViewController.swift in Sources */,

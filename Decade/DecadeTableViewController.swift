@@ -20,7 +20,6 @@ class DecadeTableViewController: UITableViewController, DecadesWereAddedToDelega
         DecadeSearchController.shared.delegate = self
         
         self.view.backgroundColor = .customBackgroundColor
-        CasheController.shared.cacheUrls()
         
         searchForDecades(searchTerms: searchTerms)
     }

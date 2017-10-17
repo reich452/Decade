@@ -116,7 +116,7 @@ class CameraViewController: UIViewController {
             newInput = try AVCaptureDeviceInput(device: newCamera)
             self.captureSession.addInput(newInput)
         } catch {
-            print("Error: Cannot Capure newInput \(error.localizedDescription)")
+            print("Error: Cannot Capure newInput \(error.localizedDescription) \(#file) \(#function)")
         }
         
         self.captureSession.commitConfiguration()
@@ -129,7 +129,7 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
     
     func displayCapturedPhoto(capturedPhoto : UIImage) {
         
-        let cameraPreviewViewController = storyboard?.instantiateViewController(withIdentifier: "CameraPreviewViewController") as! CameraPreviewViewController
+        let cameraPreviewViewController = storyboard?.instantiateViewController(withIdentifier: Constants.cameraPreviewViewController) as! CameraPreviewViewController
         cameraPreviewViewController.capturedImage = capturedPhoto
         navigationController?.pushViewController(cameraPreviewViewController, animated: true)
     }
@@ -137,7 +137,7 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         
         if let error = error {
-            print(error.localizedDescription)
+            print("Cannot captureOutput \(#file) \(#function) \(error.localizedDescription)")
         } else {
             
             if let sampleBuffer = photoSampleBuffer, let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) {

@@ -12,11 +12,11 @@ import CloudKit
 class User {
     
     static let recordTypeKey = "User"
-    static let likedImageUrlsKey = "likedImageURLs"
-    static let likedImageKey = "likedImage"
-    static let imageIdKey = "imageId"
-    static let commentsKey = "comment"
-    static let appleUserRefKey = "appleUserRef"
+    fileprivate static let likedImageUrlsKey = "likedImageURLs"
+    fileprivate static let likedImageKey = "likedImage"
+    fileprivate static let imageIdKey = "imageId"
+    fileprivate static let commentsKey = "comment"
+    fileprivate static let appleUserRefKey = "appleUserRef"
     
     var likedImageURLs: [String] = []
     var imageIds: [String] = []

@@ -21,4 +21,6 @@ class DecadeHomeCollectionViewCell: UICollectionViewCell {
         guard let decade = decade else { return }
         decadeImageView.image = UIImage(named: (decade.imageName))
     }
+    
 }
+

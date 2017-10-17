@@ -20,11 +20,11 @@ class DecadeSearchController {
     private let countKey = "count"
     private let valueKey = "value"
     private let contentURLKey = "contentUrl"
-    private let apiParameter = "Ocp-Apim-Subscription-Key"
+    private let apiParameter = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
     private let baseURL = URL(string: "https://api.cognitive.microsoft.com/bing/v5.0/images/search")
     private let baseURL2 = URL(string: "https://api.cognitive.microsoft.com/bing/v7.0/images/search")
     private let apiKey = "df427e03b60e43f3b68af6ea34973806"
-    private let apiKey2 = "c3f846e0028943f5afd96e9cdd6eae73"
+    private let apiKey2 = "1a5c5b8a5fbf47f2854c8b6b8c4dcc9c"
     
     // MARK: - Properties 
     
@@ -99,7 +99,7 @@ class DecadeSearchController {
             else { completion(.baseUrlFailed); print("base url failed"); return }
 
         let urlParameters: [String: String] = ["q": getRandomSearchTermFrom(searchTerms: keywords)]
-        NetworkController.performRequest(for: baseURL, apiKey: apiKey, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
+        NetworkController.performRequest(for: baseURL, apiKey: apiKey2, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
             if let error = error { print("Error: searching for image \(error.localizedDescription)")
                 completion(.imageSearchFailure); print("imageSearch failure"); return }
             

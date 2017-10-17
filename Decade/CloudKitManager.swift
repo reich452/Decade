@@ -12,6 +12,7 @@ import CloudKit
 class CloudKitManager {
     
     static let shared = CloudKitManager()
+    private let recordTypeKey = "User"
     
     let publicDatabase = CKContainer.default().publicCloudDatabase
     
@@ -56,7 +57,10 @@ class CloudKitManager {
             let predicate = NSPredicate(format: "appleUserRef == %@", appleUserReference)
             
             // Fetch the real User record
-            self.fetchRecordsWithType(User.recordTypeKey, predicate: predicate, recordFetchedBlock: nil, completion: { (records, error) in
+            self.fetchRecordsWithType(self.recordTypeKey, predicate: predicate, recordFetchedBlock: nil, completion: { (records, error) in
+                if let error = error {
+                    print("Error fetchingRecordsWithType \(#file) \(#function) \(error.localizedDescription)")
+                }
                 guard let currentUserRecord = records?.first else {  completion(nil, appleUserReference); return }
                 
                 let currentUser = User(cloudKitRecord: currentUserRecord)
@@ -106,7 +110,7 @@ class CloudKitManager {
                 completion?(fetchedRecords, error)
             }
         }
-        queryCompletionBlock = nil
+        
         queryOperation.queryCompletionBlock = queryCompletionBlock
         
         self.publicDatabase.add(queryOperation)

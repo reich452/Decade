@@ -12,13 +12,13 @@ import CloudKit
 
 class Decade {
     
-    static let imageNameKey = "name"
-    static let contentUrlKey = "contentUrl"
-    static let imageIdKey = "imageId"
-    static let imageDataKey = "imageData"
-    static let ownerReferenceKey = "ownerReference"
-    static let typeKey = "Decade"
-    static let hostPageUrlKey = "hostPageUrl"
+   fileprivate static let imageNameKey = "name"
+   fileprivate static let contentUrlKey = "contentUrl"
+   fileprivate static let imageIdKey = "imageId"
+   fileprivate static let imageDataKey = "imageData"
+   fileprivate static let ownerReferenceKey = "ownerReference"
+   fileprivate static let typeKey = "Decade"
+   fileprivate static let hostPageUrlKey = "hostPageUrl"
     
     let imageName: String
     let contentUrlString: String
